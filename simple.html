@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <title>SandboxAPI Tester</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <h1>SandboxAPI Tester</h1>
+        <p>Test your VWSandbox here.</p>
+        <form class="" action="index.html" method="post">
+            <select name="Method">
+                <option value="GET" selected>GET</option>
+                <option value="POST">POST</option>
+                <option value="DELETE">DELETE</option>
+            </select>
+            <select name="Command">
+                <option value="3drdownload">3drdownload</option>
+                <option value="3drmetadata">3drmetadata</option>
+                <option value="3drpermission">3drpermission</option>
+                <option value="3drsearch">3drsearch</option>
+                <option value="3drtexture">3drtexture</option>
+                <option value="3drthumbnail">3drthumbnail</option>
+                <option value="apppath" selected>apppath</option>
+                <option value="cameras">cameras</option>
+                <option value="copyinstance">copyinstance</option>
+                <option value="datafile">datafile</option>
+                <option value="docdir">docdir</option>
+                <option value="forgotpassword">forgotpassword</option>
+                <option value="getanalytics.js">getanalytics.js</option>
+                <option value="getassets">getassets</option>
+                <option value="globalassetassetdata">globalassetassetdata</option>
+                <option value="globalassetmetadata">gloablassetmetadata</option>
+                <option value="globalassets">globalassets</option>
+                <option value="inventory">inventory</option>
+                <option value="inventoryitemassetdata">inventoryitemassetdata</option>
+                <option value="inventoryitemmetadata">inventoryitemmetadata</option>
+                <option value="library">library</option>
+                <option value="login">login</option>
+                <option value="logindata">logindata</option>
+                <option value="logout">logout</option>
+                <option value="profile">profile</option>
+                <option value="profiles">profiles</option>
+                <option value="restorebackup">restorebackup</option>
+                <option value="salt">salt</option>
+                <option value="saspath">saspath</option>
+                <option value="sitelogin">sitelogin</option>
+                <option value="sitelogout">sitelogout</option>
+                <option value="state">state</option>
+                <option value="statedata">statedata</option>
+                <option value="statehistory">statehistory</option>
+                <option value="states">states</option>
+                <option value="stateslist">stateslist</option>
+                <option value="texture">texture</option>
+                <option value="textures">textures</option>
+                <option value="texturethumbnail">texturethumbnail</option>
+                <option value="thumbnail">thumbnail</option>
+                <option value="updatepassword">updatepassword</option>
+
+                <option value="3drupload">3drupload</option>
+                <option value="createprofile">createprofile</option>
+                <option value="createstate">createstate</option>
+                <option value="error">error</option>
+                <option value="globalasset">globalasset</option>
+                <option value="inventoryitem">inventroyitem</option>
+                <option value="inventoryitemmetadata">inventoryitemmetadata</option>
+                <option value="profile">profile</option>
+                <option value="publish">publish</option>
+                <option value="statedata">statedata</option>
+                <option value="thumbnail">thumbnail</option>
+
+                <option value="globalasset">globalasset</option>
+                <option value="inventoryitem">inventoryitem</option>
+                <option value="profile">profile</option>
+                <option value="state">state</option>
+            </select>
+            <br>
+            UID:<br>
+            <input type="text" name="UID">
+            <br>
+            SID:<br>
+            <input type="text" name="SID">
+            <br>
+            Filepath/name:<br>
+            <input type="text" name="Filepath/name">
+            <br>
+            <input type="submit" name="Submit" formaction="localhost:3000/adl/sandbox/vwfdatamanager.svc/">
+        </form>
+    </body>
+
+</html>

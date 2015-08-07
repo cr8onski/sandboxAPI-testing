@@ -1,0 +1,1 @@
+{"_adl_sandbox_L8BnGGj85ZHAmsy1_":{"objects":0,"owner":"joe","title":"worldMultistep.Test.Title","description":"","lastUpdate":"2015-08-07T18:01:37.675Z","created":"2015-08-07T18:01:37.678Z","publishSettings":{"allowAnonymous":false,"SinglePlayer":false,"camera":null,"createAvatar":true,"allowTools":true,"persistence":true}}}

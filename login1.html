@@ -1,0 +1,79 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha256-min.js"></script>
+        <script>
+            // added this because the handleLoginButton was looking for the root variable, which
+            // was in another file .. in js/model.js
+            // had to add https://sandbox.adlnet.gov/ because i was running from localhost
+            var root='https://sandbox.adlnet.gov/100/adl/sandbox';
+
+			//this is called from the handleLoginButton function below
+			//makes one string of p, u, and s and calls to encrypt 1k times
+			//then spits that back at ya
+            var EncryptPassword=function(password,username,salt) {
+              var unencrpytedpassword=password+username+salt;
+              for(var i=0;i<1000;i++) {
+                unencrpytedpassword=CryptoJS.SHA256(unencrpytedpassword)+'';
+              }
+                return unencrpytedpassword;
+            };
+
+
+            var handleLoginButton=function(o,e) {
+//              var username=$('#txtusername').val();
+//              var password=$('#txtpassword').val();
+              // o,e were other variables from the login page, i just hijacked them and used them for name and password
+              var username = o;
+              var password = e;
+              // this is jquery's ajax function.. it just does a GET to the URL specified
+              // then it grabs the responseText from the server and saves it as the salt
+              var salt=$.ajax(root+'/vwfDataManager.svc/salt?UID='+username,{async:false}).responseText;
+              password=EncryptPassword(password,username,$.trim(salt));
+              // makes a special form object that knows how to format POST's form body
+              //weird - how does it know how to do that? and that's why the new and it's a javascript thingie - k
+              // makers of javascript made the function.. they just coded it that way - aka magic
+              // https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
+              var formData=new FormData();
+              // adds 'em
+              formData.append('username',username);
+              formData.append('password',password);
+			  //try adding Access-Control
+			  //headers.append('Access-Control-Allow-Origin', root)
+
+              // same as FormData, just this time we're making a built in XMLHttpRequest (AJAX)
+              // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+              var xhr=new XMLHttpRequest();
+//              xhr.open("POST","../../auth/local");
+              // this says 'get ready to do a http POST request to URL...'
+              xhr.open("POST","https://sandbox.adlnet.gov/100/auth/local");
+              // this says 'during the load process, call this function and pass in the xhr object at that time'
+              // and our function that it calls is just looking for a good status (300's are usally redirecting
+              // the client to another page, 200 means the request was good)
+              xhr.addEventListener("load",function(xhr) {
+                if(xhr.target.status===301||xhr.target.status===302||xhr.target.status===200) {
+                  console.log('good');
+                    console.log(xhr);
+                } else {
+                  console.log('error');
+                  console.log(xhr);
+                }
+              });
+              // adding another listener that says if the process hit an error, call this function
+              xhr.addEventListener("error",function() {
+                console.log('error')
+              },false);
+
+              // finally after all that setup, send the request with the form data
+              xhr.send(formData);
+            };
+
+			handleLoginButton('Postman', 'Postman123')
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
