@@ -9,11 +9,11 @@ var vwf = 'vwfdatamanager.svc/';
 var sid = '?SID=_adl_sandbox_L8BnGGj85ZHAmsy1_';
 
 // setting up the command objects - these need SID's
-var commands = [/*'apppath', 'cameras'/*, 'docdir', 'getassets',
+var commands = ['apppath', 'cameras', 'docdir', 'getassets',
 				'getassetassetdata', 'getassetmetadata', 'globalassets',
-				'profile', 'profiles', */'restorebackup'/*, 'salt', 'saspath'/*,
+				'profile', 'profiles', /*'restorebackup'*/, 'salt', 'saspath',
 				'state', 'statedata', 'statehistory', 'states', 'stateslist',
-				'textures', 'thumbnail', 'updatepassword'*/];
+				'textures', 'thumbnail', 'updatepassword'];
 
 var options = {
 	// url : "" + root + vwf,
@@ -21,6 +21,10 @@ var options = {
 		// 'SID':'_adl_sandbox_L8BnGGj85ZHAmsy1_'	//the one state id there is right now
 		// 'UID':'Postman'
 	//}
+	// parameters : {
+		// 'UID' : 'Postman',
+		// 'SID' : 'adl_sandbox_L8BnGGj85ZHAmsy1_'
+	// }
 };
 
 //setting up the loop
@@ -28,7 +32,7 @@ var len = commands.length;
 var i;
 for (i = 0; i < len; i++) {
 	(function (i) {
-		options.url = "" + root + vwf + commands[i] + sid;
+		options.url = root + vwf + commands[i] + sid;
 		request
 			.get(options)
 			.on('response', function(response) {
@@ -45,7 +49,7 @@ for (i = 0; i < len; i++) {
 				console.log('error\n');
 			})
 			.pipe(fs.createWriteStream(commands[i] + '.txt'));
-		console.log('\n');
+		// console.log('\n'); bad idea - they happen before the calls return
 	}) (i);
 }
 
