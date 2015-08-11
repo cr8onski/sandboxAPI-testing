@@ -75,20 +75,23 @@ var formData = {
 };
 
 //make the Post
-
+var cookies = "";
 request
-	.post({url : root + localAuth, formData : formData})
+	.post({url : root + localAuth, form : formData})
 	.on('response', function(response) {
 		console.log(response.statusCode);
 		if (response.statusCode === 301 || response.statusCode === 302 || response.statusCode === 200) {
 			console.log('good');
 			console.log(response.headers['content-type']);
+			console.log(response.headers);
+			cookies = response.headers['set-cookie'][1];
 		} else {
 			console.log('error: not okay nor redirect');
 		}
 	})
 	.on('data', function(chunk) {
 		request
+			
 			.get(root + sandbox + vwf + 'logindata')
 			.on('response', function(response) {
 				console.log(response.statusCode);
@@ -100,6 +103,7 @@ request
 			.on('error', function(err) {
 				console.log('Bad news, Dude: ' + err + '\n');
 			})
+			.cookie(cookies)
 	})
 	.on('error', function(error) {
 		console.log('Whoa!! Error: ' + error + '\n');
