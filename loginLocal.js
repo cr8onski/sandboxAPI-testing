@@ -26,14 +26,12 @@ var fs = require('fs');
 var EncryptPassword = function (password, username,salt)
 {
 	var CryptoJS = require('crypto-js');
-	var unencrpytedpassword = password + username + salt; 
+	var unencrpytedpassword = password + username + salt;
 	for (var i = 0; i < 1000; i++)
 	{
 		unencrpytedpassword = CryptoJS.SHA256(unencrpytedpassword) + '';
 	}
-	
 	return unencrpytedpassword;
-	
 }
 
 //uri help
@@ -65,7 +63,7 @@ request
 		console.log(error);
 		console.log('error = no salt try again\n');
 	})
-	
+
 //let's assume we've got the salt at this point
 //Encrypt the password
 pw = EncryptPassword(pword, UID, salt);
@@ -94,12 +92,12 @@ request
 	})
 	.on('error', function(error) {
 		console.log('Whoa!! Error: ' + error + '\n');
-		
+
 	});
 	//this is where they say - xhr.send(formData;)
 	//I'm not folowing this
 	//I think I already sent it, was that not the right thing to do?
-	
+
 console.log('Happy day, you may be logged in.');
 
 //test against getting logindata
