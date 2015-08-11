@@ -47,8 +47,8 @@ function redirect()
 }
 
 //uri help
-// var root = 'http://localhost:3000/';
-// var sandbox = 'sandbox/adl/';
+var root = 'http://localhost:3000/';
+var sandbox = 'sandbox/adl/';
 // var vwf = 'vwfdatamanager.svc/';
 // var localAuth = 'auth/local/';
 // var sid = '?SID=_adl_sandbox_L8BnGGj85ZHAmsy1_';
@@ -144,7 +144,7 @@ handleLoginButton = function(o, e){
 	var username = $('#txtusername').val();
 	var password = $('#txtpassword').val();
 
-	var salt = $.ajax( root + '/vwfDataManager.svc/salt?UID='+ username,{async:false}).responseText;
+	var salt = $.ajax( root + sandbox + '/vwfDataManager.svc/salt?UID='+ username,{async:false}).responseText;
 
 	password = EncryptPassword(password,username,$.trim(salt));
 
