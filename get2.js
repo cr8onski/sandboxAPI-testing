@@ -27,6 +27,6 @@ for (i = 0; i < len; i++) { (function (i) {
 			console.log(error);
 			console.log('error');
 		})
-		.pipe(fs.createWriteStream(commands[i] + '.txt'));
+		.pipe(fs.createWriteStream('get'commands[i] + '.txt'));
 	})(i);
 }
