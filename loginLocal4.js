@@ -78,10 +78,10 @@ var formData = {
 //make the Post
 var cookies = "";
 var loginJar = request.jar();
-request = request.defaults({jar : loginJar})
+request = request.defaults({jar : true});
 request
 	// .defaults({jar : true})
-	.post({url : root + localAuth, form : formData})
+	.post({url : root + localAuth, form : formData}, function () {request(root + sandbox + vwf + 'logindata', function (error, response, body) {console.log('error: ' + error + '\nresponse: ' + response.statusCode + '\nbody' + body);})})
 	.on('response', function(response) {
 		console.log(response.statusCode);
 		if (response.statusCode === 301 || response.statusCode === 302 || response.statusCode === 200) {
@@ -90,6 +90,8 @@ request
 			console.log(response.headers);
 			loginJar.setcookie = response.headers['set-cookie'][1];
 			console.log('Are there cookies in the jar? ' + loginJar.getCookies());
+			console.log('Or in this jar? ' + request.jar);
+			console.log('Or in this jar? ' + response.jar);
 		} else {
 			console.log('error: not okay nor redirect');
 		}
@@ -97,21 +99,21 @@ request
 	.on('data', function(chunk) {
 		// request.jar(cookies);
 		console.log('\nCookies are: ' + loginJar.getCookies() + '\n');
-		request
-			.defaults({jar : true})
-			.get({url : root + sandbox + vwf + 'logindata', jar : loginJar})
-			.on('response', function(response) {
-				console.log(response.statusCode);
-				console.log(response.headers['content-type']);
-			})
-			.on('data', function(chunk) {
-				console.log('Is the session cookie there? ' + request.jar.getCookies());
-				console.log(chunk.toString() + "\n");
-			})
-			.on('error', function(err) {
-				console.log('Bad news, Dude: ' + err + '\n');
-			})
-			.jar(cookies);
+		// request
+		// 	.defaults({jar : true})
+		// 	.get({url : root + sandbox + vwf + 'logindata', jar : loginJar})
+		// 	.on('response', function(response) {
+		// 		console.log(response.statusCode);
+		// 		console.log(response.headers['content-type']);
+		// 	})
+		// 	.on('data', function(chunk) {
+		// 		// console.log('Is the session cookie there? ' + request.jar.getCookies());
+		// 		console.log(chunk.toString() + "\n");
+		// 	})
+		// 	.on('error', function(err) {
+		// 		console.log('Bad news, Dude: ' + err + '\n');
+		// 	})
+		// 	.jar(cookies);
 	})
 	.on('error', function(error) {
 		console.log('Whoa!! Error: ' + error + '\n');

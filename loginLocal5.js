@@ -4,7 +4,7 @@ console.log('Howdy!');//intro - we're working
 //loading modules
 var request = require('request');
 var fs = require('fs');
-// var cookie = require('request.cookies');
+require("request-debug")(request);
 
 //https://sandbox.adlnet.gov/100/adl/sandbox/login - returns 200 login screen
 //https://sandbox.adlnet.gov/100/adl/sandbox/vwfDataManager.svc/salt?UID=cr8onski - get the salt
@@ -76,11 +76,11 @@ var formData = {
 };
 
 //make the Post
-var cookies = "";
-var loginJar = request.jar();
-request = request.defaults({jar : loginJar})
+var cookies = {};
+var cookie = "";
+// var loginJar = request.jar();
+
 request
-	// .defaults({jar : true})
 	.post({url : root + localAuth, form : formData})
 	.on('response', function(response) {
 		console.log(response.statusCode);
@@ -88,47 +88,34 @@ request
 			console.log('good');
 			console.log(response.headers['content-type']);
 			console.log(response.headers);
-			loginJar.setcookie = response.headers['set-cookie'][1];
-			console.log('Are there cookies in the jar? ' + loginJar.getCookies());
+
+			var loginJar = request.jar();
+			cookie = response.headers['set-cookie'][1];
+			cookies = request.cookie(cookie);
+			loginJar.setCookie(cookies);
+
+			console.log("Compare:\n");
+			console.log("cookie : " + cookie + "to...\n");
+			console.log("cookies: " + cookies + "to...\n");
+			console.log("jar    : " + loginJar.getCookies() + "\n");
+
+			request({url : root + sandbox + vwf + 'logindata', jar : loginJar})
+				.on('response', function(response) {
+					console.log(response.statusCode);
+					console.log(response.headers['content-type']);
+				})
+				.on('data', function(chunk) {
+					console.log(chunk.toString() + "\n");
+				})
+				.on('error', function(err) {
+					console.log('Bad news, Dude: ' + err + '\n');
+				})
 		} else {
 			console.log('error: not okay nor redirect');
 		}
-	})
-	.on('data', function(chunk) {
-		// request.jar(cookies);
-		console.log('\nCookies are: ' + loginJar.getCookies() + '\n');
-		request
-			.defaults({jar : true})
-			.get({url : root + sandbox + vwf + 'logindata', jar : loginJar})
-			.on('response', function(response) {
-				console.log(response.statusCode);
-				console.log(response.headers['content-type']);
-			})
-			.on('data', function(chunk) {
-				console.log('Is the session cookie there? ' + request.jar.getCookies());
-				console.log(chunk.toString() + "\n");
-			})
-			.on('error', function(err) {
-				console.log('Bad news, Dude: ' + err + '\n');
-			})
-			.jar(cookies);
-	})
-	.on('error', function(error) {
-		console.log('Whoa!! Error: ' + error + '\n');
-
 	});
-	//this is where they say - xhr.send(formData;)
-	//I'm not folowing this
-	//I think I already sent it, was that not the right thing to do?
 
 console.log('Happy day, you may be logged in.');
-
-//test against getting logindata
-// if (stuff) {
-//
-// } else {
-// 	console.log("We regret to inform you - you've got no stuff");
-// }
 
 //we've made it to the end - nonasynchronously
 console.log('Ciao, Bella!');
