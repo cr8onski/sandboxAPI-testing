@@ -75,7 +75,8 @@ var formData = {
 	password : pw
 };
 
-var cookie = "session=P3J0T1Bczgs1zvo78j1ZoA.YJJhMTA-pTfyARRnWUDGFtTw2hFxOaoVolAtsh2_rQR1D88iHHrVDIyDjed6l-QvCYL3nR1UPXCGIdz5m5Zd0r3ExEz-EGecRsJCF-CAmdOGmdXjzHft4K3VOHTvcTnl-atspKvaNbwvYriXxPu5L2vhj-KrW3cvBWwwP5TsRe_TUWtUngAj--9mhYJ3oHR9I91SiPxZKiUU5_HyMYJUDNUk8kYyYGTa_59Vwp_2T2w4nS1nCCZitp47k2qarvTWT95OeiJ458jEDhcWqqz2TTZsgROvbM1qus5mAksOR9ojOqZXlelb1q7qDFStKQbsvqgfRcy552t7qNjF4MT8aPI0JY9hoCRr8m32CCqQKHuFqdVFg1uDkp0o6l2gzN3IJIA5fu8VpDDCS93hya-9HA.1439934870142.86400000.dhKcVyO_2GciwTkeo0GGldYDUbNg8CLy7yNOXiT6wrM; i18next=en-US";
+var cookie = "session=0J0cGjsvJVg5oLB3NUd_FQ.IKq8WmXUtiTekyN2k8GX3Y5ytpc3wJ96AVGIL1vTBvXnzj-U_o6-7cju6YY8qxj7lUnIH01tYunDsXkzGhrYROAYhUvNtFfwbFxQd5g5u92FhKZQCjAS8vsFi_2Ss998h4iDK0nUUgNQ7Dt1Kn_MBgxOm1U69RbUpPMMmVpqDeBbJuSJ1PFGmu7zz1F31uoT0j-zxlW8lowVRLXHdohqA4NyJBq95a_-A6RoTEVK1U1WvL3nlIHhDNXKd0cMOzZXhQvS-vgnqaYiymkNMyf7_eGFxgmo-6l5sOTQuzYYzn32ShEWwLfM4xcE0qTiOep9e4KogbOCDL885-AnVK7tv1uPdrJs_yMzNd3fWSDjGtBVtauSe7gkHfXt6SoqS9D6MpZTrE69FBdhe_0ZrjhtXQ.1439987804677.86400000.pCpPFuagaFuMt35zrX2lai1KJ0p4lPUTRtHHzuvkV6E"//; i18next=en-US" - this part is not needed
+
 
 // var loginJar = request.jar();
 var request = request.defaults({jar: true});
@@ -85,7 +86,7 @@ jar.setCookie(cookie, root, function(){
 
 	console.log("These are cool cookies:", jar.getCookies(root));
 
-	request({url : root + sandbox + vwf + 'logindata'/*, jar : loginJar*/})
+	request({url : root + sandbox + vwf + 'logindata', jar : jar})
 		.on('response', function(response) {
 			console.log(response.statusCode);
 			console.log(response.headers['content-type']);
