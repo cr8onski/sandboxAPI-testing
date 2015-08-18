@@ -4,6 +4,8 @@ console.log('Howdy!');//intro - we're working
 //loading modules
 var request = require('request');
 var fs = require('fs');
+//adding tough cookie to the mix - see if this helps
+var tough = require('tough-cookie');
 // require("request-debug")(request);
 
 //https://sandbox.adlnet.gov/100/adl/sandbox/login - returns 200 login screen
@@ -75,11 +77,15 @@ var formData = {
 	password : pw
 };
 
-//make the Post
-var cookies = {};
-var cookie = "";
-// var loginJar = request.jar();
-var request = request.defaults({jar: true});
+//Here comes a change with the new tough-cookie required
+	//make the Post
+	// var cookies = {};
+	// var cookie = "";
+	// var loginJar = request.jar(); moved to inside of following request
+var Cookie = tough.Cookie;
+//just this one for now, others will be inside requests
+
+
 request
 	.post({url : root + localAuth, form : formData})
 	.on('response', function(response) {
@@ -88,18 +94,34 @@ request
 			console.log('good');
 			console.log(response.headers['content-type']);
 			console.log(response.headers);
-			// debugger;
-			// var loginJar = request.jar();
-			// cookie = response.headers['set-cookie'][1];
-			// cookies = request.cookie(cookie);
-			// loginJar.setCookieSync(cookies, root);
-			//
-			// console.log("Compare:\n");
-			// console.log("cookie : " + cookie + "to...\n");
-			// console.log("cookies: " + cookies + "to...\n");
-			// console.log("jar    : " + loginJar.getCookiesSync(root) + "\n");
+//Above it all good/nothing new
+//Below is trying out some new tough-cookie stuff
+			// var cookie = Cookie.parse(response.headers['set-cookie']);
+			var cookies = response.headers['set-cookie'][1];
 
-			request({url : root + sandbox + vwf + 'logindata'/*, jar : loginJar*/})
+			// if (response.headers['set-cookie'] instanceof Array)
+			// 	cookies = response.headers['set-cookie'].map(function (c) { return (Cookie.parse(c)); });
+			// else
+			// 	cookies = [Cookie.parse(response.headers['set-cookie'])];
+
+			var loginJar = new tough.CookieJar();
+			console.log(cookies);
+			loginJar.setCookieSync(cookies, root);
+			// cookie = response.headers['set-cookie'][1];
+
+//old tries
+			// cookies = request.cookie(cookie);
+			// loginJar.setCookie(cookies);
+			// loginJar.add(cookies);
+			// loginJar.append('cookies');
+
+			console.log("Compare:\n");
+			// console.log("cookie : " + cookie + "to...\n");
+			console.log("cookies: " + cookies + "to...\n");
+			 console.log("jar    : " + loginJar.getCookiesSync(root, {}) + "\n");
+
+			request({url : root + sandbox + vwf + 'logindata', jar : loginJar})
+				.then(console.log("Inside logindata request: " + jar))
 				.on('response', function(response) {
 					console.log(response.statusCode);
 					console.log(response.headers['content-type']);
@@ -113,6 +135,9 @@ request
 		} else {
 			console.log('error: not okay nor redirect');
 		}
+	})
+	.on('error', function(error) {
+		console.log("Error Logging In: " + error + '\n');
 	});
 
 console.log('Happy day, you may be logged in.');

@@ -4,7 +4,7 @@ console.log('Howdy!');//intro - we're working
 //loading modules
 var request = require('request');
 var fs = require('fs');
-// require("request-debug")(request);
+require("request-debug")(request);
 
 //https://sandbox.adlnet.gov/100/adl/sandbox/login - returns 200 login screen
 //https://sandbox.adlnet.gov/100/adl/sandbox/vwfDataManager.svc/salt?UID=cr8onski - get the salt
@@ -78,8 +78,8 @@ var formData = {
 //make the Post
 var cookies = {};
 var cookie = "";
-// var loginJar = request.jar();
-var request = request.defaults({jar: true});
+// var loginJar = request.jar(); moved to inside of following request
+
 request
 	.post({url : root + localAuth, form : formData})
 	.on('response', function(response) {
@@ -88,18 +88,21 @@ request
 			console.log('good');
 			console.log(response.headers['content-type']);
 			console.log(response.headers);
-			// debugger;
-			// var loginJar = request.jar();
-			// cookie = response.headers['set-cookie'][1];
-			// cookies = request.cookie(cookie);
-			// loginJar.setCookieSync(cookies, root);
-			//
-			// console.log("Compare:\n");
-			// console.log("cookie : " + cookie + "to...\n");
-			// console.log("cookies: " + cookies + "to...\n");
-			// console.log("jar    : " + loginJar.getCookiesSync(root) + "\n");
 
-			request({url : root + sandbox + vwf + 'logindata'/*, jar : loginJar*/})
+			var loginJar = request.jar();
+			cookie = response.headers['set-cookie'][1];
+			cookies = request.cookie(cookie);
+			// loginJar.setCookie(cookies);
+			// loginJar.add(cookies);
+			loginJar.append('cookies');
+
+			console.log("Compare:\n");
+			console.log("cookie : " + cookie + "to...\n");
+			console.log("cookies: " + cookies + "to...\n");
+			console.log("jar    : " + loginJar.getCookies() + "\n");
+
+			request({url : root + sandbox + vwf + 'logindata', jar : loginJar})
+				.then(console.log("Inside logindata request: " + jar))
 				.on('response', function(response) {
 					console.log(response.statusCode);
 					console.log(response.headers['content-type']);
@@ -113,6 +116,9 @@ request
 		} else {
 			console.log('error: not okay nor redirect');
 		}
+	})
+	.on('error', function(error) {
+		console.log("Error Logging In: " + error + '\n');
 	});
 
 console.log('Happy day, you may be logged in.');

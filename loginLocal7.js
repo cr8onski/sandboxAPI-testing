@@ -75,47 +75,31 @@ var formData = {
 	password : pw
 };
 
-//make the Post
-var cookies = {};
-var cookie = "";
+var cookie = "session=P3J0T1Bczgs1zvo78j1ZoA.YJJhMTA-pTfyARRnWUDGFtTw2hFxOaoVolAtsh2_rQR1D88iHHrVDIyDjed6l-QvCYL3nR1UPXCGIdz5m5Zd0r3ExEz-EGecRsJCF-CAmdOGmdXjzHft4K3VOHTvcTnl-atspKvaNbwvYriXxPu5L2vhj-KrW3cvBWwwP5TsRe_TUWtUngAj--9mhYJ3oHR9I91SiPxZKiUU5_HyMYJUDNUk8kYyYGTa_59Vwp_2T2w4nS1nCCZitp47k2qarvTWT95OeiJ458jEDhcWqqz2TTZsgROvbM1qus5mAksOR9ojOqZXlelb1q7qDFStKQbsvqgfRcy552t7qNjF4MT8aPI0JY9hoCRr8m32CCqQKHuFqdVFg1uDkp0o6l2gzN3IJIA5fu8VpDDCS93hya-9HA.1439934870142.86400000.dhKcVyO_2GciwTkeo0GGldYDUbNg8CLy7yNOXiT6wrM; i18next=en-US";
+
 // var loginJar = request.jar();
 var request = request.defaults({jar: true});
-request
-	.post({url : root + localAuth, form : formData})
-	.on('response', function(response) {
-		console.log(response.statusCode);
-		if (response.statusCode === 301 || response.statusCode === 302 || response.statusCode === 200) {
-			console.log('good');
+
+var jar = request.jar();
+jar.setCookie(cookie, root, function(){
+
+	console.log("These are cool cookies:", jar.getCookies(root));
+
+	request({url : root + sandbox + vwf + 'logindata'/*, jar : loginJar*/})
+		.on('response', function(response) {
+			console.log(response.statusCode);
 			console.log(response.headers['content-type']);
-			console.log(response.headers);
-			// debugger;
-			// var loginJar = request.jar();
-			// cookie = response.headers['set-cookie'][1];
-			// cookies = request.cookie(cookie);
-			// loginJar.setCookieSync(cookies, root);
-			//
-			// console.log("Compare:\n");
-			// console.log("cookie : " + cookie + "to...\n");
-			// console.log("cookies: " + cookies + "to...\n");
-			// console.log("jar    : " + loginJar.getCookiesSync(root) + "\n");
+		})
+		.on('data', function(chunk) {
+			console.log(chunk.toString() + "\n");
+		})
+		.on('error', function(err) {
+			console.log('Bad news, Dude: ' + err + '\n');
+		});
 
-			request({url : root + sandbox + vwf + 'logindata'/*, jar : loginJar*/})
-				.on('response', function(response) {
-					console.log(response.statusCode);
-					console.log(response.headers['content-type']);
-				})
-				.on('data', function(chunk) {
-					console.log(chunk.toString() + "\n");
-				})
-				.on('error', function(err) {
-					console.log('Bad news, Dude: ' + err + '\n');
-				})
-		} else {
-			console.log('error: not okay nor redirect');
-		}
-	});
+	console.log('Happy day, you may be logged in.');
 
-console.log('Happy day, you may be logged in.');
+	//we've made it to the end - nonasynchronously
+	console.log('Ciao, Bella!');
 
-//we've made it to the end - nonasynchronously
-console.log('Ciao, Bella!');
+});
