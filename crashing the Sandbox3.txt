@@ -1,0 +1,386 @@
+Commands and combinations through the API which crash the Sandbox server. (As of August 19, 2015  Used files: allGetCommands3.js on Sandbox Dev branch from 2015-08-12 09:52:50.)
+
+GET Command and Logged in, UID in querystring, No additional info (UID, SID):
+Crash
+
+
+5xx Errors (see below for more details)
+
+cameras - 500  text/html; charset=utf-8
+TypeError: Arguments to path.join must be strings<br> &nbsp; &nbsp;at f (path.js
+:204:15)<br> &nbsp; &nbsp;at Object.filter (native)<br> &nbsp; &nbsp;at Object.e
+xports.join (path.js:209:40)<br> &nbsp; &nbsp;at GetCameras (c:\Users\creighta\w
+orkspace\sandbox\support\server\sandboxAPI.js:1012:27)<br> &nbsp; &nbsp;at c:\Us
+ers\creighta\workspace\sandbox\support\server\sandboxAPI.js:1588:7<br> &nbsp; &n
+bsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\suppor
+t\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\w
+orkspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at route
+ToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<b
+r> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace
+\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim
+_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\ind
+ex.js:302:13)
+
+
+copyinstance - 500  text/html; charset=utf-8
+TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;a
+t CopyInstance (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js
+:662:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\
+sandboxAPI.js:1645:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users
+\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at
+ Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:
+1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\sup
+port\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_req
+uest] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer
+.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\n
+ode_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\cre
+ighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp
+; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\no
+de_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\User
+s\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+getassets - 500  text/html; charset=utf-8
+TypeError: Cannot call method &#39;replace&#39; of undefined<br> &nbsp; &nbsp;at
+ getState (c:\Users\creighta\workspace\sandbox\support\server\AssetPreload.js:12
+1:26)<br> &nbsp; &nbsp;at Object.getAssets (c:\Users\creighta\workspace\sandbox\
+support\server\AssetPreload.js:133:2)<br> &nbsp; &nbsp;at c:\Users\creighta\work
+space\sandbox\support\server\sandboxAPI.js:1776:20<br> &nbsp; &nbsp;at Object.ex
+ports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\session
+s.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox
+\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\
+creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;
+at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_mo
+dules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\User
+s\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br
+> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\r
+outer\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users
+\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)
+
+
+restorebackup - 500  text/html; charset=utf-8
+TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;a
+t RestoreBackupState (c:\Users\creighta\workspace\sandbox\support\server\sandbox
+API.js:790:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\s
+erver\sandboxAPI.js:1655:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:
+\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &n
+bsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxA
+PI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandb
+ox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as hand
+le_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router
+\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\san
+dbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Use
+rs\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br>
+ &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sand
+box\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c
+:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:
+10)
+
+
+stateslist - 500  text/html; charset=utf-8
+TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;a
+t GetStateList (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js
+:769:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\
+sandboxAPI.js:1650:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users
+\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at
+ Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:
+1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\sup
+port\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_req
+uest] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer
+.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\n
+ode_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\cre
+ighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp
+; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\no
+de_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\User
+s\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+thumbnail - 500  text/html; charset=utf-8
+TypeError: Cannot read property &#39;SID&#39; of undefined<br> &nbsp; &nbsp;at G
+etThumbnail (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:98
+1:37)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\san
+dboxAPI.js:1583:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\cr
+eighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Ob
+ject.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:148
+9:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\suppor
+t\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_reques
+t] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js
+:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node
+_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creigh
+ta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &
+nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_
+modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\c
+reighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+
+
+Other GET responses:
+
+404
+text/plain
+
+404 Not Found
+
+404
+text/plain
+3drmetatdata
+404 Not Found
+
+401
+undefined
+3drdownload
+
+401
+application/json; charset=utf-8
+3drpermission
+""
+
+200
+text/plain
+apppath
+/adl/sandbox
+
+401
+undefined
+3drthumbnail
+
+
+401
+undefined
+3drtexture
+
+
+404
+text/plain
+datafile
+file not found
+
+200
+application/json; charset=utf-8
+3drsearch
+[]
+
+200
+text/json
+docdir
+{"path":"./public/docs","name":"docs","type":"folder","children":[{"path":"./pub
+lic/docs/index.html","name":"index.html","type":"file"},{"path":"./public/docs/S
+cript Reference","name":"Script Reference","type":"folder","children":[{"path":"
+./public/docs/Script Reference/index.html","name":"index.html","type":"file"},{"
+path":"./public/docs/Script Reference/Materials","name":"Materials","type":"fold
+er","children":[{"path":"./public/docs/Script Reference/Materials/index.html","n
+ame":"index.html","type":"file"}]},{"path":"./public/docs/Script Reference/Rayca
+sting","name":"Raycasting","type":"folder","children":[{"path":"./public/docs/Sc
+ript Reference/Raycasting/index.html","name":"index.html","type":"file"}]},{"pat
+h":"./public/docs/Script Reference/Sound","name":"Sound","type":"folder","childr
+en":[{"path":"./public/docs/Script Reference/Sound/index.html","name":"index.htm
+l","type":"file"}]},{"path":"./public/docs/Script Reference/Transform API","name
+":"Transform API","type":"folder","children":[{"path":"./public/docs/Script Refe
+rence/Transform API/index.html","name":"index.html","type":"file"}]},{"path":"./
+public/docs/Script Reference/XAPI","name":"XAPI","type":"folder","children":[{"p
+ath":"./public/docs/Script Reference/XAPI/index.html","name":"index.html","type"
+:"file"}]}]},{"path":"./public/docs/Tutorials","name":"Tutorials","type":"folder
+","children":[{"path":"./public/docs/Tutorials/BuildingAGame","name":"BuildingAG
+ame","type":"folder","children":[{"path":"./public/docs/Tutorials/BuildingAGame/
+index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Tutorial
+s/index.html","name":"index.html","type":"file"},{"path":"./public/docs/Tutorial
+s/Lighting","name":"Lighting","type":"folder","children":[{"path":"./public/docs
+/Tutorials/Lighting/index.html","name":"index.html","type":"file"}]},{"path":"./
+public/docs/Tutorials/Scripting","name":"Scripting","type":"folder","children":[
+{"path":"./public/docs/Tutorials/Scripting/index.html","name":"index.html","type
+":"file"}]}]},{"path":"./public/docs/User Guide","name":"User Guide","type":"fol
+der","children":[{"path":"./public/docs/User Guide/3D Assets","name":"3D Assets"
+,"type":"folder","children":[{"path":"./public/docs/User Guide/3D Assets/Importi
+ng DAE files","name":"Importing DAE files","type":"folder","children":[{"path":"
+./public/docs/User Guide/3D Assets/Importing DAE files/index.html","name":"index
+.html","type":"file"}]},{"path":"./public/docs/User Guide/3D Assets/index.html",
+"name":"index.html","type":"file"},{"path":"./public/docs/User Guide/3D Assets/L
+oading from the 3DR","name":"Loading from the 3DR","type":"folder","children":[{
+"path":"./public/docs/User Guide/3D Assets/Loading from the 3DR/index.html","nam
+e":"index.html","type":"file"}]}]},{"path":"./public/docs/User Guide/Avatars","n
+ame":"Avatars","type":"folder","children":[{"path":"./public/docs/User Guide/Ava
+tars/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Use
+r Guide/Behaviors","name":"Behaviors","type":"folder","children":[{"path":"./pub
+lic/docs/User Guide/Behaviors/index.html","name":"index.html","type":"file"}]},{
+"path":"./public/docs/User Guide/Chat","name":"Chat","type":"folder","children":
+[{"path":"./public/docs/User Guide/Chat/index.html","name":"index.html","type":"
+file"}]},{"path":"./public/docs/User Guide/Environment","name":"Environment","ty
+pe":"folder","children":[{"path":"./public/docs/User Guide/Environment/index.htm
+l","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Geomet
+ry Modifiers","name":"Geometry Modifiers","type":"folder","children":[{"path":".
+/public/docs/User Guide/Geometry Modifiers/index.html","name":"index.html","type
+":"file"}]},{"path":"./public/docs/User Guide/Groups","name":"Groups","type":"fo
+lder","children":[{"path":"./public/docs/User Guide/Groups/index.html","name":"i
+ndex.html","type":"file"}]},{"path":"./public/docs/User Guide/index.html","name"
+:"index.html","type":"file"},{"path":"./public/docs/User Guide/Inventory","name"
+:"Inventory","type":"folder","children":[{"path":"./public/docs/User Guide/Inven
+tory/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Use
+r Guide/Lights","name":"Lights","type":"folder","children":[{"path":"./public/do
+cs/User Guide/Lights/index.html","name":"index.html","type":"file"}]},{"path":".
+/public/docs/User Guide/Linking","name":"Linking","type":"folder","children":[{"
+path":"./public/docs/User Guide/Linking/index.html","name":"index.html","type":"
+file"}]},{"path":"./public/docs/User Guide/Managing Worlds","name":"Managing Wor
+lds","type":"folder","children":[{"path":"./public/docs/User Guide/Managing Worl
+ds/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User
+Guide/Materials","name":"Materials","type":"folder","children":[{"path":"./publi
+c/docs/User Guide/Materials/index.html","name":"index.html","type":"file"}]},{"p
+ath":"./public/docs/User Guide/Particles","name":"Particles","type":"folder","ch
+ildren":[{"path":"./public/docs/User Guide/Particles/index.html","name":"index.h
+tml","type":"file"}]},{"path":"./public/docs/User Guide/Paths and Shapes","name"
+:"Paths and Shapes","type":"folder","children":[{"path":"./public/docs/User Guid
+e/Paths and Shapes/index.html","name":"index.html","type":"file"}]},{"path":"./p
+ublic/docs/User Guide/Permissions","name":"Permissions","type":"folder","childre
+n":[{"path":"./public/docs/User Guide/Permissions/index.html","name":"index.html
+","type":"file"}]},{"path":"./public/docs/User Guide/Primitive Objects","name":"
+Primitive Objects","type":"folder","children":[{"path":"./public/docs/User Guide
+/Primitive Objects/index.html","name":"index.html","type":"file"}]},{"path":"./p
+ublic/docs/User Guide/Publishing","name":"Publishing","type":"folder","children"
+:[{"path":"./public/docs/User Guide/Publishing/index.html","name":"index.html","
+type":"file"}]},{"path":"./public/docs/User Guide/Scripts","name":"Scripts","typ
+e":"folder","children":[{"path":"./public/docs/User Guide/Scripts/index.html","n
+ame":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Selecting O
+bjects","name":"Selecting Objects","type":"folder","children":[{"path":"./public
+/docs/User Guide/Selecting Objects/index.html","name":"index.html","type":"file"
+}]},{"path":"./public/docs/User Guide/Sound","name":"Sound","type":"folder","chi
+ldren":[{"path":"./public/docs/User Guide/Sound/index.html","name":"index.html",
+"type":"file"}]},{"path":"./public/docs/User Guide/Terrain","name":"Terrain","ty
+pe":"folder","children":[{"path":"./public/docs/User Guide/Terrain/index.html","
+name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Textures",
+"name":"Textures","type":"folder","children":[{"path":"./public/docs/User Guide/
+Textures/index.html","name":"index.html","type":"file"}]}]}]}
+
+200
+application/javascript
+getanalytics.js
+//Analytics not found
+
+200
+text/plain
+forgotpassword
+
+
+500
+text/plain
+globalassetassetdata
+no AID in query string
+
+500
+text/plain
+globalassetmetadata
+no AID in query string
+
+500
+text/plain
+inventoryitemassetdata
+no AID in query string
+
+500
+text/plain
+inventoryitemmetadata
+no AID in query string
+
+404
+text/plain
+library
+404 Not Found
+
+200
+text/json
+globalassets
+[]
+
+200
+text/json
+inventory
+[]
+
+200
+text/plain
+login
+No longer supported. Login now travels over the socket handshake
+
+200
+text/plain
+logindata
+{"user_uid":"Postman","username":"Postman","admin":false,"instances":[],"clients
+":[]}
+
+200
+text/plain
+logout
+Client was not Logged into undefined
+
+200
+undefined
+saspath
+
+
+200
+text/json
+profiles
+["___Global___","joe","N4151f242","N8343485f","Postman"]
+
+401
+text/plain
+sitelogin
+Login Format incorrect
+
+200
+text/plain
+sitelogout
+
+
+200
+text/plain
+profile
+{"Username":"Postman","Email":"postman@mail.com","Avatar":"usmale.dae","Salt":"2
+693fde4-7a94-6971-5647-998426746814","inventoryKey":"26aa3e45-5ac5-421d-bf15-b7b
+aeb64ac08","id":"Postman","TempPassword":{"Password":"bc971221ff215106e624972eec
+d28e01f0c25adc1891fc0f546647b47dbc60f3","Time":"2015-08-19T21:11:41.944Z"}}
+
+500
+text/plain
+state
+Error: ENOENT, open 'c:\Users\creighta\workspace\sandbox\data\States\undefined\s
+tate'
+
+401
+text/plain
+salt
+2946e97c-4f7b-4e31-bb2a-a24b6732ac2e
+
+
+200
+text/json
+statehistory
+{"error":"inner state not found"}
+
+404
+text/plain
+texture
+file not found
+
+200
+text/json
+textures
+{"GetTexturesResult":"{\"root\":[]}"}
+
+404
+text/plain
+texturethumbnail
+file not found
+
+401
+text/plain
+updatepassword
+bad password
+
+200
+text/json
+states
+{"_adl_sandbox_L8BnGGj85ZHAmsy1_":{"objects":3,"owner":"joe","title":"worldMulti
+step.Test.Title","description":"","lastUpdate":"2015-08-12T17:53:37.412Z","creat
+ed":"2015-08-07T18:01:37.678Z","publishSettings":{"allowAnonymous":false,"Single
+Player":false,"camera":null,"createAvatar":true,"allowTools":true,"persistence":
+true},"updates":72,"userSetThumbnail":true}}

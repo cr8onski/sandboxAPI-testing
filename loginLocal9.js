@@ -26,12 +26,14 @@ var fs = require('fs');
 //additional functions for login
 var EncryptPassword = function (password, username,salt)
 {
+
 	var CryptoJS = require('crypto-js');
 	var unencrpytedpassword = password + username + salt;
 	for (var i = 0; i < 1000; i++)
 	{
 		unencrpytedpassword = CryptoJS.SHA256(unencrpytedpassword) + '';
 	}
+		console.log('In Encrypt: ', password, username, salt, unencrpytedpassword);
 	return unencrpytedpassword;
 }
 
@@ -74,7 +76,8 @@ var formData = {
 	username : UID,
 	password : pw
 };
-
+console.log("Here's what went into the pw: " + pword + UID + salt);
+console.log('This must be the right password: ' + pw);
 //The copy paste method, which we have gotten to work now (see 7)
 // var cookie = "session=0J0cGjsvJVg5oLB3NUd_FQ.IKq8WmXUtiTekyN2k8GX3Y5ytpc3wJ96AVGIL1vTBvXnzj-U_o6-7cju6YY8qxj7lUnIH01tYunDsXkzGhrYROAYhUvNtFfwbFxQd5g5u92FhKZQCjAS8vsFi_2Ss998h4iDK0nUUgNQ7Dt1Kn_MBgxOm1U69RbUpPMMmVpqDeBbJuSJ1PFGmu7zz1F31uoT0j-zxlW8lowVRLXHdohqA4NyJBq95a_-A6RoTEVK1U1WvL3nlIHhDNXKd0cMOzZXhQvS-vgnqaYiymkNMyf7_eGFxgmo-6l5sOTQuzYYzn32ShEWwLfM4xcE0qTiOep9e4KogbOCDL885-AnVK7tv1uPdrJs_yMzNd3fWSDjGtBVtauSe7gkHfXt6SoqS9D6MpZTrE69FBdhe_0ZrjhtXQ.1439987804677.86400000.pCpPFuagaFuMt35zrX2lai1KJ0p4lPUTRtHHzuvkV6E"//; i18next=en-US"
 
