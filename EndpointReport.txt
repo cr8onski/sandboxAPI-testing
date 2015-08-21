@@ -1,0 +1,46 @@
+Report of Testing SandboxAPI Endpoints on 2015-08-21 19:49:38.
+Requests which produce Server Errors or Crashes.
+
+cameras
+500 TypeError: Arguments to path.join must be strings<br> &nbsp; &nbsp;at f (path.js:204:15)<br> &nbsp; &nbsp;at Object.filter (native)<br> &nbsp; &nbsp;at Object.exports.join (path.js:209:40)<br> &nbsp; &nbsp;at GetCameras (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1012:27)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1588:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)
+
+
+copyinstance
+500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at CopyInstance (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:662:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1645:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+getassets
+500 TypeError: Cannot call method &#39;replace&#39; of undefined<br> &nbsp; &nbsp;at getState (c:\Users\creighta\workspace\sandbox\support\server\AssetPreload.js:121:26)<br> &nbsp; &nbsp;at Object.getAssets (c:\Users\creighta\workspace\sandbox\support\server\AssetPreload.js:133:2)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1776:20<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)
+
+
+globalassetassetdata
+500 no AID in query string
+
+
+globalassetmetadata
+500 no AID in query string
+
+
+inventoryitemassetdata
+500 no AID in query string
+
+
+inventoryitemmetadata
+500 no AID in query string
+
+
+restorebackup
+500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at RestoreBackupState (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:790:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1655:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+state
+500 Error: ENOENT, open 'c:\Users\creighta\workspace\sandbox\data\States\undefined\state'
+
+
+stateslist
+500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at GetStateList (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:769:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1650:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:59:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+thumbnail
+500 TypeError: Cannot read property &#39;SID&#39; of undefined<br> &nbsp; &nbsp;at GetThumbnail (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:981:37)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1583:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:59:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+

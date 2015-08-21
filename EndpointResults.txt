@@ -1,0 +1,200 @@
+Results from Testing SandboxAPI Endpoints on 2015-08-21 19:49:38
+
+
+404 404 Not Found
+
+
+3drdownload
+401 
+
+3drmetadata
+401 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Request Error</title>
+    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>
+  </head>
+  <body>
+    <div id="content">
+      <p class="heading1">Request Error</p>
+      <p>The server encountered an error processing the request. The exception message is 'Object reference not set to an instance of an object.'. See server logs for more details. The exception stack trace is: </p>
+      <p>   at vwar.service.host._3DRAPI.GetMetadataJSON(String pid, String key)
+   at SyncInvokeGetMetadataJSON(Object , Object[] , Object[] )
+   at System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]&amp; outputs)
+   at System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc&amp; rpc)
+   at System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)</p>
+    </div>
+  </body>
+</html>
+
+3drpermission
+401 ""
+
+3drsearch
+200 []
+
+3drtexture
+401 
+
+3drupload
+404 404 Not Found
+
+
+apppath
+200 /adl/sandbox
+
+
+cameras
+500 TypeError: Arguments to path.join must be strings<br> &nbsp; &nbsp;at f (path.js:204:15)<br> &nbsp; &nbsp;at Object.filter (native)<br> &nbsp; &nbsp;at Object.exports.join (path.js:209:40)<br> &nbsp; &nbsp;at GetCameras (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1012:27)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1588:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)
+
+
+copyinstance
+500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at CopyInstance (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:662:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1645:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+createprofile
+404 404 Not Found
+
+
+createstate
+404 404 Not Found
+
+
+datafile
+404 file not found
+
+
+docdir
+200 {"path":"./public/docs","name":"docs","type":"folder","children":[{"path":"./public/docs/index.html","name":"index.html","type":"file"},{"path":"./public/docs/Script Reference","name":"Script Reference","type":"folder","children":[{"path":"./public/docs/Script Reference/index.html","name":"index.html","type":"file"},{"path":"./public/docs/Script Reference/Materials","name":"Materials","type":"folder","children":[{"path":"./public/docs/Script Reference/Materials/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Script Reference/Raycasting","name":"Raycasting","type":"folder","children":[{"path":"./public/docs/Script Reference/Raycasting/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Script Reference/Sound","name":"Sound","type":"folder","children":[{"path":"./public/docs/Script Reference/Sound/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Script Reference/Transform API","name":"Transform API","type":"folder","children":[{"path":"./public/docs/Script Reference/Transform API/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Script Reference/XAPI","name":"XAPI","type":"folder","children":[{"path":"./public/docs/Script Reference/XAPI/index.html","name":"index.html","type":"file"}]}]},{"path":"./public/docs/Tutorials","name":"Tutorials","type":"folder","children":[{"path":"./public/docs/Tutorials/BuildingAGame","name":"BuildingAGame","type":"folder","children":[{"path":"./public/docs/Tutorials/BuildingAGame/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Tutorials/index.html","name":"index.html","type":"file"},{"path":"./public/docs/Tutorials/Lighting","name":"Lighting","type":"folder","children":[{"path":"./public/docs/Tutorials/Lighting/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/Tutorials/Scripting","name":"Scripting","type":"folder","children":[{"path":"./public/docs/Tutorials/Scripting/index.html","name":"index.html","type":"file"}]}]},{"path":"./public/docs/User Guide","name":"User Guide","type":"folder","children":[{"path":"./public/docs/User Guide/3D Assets","name":"3D Assets","type":"folder","children":[{"path":"./public/docs/User Guide/3D Assets/Importing DAE files","name":"Importing DAE files","type":"folder","children":[{"path":"./public/docs/User Guide/3D Assets/Importing DAE files/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/3D Assets/index.html","name":"index.html","type":"file"},{"path":"./public/docs/User Guide/3D Assets/Loading from the 3DR","name":"Loading from the 3DR","type":"folder","children":[{"path":"./public/docs/User Guide/3D Assets/Loading from the 3DR/index.html","name":"index.html","type":"file"}]}]},{"path":"./public/docs/User Guide/Avatars","name":"Avatars","type":"folder","children":[{"path":"./public/docs/User Guide/Avatars/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Behaviors","name":"Behaviors","type":"folder","children":[{"path":"./public/docs/User Guide/Behaviors/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Chat","name":"Chat","type":"folder","children":[{"path":"./public/docs/User Guide/Chat/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Environment","name":"Environment","type":"folder","children":[{"path":"./public/docs/User Guide/Environment/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Geometry Modifiers","name":"Geometry Modifiers","type":"folder","children":[{"path":"./public/docs/User Guide/Geometry Modifiers/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Groups","name":"Groups","type":"folder","children":[{"path":"./public/docs/User Guide/Groups/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/index.html","name":"index.html","type":"file"},{"path":"./public/docs/User Guide/Inventory","name":"Inventory","type":"folder","children":[{"path":"./public/docs/User Guide/Inventory/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Lights","name":"Lights","type":"folder","children":[{"path":"./public/docs/User Guide/Lights/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Linking","name":"Linking","type":"folder","children":[{"path":"./public/docs/User Guide/Linking/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Managing Worlds","name":"Managing Worlds","type":"folder","children":[{"path":"./public/docs/User Guide/Managing Worlds/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Materials","name":"Materials","type":"folder","children":[{"path":"./public/docs/User Guide/Materials/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Particles","name":"Particles","type":"folder","children":[{"path":"./public/docs/User Guide/Particles/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Paths and Shapes","name":"Paths and Shapes","type":"folder","children":[{"path":"./public/docs/User Guide/Paths and Shapes/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Permissions","name":"Permissions","type":"folder","children":[{"path":"./public/docs/User Guide/Permissions/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Primitive Objects","name":"Primitive Objects","type":"folder","children":[{"path":"./public/docs/User Guide/Primitive Objects/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Publishing","name":"Publishing","type":"folder","children":[{"path":"./public/docs/User Guide/Publishing/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Scripts","name":"Scripts","type":"folder","children":[{"path":"./public/docs/User Guide/Scripts/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Selecting Objects","name":"Selecting Objects","type":"folder","children":[{"path":"./public/docs/User Guide/Selecting Objects/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Sound","name":"Sound","type":"folder","children":[{"path":"./public/docs/User Guide/Sound/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Terrain","name":"Terrain","type":"folder","children":[{"path":"./public/docs/User Guide/Terrain/index.html","name":"index.html","type":"file"}]},{"path":"./public/docs/User Guide/Textures","name":"Textures","type":"folder","children":[{"path":"./public/docs/User Guide/Textures/index.html","name":"index.html","type":"file"}]}]}]}
+
+error
+404 404 Not Found
+
+
+forgotpassword
+200 
+
+
+getanalytics.js
+200 //Analytics not found
+
+getassets
+500 TypeError: Cannot call method &#39;replace&#39; of undefined<br> &nbsp; &nbsp;at getState (c:\Users\creighta\workspace\sandbox\support\server\AssetPreload.js:121:26)<br> &nbsp; &nbsp;at Object.getAssets (c:\Users\creighta\workspace\sandbox\support\server\AssetPreload.js:133:2)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1776:20<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)
+
+
+globalasset
+404 404 Not Found
+
+
+globalassetassetdata
+500 no AID in query string
+
+
+globalassetmetadata
+500 no AID in query string
+
+
+globalassets
+200 []
+
+inventory
+200 []
+
+inventoryitem
+404 404 Not Found
+
+
+inventoryitemassetdata
+500 no AID in query string
+
+
+inventoryitemmetadata
+500 no AID in query string
+
+
+library
+404 404 Not Found
+
+
+login
+200 No longer supported. Login now travels over the socket handshake
+
+
+logindata
+200 {"user_uid":"Postman","username":"Postman","admin":false,"instances":[],"clients":[]}
+
+
+logout
+200 Client was not Logged into undefined
+
+
+profile
+200 {"Username":"Postman","Email":"postman@mail.com","Avatar":"usmale.dae","Salt":"2693fde4-7a94-6971-5647-998426746814","inventoryKey":"26aa3e45-5ac5-421d-bf15-b7baeb64ac08","id":"Postman","TempPassword":{"Password":"4fb75479c409089d7fdfc800b2fa04177a1ffa1b373925b2b100d8a95bc3e667","Time":"2015-08-21T19:49:43.057Z"}}
+
+
+profiles
+200 ["___Global___","joe","N4151f242","N8343485f","Postman"]
+
+publish
+404 404 Not Found
+
+
+restorebackup
+500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at RestoreBackupState (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:790:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1655:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+salt
+401 8ab81503-2291-4c09-8b0f-ca0362ad22a2
+
+
+saspath
+200 
+
+sitelogout
+200 
+
+state
+500 Error: ENOENT, open 'c:\Users\creighta\workspace\sandbox\data\States\undefined\state'
+
+
+statehistory
+200 {"error":"inner state not found"}
+
+states
+200 {"_adl_sandbox_L8BnGGj85ZHAmsy1_":{"objects":3,"owner":"joe","title":"worldMultistep.Test.Title","description":"","lastUpdate":"2015-08-12T17:53:37.412Z","created":"2015-08-07T18:01:37.678Z","publishSettings":{"allowAnonymous":false,"SinglePlayer":false,"camera":null,"createAvatar":true,"allowTools":true,"persistence":true},"updates":72,"userSetThumbnail":true}}
+
+stateslist
+500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at GetStateList (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:769:10)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1650:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:59:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+texture
+404 file not found
+
+
+textures
+200 {"GetTexturesResult":"{\"root\":[]}"}
+
+texturethumbnail
+404 file not found
+
+
+thumbnail
+500 TypeError: Cannot read property &#39;SID&#39; of undefined<br> &nbsp; &nbsp;at GetThumbnail (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:981:37)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1583:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:59:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1489:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+updatepassword
+401 no login data saving profile
+
+
+uploadtemp
+404 404 Not Found
+
