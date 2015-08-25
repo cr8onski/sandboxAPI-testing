@@ -13,7 +13,7 @@
    Run all kinds of scenarios - come back to this
 */
 
-console.log('Howdy!');//intro - we're working
+// console.log('Howdy!');//intro - we're working
 
 //loading modules
 var request = require('request');
@@ -25,327 +25,383 @@ var sandbox = 'sandbox/adl/';
 var vwf = 'vwfdatamanager.svc/';
 var auth = 'auth/local/';
 //Command help
-var sid = '?SID=_adl_sandbox_NOGEv5q7kmL6VSN4_';
+var sid = '?SID=_adl_sandbox_L8BnGGj85ZHAmsy1_';
 var UID = 'Postman';
 var pword = 'Postman123';
-var SID = '_adl_sandbox_NOGEv5q7kmL6VSN4_';
+var SID = '_adl_sandbox_L8BnGGj85ZHAmsy1_';
 var salt = "";
 var cookie = "";
 var AID;
 
 //array of strings to be used in trying to break the api
 var badData = [
-	,	//undefined, but good data will be used here 0
-	,	//undefined	1
-	'',	//empty string	2
-	'abc123',	//	3
-	'*^%#@',	//please don't swear	4
-	'>}<:>)P{?>^%}',	//random other symbols	5
-	'\t\n\'',	//escape sequences	6
-	'&#2045&#x2045',	//weird characters	7
-	'whats\x45\x99\xa3\x0athis',	//weirder characters	8
-	'Rob is great',	//propaganda	9
-	'Andy is better', 	//better propaganda	10
-	'_willthiswork',	//underscore start	11
-	'Mick "the Mick" Muzac',	//double quotes	12
-	"Steven 'the Steve' Vergenz",	//single quotes	13
+	,	//undefined	0
+	'',	//empty string	1
+	'abc123',	//	2
+	'*^%#@',	//please don't swear	3
+	'>}<:>)P{?>^%}',	//random other symbols	4
+	'\t\n\'',	//escape sequences	5
+	'&#2045&#x2045',	//weird characters	6
+	'whats\x45\x99\xa3\x0athis',	//weirder characters	7
+	'Rob is great',	//propaganda	8
+	'Andy is better', 	//better propaganda	9
+	'_willthiswork',	//underscore start	10
+	'Mick "the Mick" Muzac',	//double quotes	11
+	"Steven 'the Steve' Vergenz",	//single quotes	12
 ]
 
 // setting up the command objects
 var commands = [
 	none = {
+		//this command is a setup it is never going to produce a favorable response
 		name : '',
 		methods : ['GET', 'POST', 'DELETE'],
 	},
 	drdownload = {
+		//401
 		name : '3drdownload',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},/*
+	},
 	drmetadata = {
+		//401 and the page
 		name : '3drmetadata',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	drpermission = {
+		//401 ""
 		name : '3drpermission',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	drsearch = {
+		//comes back 200; however i give it nothing to search for and it comes back with nothing.  It would be nice to search for different files and find a few
 		name : '3drsearch',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	drtexture = {
+		//401
 		name : '3drtexture',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	drupload = {
+		//404 404 not found
 		name : '3drupload',
 		methods : ['POST'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	apppath = {
+		//this one works as is
 		name : 'apppath',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*//*
 	cameras = {
+		//works as is.  Would like to add a camera to double check
 		name : 'cameras',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	copyinstance = {
+		//weird - 200 _adl_sandbox_jzfyZYS4Vwt9iXh3_ find out more about this instance
 		name : 'copyinstance',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	createprofile = {
+		//404 404 not found
 		name : 'createprofile',
 		methods : ['POST'],
 		keys : [],
 		vals : [],
 	},
 	createstate = {
+		//404 404 not found
 		name : 'createstate',
 		methods : ['POST'],
 		keys : [],
 		vals : [],
 	},
 	datafile = {
+		//404 file not found
 		name : 'datafile',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	docdir = {
+		//works fine as is, find way to suppress or shorten
 		name : 'docdir',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	error = {
+		//404 404 not found
 		name : 'error',
 		methods : ['POST'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	forgotpassword = {
+		//200
 		name : 'forgotpassword',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	getanalytics = {
+		//200 //Analytics not found, find analytics
 		name : 'getanalytics.js',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	getassets = {
+		//200 and array of assets
 		name : 'getassets',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	globalasset = {
+		//404 404 not found
 		name : 'globalasset',
 		methods : ['POST', 'DELETE'],
 		keys : [],
 		vals : [],
 	},
 	globalassetassetdata = {
+		//500 no AID in query string
 		name : 'globalassetassetdata',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	globalassetmetadata = {
+		//500 no AID in query string
 		name : 'globalassetmetadata',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	globalassets = {
+		//200 [], find a way to add an asset to double check
 		name : 'globalassets',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*//*
 	inventory = {
+		//200 [], find way to add to inventory and double check
 		name : 'inventory',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	inventoryitem = {
+		//404 404 not found
 		name : 'inventoryitem',
 		methods : ['POST', 'DELETE'],
 		keys : [],
 		vals : [],
 	},
 	inventoryitemassetdata = {
+		//500 no AID in query string
 		name : 'inventoryitemassetdata',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	inventoryitemmetadata = {
+		//500 no AID in query string
 		name : 'inventoryitemmetadata',
 		methods : ['GET', 'POST'],
 		keys : [],
 		vals : [],
 	},
 	library = {
+		//404 404 not found, find the library
 		name : 'library',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	login = {
+		//200 no longer supported...
+		//that's as good as it gets
 		name : 'login',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*//*
 	logindata = {
+		//200 {object...}
 		name : 'logindata',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	logout = {
+		//200 Client was not Logged into undefined
+		//find out more about this
 		name : 'logout',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	profile = {
+		//200 {Object...}
 		name : 'profile',
 		methods : ['GET', 'POST', 'DELETE'],
 		keys : [],
 		vals : [],
-	},
+	},*//*
 	profiles = {
+		//200 [Array of profile names]
 		name : 'profiles',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	publish = {
+		//404 404 not found
 		name : 'publish',
 		methods : ['POST'],
 		keys : [],
 		vals : [],
 	},
 	restorebackup = {
+		//500 You must be the owner of a world you publish
+		//find out more about this
 		name : 'restorebackup',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	salt = {
+		//200 salt string
 		name : 'salt',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*//*
 	saspath = {
+		//200
+		//could look into getting something more back
 		name : 'saspath',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	sitelogin = {
+		//401 Login Format incorrect
 		name : 'sitelogin',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	sitelogout = {
+		//200
+		//would if be different is we could login to site
 		name : 'sitelogout',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	state = {
+		//200 {"GetStateResult"...}
 		name : 'state',
 		methods : ['GET', 'DELETE'],
 		keys : [],
 		vals : [],
-	},
-/*	statedata = {
+	},*//*
+	statedata = {
+		//find what can make this one work
+		//it is our chief crasher
 		name : 'statedata',
 		methods : ['GET', 'POST'],
 		keys : [],
 		vals : [],
-	},
-*/
+	},*//*
 	statehistory = {
+		//200 {"children"...}
 		name : 'statehistory',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*//*
 	states = {
+		//200 {"_adl_sandbox_..."...}
 		name : 'states',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
-/*	stateslist = {
+	},*//*
+	stateslist = {
+		//200 [{"file"...}]
 		name : 'stateslist',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	texture = {
+		//404 file not found
+		//find some textures
 		name : 'texture',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	textures = {
+		//200 {"GetTextureResult"...}
+		//find some textures to upload
 		name : 'textures',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	texturethumbnail = {
+		//404 file not found
 		name : 'texturethumbnail',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},
+	},/*
 	thumbnail = {
+		//200 ?png
+		//find way to suppress
 		name : 'thumbnail',
 		methods : ['GET', 'POST'],
 		keys : [],
 		vals : [],
-	},
+	},*/
 	updatepassword = {
+		//401 no login data saving profile
 		name : 'updatepassword',
 		methods : ['GET'],
 		keys : [],
 		vals : [],
 	},
 	uploadtemp = {
+		//404 404 Not Found
 		name : 'uploadtemp',
 		methods : ['POST'],
 		keys : [],
 		vals : [],
-	},*/
+	},
 ];
 
 //EncryptPassword function for login
@@ -425,48 +481,61 @@ var reqLoginData = function (err, response, data) {
 	}
 }
 
-function varyMethod(j, param) {
-	console.log(j, param.num);
-	if (j === param.num) {
-		return;	//All methods have been done it's time to end
+var setOptions = function (index) {
+	i = index;
+	command = commands[i];
+	console.log(command);
+	var opts = {
+		qs : {
+			UID : 'Postman',
+			SID : '_adl_sandbox_L8BnGGj85ZHAmsy1_',
+		},
+		url : "" + root + sandbox + vwf + commands[i].name,
+		useQuerystring : true,
+		method : command.methods[0],
+	};
+	if (command.keys) {
+		len = command.keys.length;
+		for (var j = 0; j < len; j++) {
+			opts.qs['command.keys[j]'] = opts.qs['command.vals[j]'];
+		}
 	}
-	// param.options.method = param.commands[param.i].methods[j];
-	// console.log('Method = ' + param.options.method);
-	// 	param.request({url : param.options.url, jar : param.jar}, function (err, response, body) {
-	// 		param.results += "\n" + param.commands[param.i].name + '\n';
-	// 		param.results += 'Method = ' + param.options.method + '\n';
-	// 		if (err) {
-	// 			console.log('Error:', err);
-	// 			param.results += err + '\n';
-	// 			param.report += "\n" + param.commands[param.i].name + ' ' + param.options.method + '\n' + err + '\n';
-	// 		} else {
-	// 			console.log(commands[param.i].name, body);
-	// 			param.results += param.response.statusCode + " " + body + '\n';
-	// 			if (response.statusCode >= 500) {
-	// 				param.report += "\n" + commands[param.i].name + '\n' + param.options.method + ' ' + param.response.statusCode + " " + body + '\n';
-	// 			}
-	// 		}
-			varyMethod(j + 1);
-			doRequest(param.i + 1);
-		// });
-	// doRequest(i + 1);
-// 	varyMethod(j + 1);
+
+	return opts;
+}
+
+//Take an Object and builds a string of that Object to return
+var strObj = function(obj) {
+	var str = "";
+	for (var f in obj) {
+		if (f !== null && typeof f === 'object') {
+			str += strObj(f);
+		} else if (obj.hasOwnProperty(f)) {
+			str += f + " : " + obj[f] + "; ";
+		}
+	}
+	return str;
 }
 
 var runEmAll = function (error, response, data) {
 
-	console.log('In runEmAll');
+	// console.log('In runEmAll');
 
-	var options = {
-		qs : {	//default qs
-			UID : 'Postman',
-			SID : '_adl_sandbox_L8BnGGj85ZHAmsy1_',
-		}
-	};
 	var jar2 = request.jar();
 	jar2 = jar2.setCookie(cookie, root, function(){
 		console.log("These are cool cookies:", jar2.getCookies(root) + '\n');
 	});
+
+	// var options = {
+	// 	qs : {
+	// 		UID : 'Postman',
+	// 		SID : '_adl_sandbox_L8BnGGj85ZHAmsy1_',
+	// 	}
+		// jar : request.jar(),
+	// };
+	// options.jar = options.jar.setCookie(cookie, root, function(){
+	// 	console.log('these are cool cookies:', options.jar.getCookies(root) + '\n');
+	// })
 
 	//setting up the loop
 	var results = "Results from Testing SandboxAPI Endpoints on " + new Date().toISOString().replace('T', ' ').substr(0, 19) + '\n';
@@ -477,31 +546,39 @@ var runEmAll = function (error, response, data) {
 
 	function doRequest(i) {
 		if (i === len) {
-			console.log('Here at doRequest');
 			fs.writeFile(filename, results, console.log('For all results see file', filename));
 			fs.writeFile(fileReport, report, console.log('For report of errors see file', fileReport));
-			console.log('finishing doRequest');
+			// console.log('finishing doRequest');
 			return;
 		}
 
-		options.url = "" + root + sandbox + vwf + commands[i].name;
-		options.useQuerystring = true;
-		var numMethods = commands[i].methods.length;
-		var variations = badData.length;
-		var param = {
-			num : numMethods,
-			opts : options,
-			jar : jar2,
-			results : results,
-			report : report,
-			commands : commands,
-			i : i,
-		}
-		console.log(param);
-		varyMethod(0, param);
-			// doRequest(i + 1);
+		var options = setOptions(i);
+
+		request(options, function (err, response, body) {
+
+			var strOpt = strObj(options);
+
+
+			// options.toString();
+			results += "\n" + commands[i].name + '\n' + strOpt + '\n';
+			console.log('right here', options, strOpt);
+			if (err) {
+				console.log('Error:', err);
+				results += err + '\n';
+				report += "\n" + commands[i].name + '\n' + options.valueOf() + '\n' + err + '\n';
+			} else {
+				console.log(commands[i].name, body);
+				results += response.statusCode + " " + body + '\n';
+				if (response.statusCode >= 500) {
+					report += "\n" + commands[i].name + '\n' + response.statusCode + " " + body + '\n';
+				}
+
+			}
+
+			doRequest(i+1);
+		})
 	} doRequest(0);
 }
 
 reqSalt();
-console.log('who loves synchrony');
+// console.log('who loves synchrony');

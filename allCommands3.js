@@ -25,30 +25,28 @@ var sandbox = 'sandbox/adl/';
 var vwf = 'vwfdatamanager.svc/';
 var auth = 'auth/local/';
 //Command help
-var sid = '?SID=_adl_sandbox_NOGEv5q7kmL6VSN4_';
+var sid = '?SID=_adl_sandbox_L8BnGGj85ZHAmsy1_';
 var UID = 'Postman';
 var pword = 'Postman123';
-var SID = '_adl_sandbox_NOGEv5q7kmL6VSN4_';
 var salt = "";
 var cookie = "";
 var AID;
 
 //array of strings to be used in trying to break the api
 var badData = [
-	,	//undefined, but good data will be used here 0
-	,	//undefined	1
-	'',	//empty string	2
-	'abc123',	//	3
-	'*^%#@',	//please don't swear	4
-	'>}<:>)P{?>^%}',	//random other symbols	5
-	'\t\n\'',	//escape sequences	6
-	'&#2045&#x2045',	//weird characters	7
-	'whats\x45\x99\xa3\x0athis',	//weirder characters	8
-	'Rob is great',	//propaganda	9
-	'Andy is better', 	//better propaganda	10
-	'_willthiswork',	//underscore start	11
-	'Mick "the Mick" Muzac',	//double quotes	12
-	"Steven 'the Steve' Vergenz",	//single quotes	13
+	,	//undefined	0
+	'',	//empty string	1
+	'abc123',	//	2
+	'*^%#@',	//please don't swear	3
+	'>}<:>)P{?>^%}',	//random other symbols	4
+	'\t\n\'',	//escape sequences	5
+	'&#2045&#x2045',	//weird characters	6
+	'whats\x45\x99\xa3\x0athis',	//weirder characters	7
+	'Rob is great',	//propaganda	8
+	'Andy is better', 	//better propaganda	9
+	'_willthiswork',	//underscore start	10
+	'Mick "the Mick" Muzac',	//double quotes	11
+	"Steven 'the Steve' Vergenz",	//single quotes	12
 ]
 
 // setting up the command objects
@@ -62,7 +60,7 @@ var commands = [
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},/*
+	},
 	drmetadata = {
 		name : '3drmetadata',
 		methods : ['GET'],
@@ -268,12 +266,6 @@ var commands = [
 		vals : [],
 	},
 	sitelogin = {
-		name : 'sitelogin',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},
-	sitelogout = {
 		name : 'sitelogout',
 		methods : ['GET'],
 		keys : [],
@@ -304,7 +296,7 @@ var commands = [
 		keys : [],
 		vals : [],
 	},
-/*	stateslist = {
+	stateslist = {
 		name : 'stateslist',
 		methods : ['GET'],
 		keys : [],
@@ -345,7 +337,7 @@ var commands = [
 		methods : ['POST'],
 		keys : [],
 		vals : [],
-	},*/
+	},
 ];
 
 //EncryptPassword function for login
@@ -425,42 +417,13 @@ var reqLoginData = function (err, response, data) {
 	}
 }
 
-function varyMethod(j, param) {
-	console.log(j, param.num);
-	if (j === param.num) {
-		return;	//All methods have been done it's time to end
-	}
-	// param.options.method = param.commands[param.i].methods[j];
-	// console.log('Method = ' + param.options.method);
-	// 	param.request({url : param.options.url, jar : param.jar}, function (err, response, body) {
-	// 		param.results += "\n" + param.commands[param.i].name + '\n';
-	// 		param.results += 'Method = ' + param.options.method + '\n';
-	// 		if (err) {
-	// 			console.log('Error:', err);
-	// 			param.results += err + '\n';
-	// 			param.report += "\n" + param.commands[param.i].name + ' ' + param.options.method + '\n' + err + '\n';
-	// 		} else {
-	// 			console.log(commands[param.i].name, body);
-	// 			param.results += param.response.statusCode + " " + body + '\n';
-	// 			if (response.statusCode >= 500) {
-	// 				param.report += "\n" + commands[param.i].name + '\n' + param.options.method + ' ' + param.response.statusCode + " " + body + '\n';
-	// 			}
-	// 		}
-			varyMethod(j + 1);
-			doRequest(param.i + 1);
-		// });
-	// doRequest(i + 1);
-// 	varyMethod(j + 1);
-}
-
 var runEmAll = function (error, response, data) {
 
 	console.log('In runEmAll');
 
 	var options = {
-		qs : {	//default qs
+		qs : {
 			UID : 'Postman',
-			SID : '_adl_sandbox_L8BnGGj85ZHAmsy1_',
 		}
 	};
 	var jar2 = request.jar();
@@ -477,29 +440,29 @@ var runEmAll = function (error, response, data) {
 
 	function doRequest(i) {
 		if (i === len) {
-			console.log('Here at doRequest');
 			fs.writeFile(filename, results, console.log('For all results see file', filename));
 			fs.writeFile(fileReport, report, console.log('For report of errors see file', fileReport));
-			console.log('finishing doRequest');
 			return;
 		}
 
 		options.url = "" + root + sandbox + vwf + commands[i].name;
-		options.useQuerystring = true;
-		var numMethods = commands[i].methods.length;
-		var variations = badData.length;
-		var param = {
-			num : numMethods,
-			opts : options,
-			jar : jar2,
-			results : results,
-			report : report,
-			commands : commands,
-			i : i,
-		}
-		console.log(param);
-		varyMethod(0, param);
-			// doRequest(i + 1);
+		request({url : options.url, jar : jar2}, function (err, response, body) {
+			results += "\n" + commands[i].name + '\n';
+
+			if (err) {
+				console.log('Error:', err);
+				results += err + '\n';
+				report += "\n" + commands[i].name + '\n' + err + '\n';
+			} else {
+				console.log(commands[i].name, body);
+				results += response.statusCode + " " + body + '\n';
+				if (response.statusCode >= 500) {
+					report += "\n" + commands[i].name + '\n' + response.statusCode + " " + body + '\n';
+				}
+
+			}
+			doRequest(i+1);
+		})
 	} doRequest(0);
 }
 
