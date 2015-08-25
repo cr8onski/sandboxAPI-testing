@@ -1,80 +1,4 @@
-Results from Testing SandboxAPI Endpoints on 2015-08-25 17:26:05
-
-
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/; useQuerystring : true; method : GET; 
-404 404 Not Found
-
-
-3drdownload
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drdownload; useQuerystring : true; method : GET; 
-401 
-
-3drmetadata
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drmetadata; useQuerystring : true; method : GET; 
-401 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>Request Error</title>
-    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>
-  </head>
-  <body>
-    <div id="content">
-      <p class="heading1">Request Error</p>
-      <p>The server encountered an error processing the request. The exception message is 'Object reference not set to an instance of an object.'. See server logs for more details. The exception stack trace is: </p>
-      <p>   at vwar.service.host._3DRAPI.GetMetadataJSON(String pid, String key)
-   at SyncInvokeGetMetadataJSON(Object , Object[] , Object[] )
-   at System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]&amp; outputs)
-   at System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc&amp; rpc)
-   at System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)</p>
-    </div>
-  </body>
-</html>
-
-3drpermission
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drpermission; useQuerystring : true; method : GET; 
-401 ""
-
-3drsearch
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drsearch; useQuerystring : true; method : GET; 
-200 []
-
-3drtexture
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drtexture; useQuerystring : true; method : GET; 
-401 
-
-3drupload
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drupload; useQuerystring : true; method : POST; 
-500 TypeError: Cannot read property &#39;path&#39; of undefined<br> &nbsp; &nbsp;at Object.proxyUpload (c:\Users\creighta\workspace\sandbox\support\server\3dr_proxy.js:187:32)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1907:18<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
-
-
-copyinstance
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/copyinstance; useQuerystring : true; method : GET; 
-200 _adl_sandbox_pODO4LnpHtkWSdYr_
-
-
-createprofile
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createprofile; useQuerystring : true; method : POST; 
-500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at validateUsername (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:424:14)<br> &nbsp; &nbsp;at CreateProfile (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:447:7)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1887:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)
-
-
-createstate
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createstate; useQuerystring : true; method : POST; 
-200 _adl_sandbox_EcsxC5J6A4GjClCt_
-
-
-datafile
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/datafile; useQuerystring : true; method : GET; 
-404 file not found
-
+Results from Testing SandboxAPI Endpoints on 2015-08-25 20:40:28
 
 error
 qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/error; useQuerystring : true; method : POST; 
@@ -84,54 +8,9 @@ getanalytics.js
 qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/getanalytics.js; useQuerystring : true; method : GET; 
 200 //Analytics not found
 
-globalasset
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset; useQuerystring : true; method : POST; 
-200 ab01f55f-a96f-4858-9089-ee604133e129
-
-
-globalassetassetdata
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetassetdata; useQuerystring : true; method : GET; 
-500 no AID in query string
-
-
-globalassetmetadata
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetmetadata; useQuerystring : true; method : GET; 
-500 no AID in query string
-
-
-inventoryitem
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitem; useQuerystring : true; method : POST; 
-200 5d07714e-0fb2-4f4c-8ebc-1d0d555c1854
-
-
-inventoryitemassetdata
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemassetdata; useQuerystring : true; method : GET; 
-500 no AID in query string
-
-
-inventoryitemmetadata
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata; useQuerystring : true; method : GET; 
-500 no AID in query string
-
-
-library
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/library; useQuerystring : true; method : GET; 
-404 404 Not Found
-
-
 logout
 qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/logout; useQuerystring : true; method : GET; 
 200 Client was not Logged into undefined
-
-
-publish
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/publish; useQuerystring : true; method : POST; 
-500 You must be the owner of a world you publish
-
-
-restorebackup
-qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup; useQuerystring : true; method : GET; 
-500 You must be the owner of a world you publish
 
 
 sitelogin
@@ -147,6 +26,10 @@ texture
 qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texture; useQuerystring : true; method : GET; 
 404 file not found
 
+
+textures
+qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/textures; useQuerystring : true; method : GET; 
+200 {"GetTexturesResult":"{\"root\":[]}"}
 
 texturethumbnail
 qs : [object Object]; url : http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texturethumbnail; useQuerystring : true; method : GET; 

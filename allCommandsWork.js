@@ -50,9 +50,9 @@ var badData = [
 	"Steven 'the Steve' Vergenz",	//single quotes	12
 ]
 
-// setting up the command objects
+//setting up the command objects
 var commands = [
-	none = {
+/*	none = {
 		//this command is a setup it is never going to produce a favorable response
 		name : '',
 		methods : ['GET', 'POST', 'DELETE'],
@@ -112,7 +112,7 @@ var commands = [
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},*/
+	},*//*
 	copyinstance = {
 		//weird - 200 _adl_sandbox_jzfyZYS4Vwt9iXh3_ find out more about this instance
 		name : 'copyinstance',
@@ -175,7 +175,7 @@ var commands = [
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},*/
+	},*//*
 	globalasset = {
 		//404 404 not found
 		name : 'globalasset',
@@ -210,7 +210,7 @@ var commands = [
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},*/
+	},*//*
 	inventoryitem = {
 		//404 404 not found
 		name : 'inventoryitem',
@@ -256,11 +256,13 @@ var commands = [
 	},*/
 	logout = {
 		//200 Client was not Logged into undefined
-		//find out more about this
+		//looks like it takes a state id 'S' and a client id 'CID'
+		//and logs out any clients and I don't know what
+		//still not it
 		name : 'logout',
 		methods : ['GET'],
-		keys : [],
-		vals : [],
+		keys : ['S', 'CID'],
+		vals : [SID, UID],
 	},/*
 	profile = {
 		//200 {Object...}
@@ -275,7 +277,7 @@ var commands = [
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},*/
+	},*//*
 	publish = {
 		//404 404 not found
 		name : 'publish',
@@ -308,14 +310,18 @@ var commands = [
 	},*/
 	sitelogin = {
 		//401 Login Format incorrect
+		//what does this really do?? is this still used??
+		//UID and P (password) pver the qs
+		//even with the hardcode I got nowhere
 		name : 'sitelogin',
 		methods : ['GET'],
-		keys : [],
-		vals : [],
+		keys : ['UID', 'P'],
+		vals : [UID, "1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"],
 	},
 	sitelogout = {
 		//200
 		//would if be different is we could login to site
+		//looks like there would be no difference in what we see
 		name : 'sitelogout',
 		methods : ['GET'],
 		keys : [],
@@ -364,7 +370,7 @@ var commands = [
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},/*
+	},
 	textures = {
 		//200 {"GetTextureResult"...}
 		//find some textures to upload
@@ -372,7 +378,7 @@ var commands = [
 		methods : ['GET'],
 		keys : [],
 		vals : [],
-	},*/
+	},
 	texturethumbnail = {
 		//404 file not found
 		name : 'texturethumbnail',
@@ -390,19 +396,49 @@ var commands = [
 	},*/
 	updatepassword = {
 		//401 no login data saving profile
+		//I get the above response, but i'm sure i've got the logindata
+		//that is the response for no logindata
+		//I think I should get the bad password response
 		name : 'updatepassword',
 		methods : ['GET'],
-		keys : [],
-		vals : [],
+		keys : ['P'],
+		vals : ["1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"],
 	},
 	uploadtemp = {
 		//404 404 Not Found
+		//is this uploading formData
+		//and where/when does this happen??
 		name : 'uploadtemp',
 		methods : ['POST'],
 		keys : [],
 		vals : [],
 	},
 ];
+
+//set up data variables (profiles, states, inventory, textures)
+setupUrl = root + sandbox + vwf;
+var profiles, states, inventory, textures;
+request({uri : setupUrl + "profiles/"}, function(err, resp, body) {
+	if (err) return console.error(err);
+	profiles = body;
+	console.log(profiles);
+});
+// request({uri : setupUrl + "states/"}, function(err, resp, body) {
+// 	if (err) return console.error(err);
+// 	states = body;
+// 	console.log(states);
+// });
+request({uri : setupUrl + "inventory/"}, function(err, resp, body) {
+	if (err) return console.error(err);
+	inventory = body;
+	console.log(inventory);
+});
+request({uri : setupUrl + "textures/"}, function(err, resp, body) {
+	if (err) return console.error(err);
+	textures = body;
+	console.log(textures);
+});
+
 
 //EncryptPassword function for login
 var EncryptPassword = function (password, username, salt) {
