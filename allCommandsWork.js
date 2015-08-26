@@ -517,8 +517,10 @@ var reqLoginData = function (err, response, data) {
 	}
 }
 
+// see about making commands into options
+// make a duplicate option for each method
 var setOptions = function (index) {
-	i = index;
+	var i = index;
 	command = commands[i];
 	console.log(command);
 	var opts = {
@@ -531,9 +533,9 @@ var setOptions = function (index) {
 		method : command.methods[0],
 	};
 	if (command.keys) {
-		len = command.keys.length;
+		var len = command.keys.length;
 		for (var j = 0; j < len; j++) {
-			opts.qs['command.keys[j]'] = opts.qs['command.vals[j]'];
+			opts.qs[command.keys[j]] = opts.qs[command.vals[j]];
 		}
 	}
 
@@ -541,10 +543,13 @@ var setOptions = function (index) {
 }
 
 //Take an Object and builds a string of that Object to return
+// Try JSON.stringify(obj, null, 4);
 var strObj = function(obj) {
 	var str = "";
 	for (var f in obj) {
-		if (f !== null && typeof f === 'object') {
+		// if (f !== null && typeof f === 'object') {
+		// if (typeof f === 'object') {
+		if (f && typeof f === 'object') {
 			str += strObj(f);
 		} else if (obj.hasOwnProperty(f)) {
 			str += f + " : " + obj[f] + "; ";
