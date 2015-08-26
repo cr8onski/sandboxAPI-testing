@@ -1,4 +1,4 @@
-Report of Testing SandboxAPI Endpoints on 2015-08-26 22:18:58.
+Report of Testing SandboxAPI Endpoints on 2015-08-26 21:10:36.
 Requests which produce Server Errors or Crashes.
 
 
@@ -27,6 +27,21 @@ globalassetmetadata
 500 no AID in query string
 
 
+inventoryitem
+{"name":"inventoryitem","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitem"}
+500 no AID in query string
+
+
+inventoryitemassetdata
+{"name":"inventoryitemassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemassetdata"}
+500 no AID in query string
+
+
+inventoryitemmetadata
+{"name":"inventoryitemmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
+500 no AID in query string
+
+
 inventoryitemmetadata
 {"name":"inventoryitemmetadata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
 500 no AID in query string
@@ -40,4 +55,3 @@ publish
 restorebackup
 {"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
 500 You must be the owner of a world you publish
-

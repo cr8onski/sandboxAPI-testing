@@ -52,366 +52,609 @@ var badData = [
 
 //setting up the command objects
 var commands = [
-/*	none = {
+	none = {
 		//this command is a setup it is never going to produce a favorable response
 		name : '',
-		methods : ['GET', 'POST', 'DELETE'],
+		method : 'GET',
+		url : root + sandbox + vwf,
+	},
+	none = {
+		//this command is a setup it is never going to produce a favorable response
+		name : '',
+		method : 'POST',
+		url : root + sandbox + vwf,
+	},
+	none = {
+		//this command is a setup it is never going to produce a favorable response
+		name : '',
+		method : 'DELETE',
+		url : root + sandbox + vwf,
 	},
 	drdownload = {
 		//401
 		name : '3drdownload',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + '3drdownload',
 	},
-	drmetadata = {
+/*	drmetadata = {
 		//401 and the page
 		name : '3drmetadata',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + '3drmetadata',
+	},*/
 	drpermission = {
 		//401 ""
 		name : '3drpermission',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + '3drpermission',
 	},
 	drsearch = {
 		//comes back 200; however i give it nothing to search for and it comes back with nothing.  It would be nice to search for different files and find a few
 		name : '3drsearch',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + '3drsearch',
 	},
 	drtexture = {
 		//401
 		name : '3drtexture',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + '3drtexture',
 	},
 	drupload = {
 		//404 404 not found
+		//and with uid and sid i'm getting 500
+		//how did I get the 404??
 		name : '3drupload',
-		methods : ['POST'],
-		keys : [],
-		vals : [],
-	},/*
-	apppath = {
+		method : 'POST',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		form : {},
+		url : root + sandbox + vwf + '3drupload',
+	},
+/*	apppath = {
 		//this one works as is
 		name : 'apppath',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
-	cameras = {
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'apppath',
+	},*/
+/*	cameras = {
 		//works as is.  Would like to add a camera to double check
+		// 200 [{"name":"Camera1","id":"SandboxCamera-vwf-N32196c51"}]
 		name : 'cameras',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			//this sid has a camera
+			'SID' : "_adl_sandbox_E8acu9xeKsoaARn7_",
+			// 'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'cameras',
+	},*/
 	copyinstance = {
 		//weird - 200 _adl_sandbox_jzfyZYS4Vwt9iXh3_ find out more about this instance
+		//yep I seem to be creating instances left and right about 60+ worlds now
 		name : 'copyinstance',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'copyinstance',
 	},
 	createprofile = {
 		//404 404 not found
 		name : 'createprofile',
-		methods : ['POST'],
-		keys : [],
-		vals : [],
+		method : 'POST',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		form : {},
+		url : root + sandbox + vwf + 'createprofile',
 	},
 	createstate = {
 		//404 404 not found
 		name : 'createstate',
-		methods : ['POST'],
-		keys : [],
-		vals : [],
+		method : 'POST',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'createstate',
 	},
 	datafile = {
 		//404 file not found
 		name : 'datafile',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},/*
-	docdir = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'datafile',
+	},
+/*	docdir = {
 		//works fine as is, find way to suppress or shorten
 		name : 'docdir',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'docdir',
 	},*/
 	error = {
 		//404 404 not found
 		name : 'error',
-		methods : ['POST'],
-		keys : [],
-		vals : [],
-	},/*
-	forgotpassword = {
+		method : 'POST',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		form : {},
+		url : root + sandbox + vwf + 'error',
+	},
+/*	forgotpassword = {
 		//200
+		//seems to be working just fine, logging in with the old password keeps the old one valid
 		name : 'forgotpassword',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'forgotpassword',
 	},*/
 	getanalytics = {
 		//200 //Analytics not found, find analytics
 		name : 'getanalytics.js',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},/*
-	getassets = {
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'getanalytics.js',
+	},
+/*	getassets = {
 		//200 and array of assets
 		name : 'getassets',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'getassets',
+	},*/
+	globalasset = {
+		//404 404 not found
+		// 200 e445fe78-0e58-4383-aba5-6fbe347cf118
+		//don't know why I started getting the 200 response
+		name : 'globalasset',
+		method : 'POST',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		form : {},
+		url : root + sandbox + vwf + 'globalasset',
+	},
 	globalasset = {
 		//404 404 not found
 		name : 'globalasset',
-		methods : ['POST', 'DELETE'],
-		keys : [],
-		vals : [],
+		method : 'DELETE',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		form : {},
+		url : root + sandbox + vwf + 'globalasset',
 	},
 	globalassetassetdata = {
 		//500 no AID in query string
 		name : 'globalassetassetdata',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'globalassetassetdata',
 	},
 	globalassetmetadata = {
 		//500 no AID in query string
 		name : 'globalassetmetadata',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},/*
-	globalassets = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'globalassetmetadata',
+	},
+/*	globalassets = {
 		//200 [], find a way to add an asset to double check
+		//got plenty now
 		name : 'globalassets',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
-	inventory = {
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'globalassets',
+	},*/
+/*	inventory = {
 		//200 [], find way to add to inventory and double check
+		//working good now
 		name : 'inventory',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
-	inventoryitem = {
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'inventory',
+	},*/
+/*	inventoryitemP = {
+		//200 9ab2d1de-20c3-4c2e-8548-f4e9dfd6960f
+		// looks good to me
+		name : 'inventoryitem',
+		method : 'POST',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		form : {},
+		url : root + sandbox + vwf + 'inventoryitem',
+	},*/
+	inventoryitemD = {
 		//404 404 not found
 		name : 'inventoryitem',
-		methods : ['POST', 'DELETE'],
-		keys : [],
-		vals : [],
+		method : 'DELETE',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+			//let's try this - should only work once
+			'AID' : '9ab2d1de-20c3-4c2e-8548-f4e9dfd6960f'
+		},
+		form : {},
+		url : root + sandbox + vwf + 'inventoryitem',
 	},
 	inventoryitemassetdata = {
 		//500 no AID in query string
 		name : 'inventoryitemassetdata',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+			//your very own aid
+			'AID' : '72011935-2aef-4f0c-a5dd-953bc89e6849'
+		},
+		url : root + sandbox + vwf + 'inventoryitemassetdata',
 	},
-	inventoryitemmetadata = {
+	inventoryitemmetadataG = {
 		//500 no AID in query string
 		name : 'inventoryitemmetadata',
-		methods : ['GET', 'POST'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+			'AID' : '56b634e6-d22d-4510-8809-d5e12fc9abdd'
+		},
+		url : root + sandbox + vwf + 'inventoryitemmetadata',
+	},
+	inventoryitemmetadataP = {
+		//500 no AID in query string
+		name : 'inventoryitemmetadata',
+		method : 'POST',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		form : {},
+		url : root + sandbox + vwf + 'inventoryitemmetadata',
 	},
 	library = {
 		//404 404 not found, find the library
 		name : 'library',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},/*
-	login = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'library',
+	},
+/*	login = {
 		//200 no longer supported...
 		//that's as good as it gets
 		name : 'login',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'login',
+	},*/
 	logindata = {
 		//200 {object...}
+		//keep this active as a test againt good session
 		name : 'logindata',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*/
-	logout = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'logindata',
+	},
+/*	logout = {
 		//200 Client was not Logged into undefined
 		//looks like it takes a state id 'S' and a client id 'CID'
-		//and logs out any clients and I don't know what
-		//still not it
+		//with a good sid for s it sends:
+		//200 Client was not Logged into _adl_sandbox_L8BnGGj85ZHAmsy1_
 		name : 'logout',
-		methods : ['GET'],
-		keys : ['S', 'CID'],
-		vals : [SID, UID],
-	},/*
-	profile = {
+		method : 'GET',
+		qs : {
+			'S' : SID,
+			'CID' : UID,
+		},
+		url : root + sandbox + vwf + 'logout',
+	},*/
+/*	profileG = {
 		//200 {Object...}
 		name : 'profile',
-		methods : ['GET', 'POST', 'DELETE'],
-		keys : [],
-		vals : [],
-	},*//*
-	profiles = {
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'profile',
+	},*/
+	profileP = {
+		//200 {Object...}
+		//need to have something to POST
+		//also think about arranging to create, post, get, delete and show deleted from profiles in that order
+		name : 'profile',
+		method : 'POST',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		form : {},
+		url : root + sandbox + vwf + 'profile',
+	},
+	profileD = {
+		//200 {Object...}
+		name : 'profile',
+		method : 'DELETE',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		form : {},
+		url : root + sandbox + vwf + 'profile',
+	},
+/*	profiles = {
 		//200 [Array of profile names]
 		name : 'profiles',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'profiles',
+	},*/
 	publish = {
 		//404 404 not found
 		name : 'publish',
-		methods : ['POST'],
-		keys : [],
-		vals : [],
+		method : 'POST',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+
+		},
+		url : root + sandbox + vwf + 'publish',
 	},
 	restorebackup = {
 		//500 You must be the owner of a world you publish
 		//find out more about this
 		name : 'restorebackup',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},/*
-	salt = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'restorebackup',
+	},
+/*	salt = {
 		//200 salt string
 		name : 'salt',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
-	saspath = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'salt',
+	},*/
+/*	saspath = {
 		//200
 		//could look into getting something more back
 		name : 'saspath',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'saspath',
 	},*/
 	sitelogin = {
-		//401 Login Format incorrect
+		//401 Already Logged in - yay!!! Victory!!!
 		//what does this really do?? is this still used??
-		//UID and P (password) pver the qs
-		//even with the hardcode I got nowhere
 		name : 'sitelogin',
-		methods : ['GET'],
-		keys : ['UID', 'P'],
-		vals : [UID, "1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'P' : '1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48',
+		},
+		url : root + sandbox + vwf + 'sitelogin',
 	},
 	sitelogout = {
 		//200
 		//would if be different is we could login to site
 		//looks like there would be no difference in what we see
+		//now after this command the sandbox console shows null for session instead of it's ususal info
 		name : 'sitelogout',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},/*
-	state = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'sitelogout',
+	},
+/*	stateG = {
 		//200 {"GetStateResult"...}
 		name : 'state',
-		methods : ['GET', 'DELETE'],
-		keys : [],
-		vals : [],
-	},*//*
-	statedata = {
-		//find what can make this one work
-		//it is our chief crasher
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'state',
+	},*/
+	stateD = {
+		//200 {"GetStateResult"...}
+		name : 'state',
+		method : 'DELETE',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		form : {},
+		url : root + sandbox + vwf + 'state',
+	},
+/*	statedataG = {
+		//it is our chief crasher when qs is empty
+		//with uid only crashes
+		//with sid only works great
+		//with uid and sid works great
+		//and valid session cookie of course
 		name : 'statedata',
-		methods : ['GET', 'POST'],
-		keys : [],
-		vals : [],
-	},*//*
-	statehistory = {
+		method : 'GET',
+		// qs : {	'UID' : UID,
+		// 	'SID' : SID,},
+		url : root + sandbox + vwf + 'statedata',
+	},*/
+	statedataG = {
+		//works fine with uid and sid in qs
+		//it is our chief crasher when qs is empty
+		//with uid and sid works great
+		name : 'statedata',
+		method : 'GET',
+		qs : {
+			// 'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'statedata',
+	},
+	statedataP = {
+		//401 Anonymous users cannot edit instances
+		//
+		name : 'statedata',
+		method : 'POST',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		form : {},
+		url : root + sandbox + vwf + 'statedata',
+	},
+/*	statehistory = {
 		//200 {"children"...}
+		//also quite huge
 		name : 'statehistory',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
-	states = {
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'statehistory',
+	},*/
+/*	states = {
 		//200 {"_adl_sandbox_..."...}
+		//this one has gotten huge
 		name : 'states',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*//*
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'states',
+	},*/
 	stateslist = {
 		//200 [{"file"...}]
 		name : 'stateslist',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},*/
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'stateslist',
+	},
 	texture = {
 		//404 file not found
 		//find some textures
 		name : 'texture',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'texture',
 	},
-	textures = {
+/*	textures = {
 		//200 {"GetTextureResult"...}
 		//find some textures to upload
 		name : 'textures',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'textures',
+	},*/
 	texturethumbnail = {
 		//404 file not found
 		name : 'texturethumbnail',
-		methods : ['GET'],
-		keys : [],
-		vals : [],
-	},/*
-	thumbnail = {
+		method : 'GET',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'texturethumbnail',
+	},
+/*	thumbnailG = {
+		//200 ?png - prints out the whole png
+		//works fine need to find way to suppress printing whole file
+		name : 'thumbnail',
+		method : 'GET',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		url : root + sandbox + vwf + 'thumbnail',
+	},*/
+	thumbnailP = {
 		//200 ?png
 		//find way to suppress
 		name : 'thumbnail',
-		methods : ['GET', 'POST'],
-		keys : [],
-		vals : [],
-	},*/
+		method : 'POST',
+		qs : {	'UID' : UID,
+			'SID' : SID,},
+		form : {},
+		url : root + sandbox + vwf + 'thumbnail',
+	},
 	updatepassword = {
 		//401 no login data saving profile
 		//I get the above response, but i'm sure i've got the logindata
 		//that is the response for no logindata
 		//I think I should get the bad password response
 		name : 'updatepassword',
-		methods : ['GET'],
-		keys : ['P'],
-		vals : ["1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"],
+		method : 'GET',
+		qs : {
+			'P' : '1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48'
+		},
+		url : root + sandbox + vwf + 'updatepassword',
 	},
 	uploadtemp = {
 		//404 404 Not Found
 		//is this uploading formData
 		//and where/when does this happen??
 		name : 'uploadtemp',
-		methods : ['POST'],
-		keys : [],
-		vals : [],
+		method : 'POST',
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
+		form : {},
+		url : root + sandbox + vwf + 'uploadtemp',
 	},
 ];
 
@@ -499,7 +742,7 @@ var reqLoginData = function (err, response, data) {
 		// console.log("cookie : " + cookie + "\n");
 		var jar = request.jar();
 		jar.setCookie(cookie, root, function(){
-			// console.log("These are cool cookies:", jar.getCookies(root) + '\n');
+			console.log("These are cool cookies:", jar.getCookies(root) + '\n');
 			request({url : root + sandbox + vwf + 'logindata', jar : jar}, runEmAll)
 				.on('response', function(response) {
 					console.log(response.statusCode);
@@ -517,101 +760,49 @@ var reqLoginData = function (err, response, data) {
 	}
 }
 
-// see about making commands into options
-// make a duplicate option for each method
-var setOptions = function (index) {
-	var i = index;
-	command = commands[i];
-	console.log(command);
-	var opts = {
-		qs : {
-			UID : 'Postman',
-			SID : '_adl_sandbox_L8BnGGj85ZHAmsy1_',
-		},
-		url : "" + root + sandbox + vwf + commands[i].name,
-		useQuerystring : true,
-		method : command.methods[0],
-	};
-	if (command.keys) {
-		var len = command.keys.length;
-		for (var j = 0; j < len; j++) {
-			opts.qs[command.keys[j]] = opts.qs[command.vals[j]];
-		}
-	}
-
-	return opts;
-}
-
-//Take an Object and builds a string of that Object to return
-// Try JSON.stringify(obj, null, 4);
-var strObj = function(obj) {
-	var str = "";
-	for (var f in obj) {
-		// if (f !== null && typeof f === 'object') {
-		// if (typeof f === 'object') {
-		if (f && typeof f === 'object') {
-			str += strObj(f);
-		} else if (obj.hasOwnProperty(f)) {
-			str += f + " : " + obj[f] + "; ";
-		}
-	}
-	return str;
-}
 
 var runEmAll = function (error, response, data) {
 
-	// console.log('In runEmAll');
-
 	var jar2 = request.jar();
-	jar2 = jar2.setCookie(cookie, root, function(){
+	jar2.setCookie(cookie, root, function(){
 		console.log("These are cool cookies:", jar2.getCookies(root) + '\n');
 	});
 
-	// var options = {
-	// 	qs : {
-	// 		UID : 'Postman',
-	// 		SID : '_adl_sandbox_L8BnGGj85ZHAmsy1_',
-	// 	}
-		// jar : request.jar(),
-	// };
-	// options.jar = options.jar.setCookie(cookie, root, function(){
-	// 	console.log('these are cool cookies:', options.jar.getCookies(root) + '\n');
-	// })
-
 	//setting up the loop
-	var results = "Results from Testing SandboxAPI Endpoints on " + new Date().toISOString().replace('T', ' ').substr(0, 19) + '\n';
-	var report = "Report of Testing SandboxAPI Endpoints on " + new Date().toISOString().replace('T', ' ').substr(0, 19) + '.\nRequests which produce Server Errors or Crashes.\n';
+	var results = "Results from Testing SandboxAPI Endpoints on " + new Date().toISOString().replace('T', ' ').substr(0, 19) + '\nSession Cookie: ' + jar2.getCookies(root) + '\n\n';
+
+	var report = "Report of Testing SandboxAPI Endpoints on " + new Date().toISOString().replace('T', ' ').substr(0, 19) + '.\nRequests which produce Server Errors or Crashes.\n\n';
+
 	var filename = 'EndpointResults.txt';
 	var fileReport = 'EndpointReport.txt';
 	var len = commands.length;
 
 	function doRequest(i) {
 		if (i === len) {
+			results += '\n\n' + jar2.getCookies(root) + 'Curiouser and curiouser\n';
 			fs.writeFile(filename, results, console.log('For all results see file', filename));
 			fs.writeFile(fileReport, report, console.log('For report of errors see file', fileReport));
 			// console.log('finishing doRequest');
 			return;
 		}
 
-		var options = setOptions(i);
+		// var options = setOptions(i);
 
-		request(options, function (err, response, body) {
+		request(commands[i], function (err, response, body) {
 
-			var strOpt = strObj(options);
+			var strOpt = JSON.stringify(commands[i]);
+			results += "\n" + strOpt + '\n';
+			console.log(strOpt);
 
-
-			// options.toString();
-			results += "\n" + commands[i].name + '\n' + strOpt + '\n';
-			console.log('right here', options, strOpt);
 			if (err) {
 				console.log('Error:', err);
 				results += err + '\n';
-				report += "\n" + commands[i].name + '\n' + options.valueOf() + '\n' + err + '\n';
+				report += "\n" + commands[i].name + '\n' + strOpt + '\n' + err + '\n';
 			} else {
 				console.log(commands[i].name, body);
 				results += response.statusCode + " " + body + '\n';
 				if (response.statusCode >= 500) {
-					report += "\n" + commands[i].name + '\n' + response.statusCode + " " + body + '\n';
+					report += "\n" + commands[i].name + '\n' + strOpt + '\n' + response.statusCode + " " + body + '\n';
 				}
 
 			}
