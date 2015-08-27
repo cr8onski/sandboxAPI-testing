@@ -492,17 +492,17 @@ var commands = [
 		},
 		url : root + sandbox + vwf + 'sitelogin',
 	},
-/*	sitelogout = {
+	sitelogout = {
 		//200
 		//would if be different is we could login to site
 		//looks like there would be no difference in what we see
-		//now after this command the sandbox console shows null for session instead of it's ususal info, so it looks like we do indeed logout
+		//now after this command the sandbox console shows null for session instead of it's ususal info
 		name : 'sitelogout',
 		method : 'GET',
 		qs : {	'UID' : UID,
 			'SID' : SID,},
 		url : root + sandbox + vwf + 'sitelogout',
-	},*/
+	},
 /*	stateG = {
 		//200 {"GetStateResult"...}
 		name : 'state',
@@ -661,7 +661,6 @@ var commands = [
 ];
 
 //set up data variables (profiles, states, inventory, textures)
-//don't know that these are helpful at all
 setupUrl = root + sandbox + vwf;
 var profiles, states, inventory, textures;
 request({uri : setupUrl + "profiles/"}, function(err, resp, body) {
@@ -674,11 +673,11 @@ request({uri : setupUrl + "profiles/"}, function(err, resp, body) {
 // 	states = body;
 // 	console.log(states);
 // });
-// request({uri : setupUrl + "inventory/"}, function(err, resp, body) {
-// 	if (err) return console.error(err);
-// 	inventory = body;
-// 	console.log(inventory);
-// });
+request({uri : setupUrl + "inventory/"}, function(err, resp, body) {
+	if (err) return console.error(err);
+	inventory = body;
+	console.log(inventory);
+});
 request({uri : setupUrl + "textures/"}, function(err, resp, body) {
 	if (err) return console.error(err);
 	textures = body;
@@ -806,38 +805,18 @@ var runEmAll = function (error, response, data) {
 				results += response.statusCode + " " + body + '\n';
 				if (response.statusCode >= 500) {
 					report += "\n" + commands[i].name + '\n' + strOpt + '\n' + response.statusCode + " " + body + '\n';
-				}	//if
+				}
 
-			}	//else
+			}
 
 			doRequest(i+1);
-		})	//request
-	}	//doRequest function
-console.log('Lake');
-//produce a loop around this to vary the input data
-//Andy's way - not quite working
-	// var varyInputs = function (k) {
-	// 	if (k === badData.length) {
-	// 		return;
-	// 	}
-	//
-	// 	doRequest(0);
-	// 	console.log(badData[k], k++);
-	// 	varyInputs(k)
-	// }
-	// varyInputs(0);
-console.log('Winni');
-//Tommy's way
-	function varyInputs() {
-		console.log('bonjorno');
-		while (bd = badData.shift()) {
-			doRequest(0);
-			console.log(badData[0]);
-		}
+		})
 	}
-	varyInputs();
-console.log('pesaukee');
-}	//runEmAll
+
+//produce a loop around this to vary the input data
+	doRequest(0);
+
+}
 
 reqSalt();
 // console.log('who loves synchrony');

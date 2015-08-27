@@ -1,0 +1,191 @@
+Report of Testing SandboxAPI Endpoints on 2015-08-27 19:43:53.
+Requests which produce Server Errors or Crashes.
+
+
+3drupload
+{"name":"3drupload","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drupload"}
+500 TypeError: Cannot read property &#39;path&#39; of undefined<br> &nbsp; &nbsp;at Object.proxyUpload (c:\Users\creighta\workspace\sandbox\support\server\3dr_proxy.js:187:32)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1907:18<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+copyinstance
+{"name":"copyinstance","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/copyinstance"}
+Error: read ECONNRESET
+
+
+And here is the messages from the Sandbox terminal (next 58 lines):
+    Session:  { sessionId: 'a809f658-3fdb-4ba9-984e-c0cbd1afe877',
+      UID: 'Postman',
+      Password: '91e782701a5dbb1446f00d5d488405c24546619c1235b904cc94f6f9c241fc31',
+      loginTime: '2015-08-27T19:43:53.182Z',
+      clients: {},
+      lastUpdate: '2015-08-27T19:43:53.182Z',
+      id: 'Postman',
+      Username: 'Postman' }
+    info: copyinstance Postman 3
+    error: uncaughtException: Cannot call method 'replace' of null date=Thu Aug 27 2
+    015 15:43:57 GMT-0400 (Eastern Daylight Time), pid=3324, uid=null, gid=null, cwd
+    =c:\Users\creighta\workspace\sandbox, execPath=c:\Program Files\nodejs\node.exe,
+     version=v0.10.28, argv=[c:\Program Files\nodejs\node.exe, c:\Users\creighta\wor
+    kspace\sandbox\app.js], rss=101371904, heapTotal=84202304, heapUsed=56530640, lo
+    adavg=[0, 0, 0], uptime=25301.2075472, trace=[column=29, file=c:\Users\creighta\
+    workspace\sandbox\support\server\sandboxAPI.js, function=copyExampleComplete, li
+    ne=758, method=null, native=false, column=13, file=c:\Users\creighta\workspace\s
+    andbox\node_modules\async\lib\async.js, function=null, line=232, method=null, na
+    tive=false, column=21, file=c:\Users\creighta\workspace\sandbox\node_modules\asy
+    nc\lib\async.js, function=null, line=136, method=null, native=false, column=17,
+    file=c:\Users\creighta\workspace\sandbox\node_modules\async\lib\async.js, functi
+    on=null, line=229, method=null, native=false, column=34, file=c:\Users\creighta\
+    workspace\sandbox\node_modules\async\lib\async.js, function=null, line=556, meth
+    od=null, native=false, column=11, file=c:\Users\creighta\workspace\sandbox\suppo
+    rt\server\sandboxAPI.js, function=null, line=699, method=null, native=false, col
+    umn=4, file=c:\Users\creighta\workspace\sandbox\support\server\examples.js, func
+    tion=null, line=18, method=null, native=false, column=20, file=fs.js, function=n
+    ull, line=207, method=null, native=false, column=15, file=fs.js, function=Object
+    .oncomplete, line=107, method=oncomplete, native=false], stack=[TypeError: Canno
+    t call method 'replace' of null,     at copyExampleComplete (c:\Users\creighta\w
+    orkspace\sandbox\support\server\sandboxAPI.js:758:29),     at c:\Users\creighta\
+    workspace\sandbox\node_modules\async\lib\async.js:232:13,     at c:\Users\creigh
+    ta\workspace\sandbox\node_modules\async\lib\async.js:136:21,     at c:\Users\cre
+    ighta\workspace\sandbox\node_modules\async\lib\async.js:229:17,     at c:\Users\
+    creighta\workspace\sandbox\node_modules\async\lib\async.js:556:34,     at c:\Use
+    rs\creighta\workspace\sandbox\support\server\sandboxAPI.js:699:11,     at c:\Use
+    rs\creighta\workspace\sandbox\support\server\examples.js:18:4,     at fs.js:207:
+    20,     at Object.oncomplete (fs.js:107:15)]
+    error:
+    error: TypeError: Cannot call method 'replace' of null
+        at copyExampleComplete (c:\Users\creighta\workspace\sandbox\support\server\s
+    andboxAPI.js:758:29)
+        at c:\Users\creighta\workspace\sandbox\node_modules\async\lib\async.js:232:1
+    3
+        at c:\Users\creighta\workspace\sandbox\node_modules\async\lib\async.js:136:2
+    1
+        at c:\Users\creighta\workspace\sandbox\node_modules\async\lib\async.js:229:1
+    7
+        at c:\Users\creighta\workspace\sandbox\node_modules\async\lib\async.js:556:3
+    4
+        at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:699:11
+        at c:\Users\creighta\workspace\sandbox\support\server\examples.js:18:4
+        at fs.js:207:20
+        at Object.oncomplete (fs.js:107:15)
+    warn: email system not configured
+
+    creighta@ORL-CREIGHTON1 ~/workspace/sandbox (development)
+    $ node app.js
+
+
+
+createprofile
+{"name":"createprofile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createprofile"}
+Error: connect ECONNREFUSED
+
+createstate
+{"name":"createstate","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createstate"}
+Error: connect ECONNREFUSED
+
+datafile
+{"name":"datafile","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/datafile"}
+Error: connect ECONNREFUSED
+
+error
+{"name":"error","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/error"}
+Error: connect ECONNREFUSED
+
+getanalytics.js
+{"name":"getanalytics.js","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/getanalytics.js"}
+Error: connect ECONNREFUSED
+
+globalasset
+{"name":"globalasset","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
+Error: connect ECONNREFUSED
+
+globalasset
+{"name":"globalasset","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
+Error: connect ECONNREFUSED
+
+globalassetassetdata
+{"name":"globalassetassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetassetdata"}
+Error: connect ECONNREFUSED
+
+globalassetmetadata
+{"name":"globalassetmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetmetadata"}
+Error: connect ECONNREFUSED
+
+inventoryitem
+{"name":"inventoryitem","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"9ab2d1de-20c3-4c2e-8548-f4e9dfd6960f"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitem"}
+Error: connect ECONNREFUSED
+
+inventoryitemassetdata
+{"name":"inventoryitemassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"72011935-2aef-4f0c-a5dd-953bc89e6849"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemassetdata"}
+Error: connect ECONNREFUSED
+
+inventoryitemmetadata
+{"name":"inventoryitemmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"56b634e6-d22d-4510-8809-d5e12fc9abdd"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
+Error: connect ECONNREFUSED
+
+inventoryitemmetadata
+{"name":"inventoryitemmetadata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
+Error: connect ECONNREFUSED
+
+library
+{"name":"library","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/library"}
+Error: connect ECONNREFUSED
+
+logindata
+{"name":"logindata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/logindata"}
+Error: connect ECONNREFUSED
+
+profile
+{"name":"profile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/profile"}
+Error: connect ECONNREFUSED
+
+profile
+{"name":"profile","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/profile"}
+Error: connect ECONNREFUSED
+
+publish
+{"name":"publish","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/publish"}
+Error: connect ECONNREFUSED
+
+restorebackup
+{"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
+Error: connect ECONNREFUSED
+
+sitelogin
+{"name":"sitelogin","method":"GET","qs":{"UID":"Postman","P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/sitelogin"}
+Error: connect ECONNREFUSED
+
+state
+{"name":"state","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/state"}
+Error: connect ECONNREFUSED
+
+statedata
+{"name":"statedata","method":"GET","qs":{"SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
+Error: connect ECONNREFUSED
+
+statedata
+{"name":"statedata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
+Error: connect ECONNREFUSED
+
+stateslist
+{"name":"stateslist","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/stateslist"}
+Error: connect ECONNREFUSED
+
+texture
+{"name":"texture","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texture"}
+Error: connect ECONNREFUSED
+
+texturethumbnail
+{"name":"texturethumbnail","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texturethumbnail"}
+Error: connect ECONNREFUSED
+
+thumbnail
+{"name":"thumbnail","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/thumbnail"}
+Error: connect ECONNREFUSED
+
+updatepassword
+{"name":"updatepassword","method":"GET","qs":{"P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/updatepassword"}
+Error: connect ECONNREFUSED
+
+uploadtemp
+{"name":"uploadtemp","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/uploadtemp"}
+Error: connect ECONNREFUSED

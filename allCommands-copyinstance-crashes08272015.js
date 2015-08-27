@@ -828,14 +828,14 @@ console.log('Lake');
 	// varyInputs(0);
 console.log('Winni');
 //Tommy's way
-	function varyInputs() {
-		console.log('bonjorno');
-		while (bd = badData.shift()) {
+	// function varyInputs() {
+	// 	console.log('bonjorno');
+	// 	while (bd = badData.shift()) {
 			doRequest(0);
-			console.log(badData[0]);
-		}
-	}
-	varyInputs();
+	// 		console.log(badData[0]);
+	// 	}
+	// }
+	// varyInputs();
 console.log('pesaukee');
 }	//runEmAll
 

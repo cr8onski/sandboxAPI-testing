@@ -1,0 +1,124 @@
+Results from Testing SandboxAPI Endpoints on 2015-08-27 19:43:53
+Session Cookie: session=6SSmo1ZWM8TxW0K-S72IEA.eTCKWXXfRpfS7mKExmp0uYlO-eCAlhz6WqqOi7w-sYaJ12TCJu-tGoFuwOu6V16F4p9rxwONfCSRd9FzqdUdEgQcsdlMmqE_01gUAJkd1ZlOElcQRK7XiSMbHSzPdHXHsAWPc8lome79OTBM67EXPuwJ2kKqstlHBLYcLMzv-r7H16VAYnZQFf_om7Fz9qOoYO3Vhm4QGVhGzFrCbC7DudxkAZ_nUco7vfKsdU3vCMs_9KLMPlA8cRWwGVHErh4KtG6GwTJ2buh0V3RWWLrEF1kVuDPPN-SDPtzoVOF3Ay7O6_6VPG5GC0QVTQKbRWs3VrNsk0MQ-BQfixNaY2JGwtCPnR7D9Gl9NFVCTtCTyu-mlkk5yx2DldU9l1gq9D1xKnzOE9LKy67htJX3Cou41fJrKp1EPAdMu1h9_d3DjPc.1440704633182.86400000.8WywYGDOhxECwh4lu6dPgWvgyMIF-5DY6AprUpO_aSE; Path=/
+
+
+{"name":"","method":"GET","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/"}
+404 404 Not Found
+
+
+{"name":"","method":"POST","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/"}
+404 404 Not Found
+
+
+{"name":"","method":"DELETE","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/"}
+404 404 Not Found
+
+
+{"name":"3drdownload","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drdownload"}
+401
+
+{"name":"3drpermission","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drpermission"}
+401 ""
+
+{"name":"3drsearch","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drsearch"}
+200 []
+
+{"name":"3drtexture","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drtexture"}
+401
+
+{"name":"3drupload","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drupload"}
+500 TypeError: Cannot read property &#39;path&#39; of undefined<br> &nbsp; &nbsp;at Object.proxyUpload (c:\Users\creighta\workspace\sandbox\support\server\3dr_proxy.js:187:32)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1907:18<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+{"name":"copyinstance","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/copyinstance"}
+Error: read ECONNRESET
+
+{"name":"createprofile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createprofile"}
+Error: connect ECONNREFUSED
+
+{"name":"createstate","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createstate"}
+Error: connect ECONNREFUSED
+
+{"name":"datafile","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/datafile"}
+Error: connect ECONNREFUSED
+
+{"name":"error","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/error"}
+Error: connect ECONNREFUSED
+
+{"name":"getanalytics.js","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/getanalytics.js"}
+Error: connect ECONNREFUSED
+
+{"name":"globalasset","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
+Error: connect ECONNREFUSED
+
+{"name":"globalasset","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
+Error: connect ECONNREFUSED
+
+{"name":"globalassetassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetassetdata"}
+Error: connect ECONNREFUSED
+
+{"name":"globalassetmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetmetadata"}
+Error: connect ECONNREFUSED
+
+{"name":"inventoryitem","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"9ab2d1de-20c3-4c2e-8548-f4e9dfd6960f"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitem"}
+Error: connect ECONNREFUSED
+
+{"name":"inventoryitemassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"72011935-2aef-4f0c-a5dd-953bc89e6849"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemassetdata"}
+Error: connect ECONNREFUSED
+
+{"name":"inventoryitemmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"56b634e6-d22d-4510-8809-d5e12fc9abdd"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
+Error: connect ECONNREFUSED
+
+{"name":"inventoryitemmetadata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
+Error: connect ECONNREFUSED
+
+{"name":"library","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/library"}
+Error: connect ECONNREFUSED
+
+{"name":"logindata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/logindata"}
+Error: connect ECONNREFUSED
+
+{"name":"profile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/profile"}
+Error: connect ECONNREFUSED
+
+{"name":"profile","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/profile"}
+Error: connect ECONNREFUSED
+
+{"name":"publish","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/publish"}
+Error: connect ECONNREFUSED
+
+{"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
+Error: connect ECONNREFUSED
+
+{"name":"sitelogin","method":"GET","qs":{"UID":"Postman","P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/sitelogin"}
+Error: connect ECONNREFUSED
+
+{"name":"state","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/state"}
+Error: connect ECONNREFUSED
+
+{"name":"statedata","method":"GET","qs":{"SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
+Error: connect ECONNREFUSED
+
+{"name":"statedata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
+Error: connect ECONNREFUSED
+
+{"name":"stateslist","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/stateslist"}
+Error: connect ECONNREFUSED
+
+{"name":"texture","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texture"}
+Error: connect ECONNREFUSED
+
+{"name":"texturethumbnail","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texturethumbnail"}
+Error: connect ECONNREFUSED
+
+{"name":"thumbnail","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/thumbnail"}
+Error: connect ECONNREFUSED
+
+{"name":"updatepassword","method":"GET","qs":{"P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/updatepassword"}
+Error: connect ECONNREFUSED
+
+{"name":"uploadtemp","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/uploadtemp"}
+Error: connect ECONNREFUSED
+
+
+session=6SSmo1ZWM8TxW0K-S72IEA.eTCKWXXfRpfS7mKExmp0uYlO-eCAlhz6WqqOi7w-sYaJ12TCJu-tGoFuwOu6V16F4p9rxwONfCSRd9FzqdUdEgQcsdlMmqE_01gUAJkd1ZlOElcQRK7XiSMbHSzPdHXHsAWPc8lome79OTBM67EXPuwJ2kKqstlHBLYcLMzv-r7H16VAYnZQFf_om7Fz9qOoYO3Vhm4QGVhGzFrCbC7DudxkAZ_nUco7vfKsdU3vCMs_9KLMPlA8cRWwGVHErh4KtG6GwTJ2buh0V3RWWLrEF1kVuDPPN-SDPtzoVOF3Ay7O6_6VPG5GC0QVTQKbRWs3VrNsk0MQ-BQfixNaY2JGwtCPnR7D9Gl9NFVCTtCTyu-mlkk5yx2DldU9l1gq9D1xKnzOE9LKy67htJX3Cou41fJrKp1EPAdMu1h9_d3DjPc.1440704633182.86400000.8WywYGDOhxECwh4lu6dPgWvgyMIF-5DY6AprUpO_aSE; Path=/Curiouser and curiouser
