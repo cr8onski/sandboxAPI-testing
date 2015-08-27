@@ -156,7 +156,7 @@ var commands = [
 		},
 		url : root + sandbox + vwf + 'cameras',
 	},*/
-	copyinstance = {
+/*	copyinstance = {
 		//weird - 200 _adl_sandbox_jzfyZYS4Vwt9iXh3_ find out more about this instance
 		//yep I seem to be creating instances left and right about 60+ worlds now
 		name : 'copyinstance',
@@ -166,14 +166,26 @@ var commands = [
 			'SID' : SID,
 		},
 		url : root + sandbox + vwf + 'copyinstance',
-	},
+	},*/
 	createprofile = {
 		//404 404 not found
 		name : 'createprofile',
 		method : 'POST',
 		qs : {	'UID' : UID,
 			'SID' : SID,},
-		form : {},
+		form : {
+			username : 'Remy',
+			email : 'remy@mail.com',
+			password : 'beware333Squirrels',
+			password2 : 'beware333Squirrels',
+			dateofbirth : '01022015',
+			sex : 'male',
+			relationshipstatus: 'none',
+			fullname : "Remy 'Dude' Creighton",
+			location : 'Orlando FL',
+			homepage : 'remy.com',
+			employer : 'no need',
+		},
 		url : root + sandbox + vwf + 'createprofile',
 	},
 	createstate = {
@@ -828,14 +840,14 @@ console.log('Lake');
 	// varyInputs(0);
 console.log('Winni');
 //Tommy's way
-	function varyInputs() {
-		console.log('bonjorno');
-		while (bd = badData.shift()) {
+	// function varyInputs() {
+	// 	console.log('bonjorno');
+	// 	while (bd = badData.shift()) {
 			doRequest(0);
-			console.log(badData[0]);
-		}
-	}
-	varyInputs();
+	// 		console.log(badData[0]);
+	// 	}
+	// }
+	// varyInputs();
 console.log('pesaukee');
 }	//runEmAll
 

@@ -1,5 +1,5 @@
-Results from Testing SandboxAPI Endpoints on 2015-08-26 22:18:58
-Session Cookie: session=LYf0VrnW-893yiI9dig5gA.-1O94tDv_hRErVIwh62tW9v9dN45ZayU_qdioZjZm9GGGJQ24Y49wsFH1EZT1waldvcSN1Ve4Jvtmor7ciM-95GcX54hqjLnLMVx4eFYvJAWWRIhnynM_Qz7-JW0bugVPi5qrDgeUTJ4XrdZtjGSttnm0nr7aYhYq5hT1q5GFe1OnOKl_MqiPUJ2jTh0KWYp4EOkOc5M2yZk4_nyAbo25I64VdFYFO72IvhWkAuf-v3o5bbU0h4U2eKYULys1btLv5CDocXLumiD-z0dGboX8Xs3YFgfEegkjpCCsKQ3R66BqSfc4EZ85Nm7N_hQluBS_bRC8uULYh12czgIX2IHfl03tf5NN3f_oSTNjnfmMz9CoRkTXfdqCeb2OI3kqw46pijK6Reut3-87T-kFhAVUP1ZAs2FFpr8ZnMQd_sZWOc.1440627538629.86400000.VVzMP1Ji2X7M0DdDqaZ54I9gmmHilhSOBFcE3L0Gjzs; Path=/
+Results from Testing SandboxAPI Endpoints on 2015-08-27 20:33:46
+Session Cookie: session=I5nnGN-GsfRohVBt1dih0g.Artg7glapPw2RxG6-unKUTQR2JLL0d8Ij6r5rMy7wz5pp-tbXBWyl10cokSfW60avf-CTS6vLchSVzDE8z5F6KjRrEDLE5X0prk7lZVWYORwv8vtDkPraEU4JdvE4ZDAM4Ox3ERhkFYZ7qNrVmsUvyWOyRVrIZJ9bRtrqzAH_vdKeALAMEcBQal12jvxsj-FM_fRvBlm7yL7hMkAvgUkuFjPwsq08Z-xFax2hsza8RytaRodXlzdE_zK7nsX_lQ5cG-vop9487DCsTeVQk4Ao6ydB2EFgVwwUS1oB-ZZUVM9Z6aH3GqiTDqZBWSlIyPVi6OZ2K1ZxMBd20zyESLKt-ow3gHxbkfWqJOxnVN_8TuPB09vAZmKx3ePgb9rLuvYxC8MHxNEzI6qijgdm91KFBbtiRZ74FCSQ0UfEKFEkYk.1440707626795.86400000.4CbA03f8ZjlKOL23u4T0NqxRFizuispFdFit12D2B4s; Path=/
 
 
 {"name":"","method":"GET","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/"}
@@ -30,16 +30,12 @@ Session Cookie: session=LYf0VrnW-893yiI9dig5gA.-1O94tDv_hRErVIwh62tW9v9dN45ZayU_
 500 TypeError: Cannot read property &#39;path&#39; of undefined<br> &nbsp; &nbsp;at Object.proxyUpload (c:\Users\creighta\workspace\sandbox\support\server\3dr_proxy.js:187:32)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1907:18<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
 
 
-{"name":"copyinstance","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/copyinstance"}
-200 _adl_sandbox_JB85B6IUIzucgip5_
-
-
 {"name":"createprofile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createprofile"}
 500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at validateUsername (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:424:14)<br> &nbsp; &nbsp;at CreateProfile (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:447:7)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1887:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)
 
 
 {"name":"createstate","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createstate"}
-200 _adl_sandbox_ThpT8fHuyrTqgDR2_
+200 _adl_sandbox_d3L3HH41eM43WyHN_
 
 
 {"name":"datafile","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/datafile"}
@@ -53,7 +49,7 @@ Session Cookie: session=LYf0VrnW-893yiI9dig5gA.-1O94tDv_hRErVIwh62tW9v9dN45ZayU_
 200 //Analytics not found
 
 {"name":"globalasset","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
-200 4186d1f4-0093-4414-96ba-ebdd7ecc85ac
+200 332ad18d-feab-486d-bcc2-50912d522cba
 
 
 {"name":"globalasset","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
@@ -99,33 +95,30 @@ Session Cookie: session=LYf0VrnW-893yiI9dig5gA.-1O94tDv_hRErVIwh62tW9v9dN45ZayU_
 
 
 {"name":"publish","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/publish"}
-500 You must be the owner of a world you publish
+500 State ID is incorrect
 
 
 {"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
-500 You must be the owner of a world you publish
+500 State ID is incorrect
 
 
 {"name":"sitelogin","method":"GET","qs":{"UID":"Postman","P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/sitelogin"}
 401 Already Logged in
 
 
-{"name":"sitelogout","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/sitelogout"}
-200 
-
 {"name":"state","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/state"}
-401 Anonymous users cannot delete instances
+500 instance does not exist
 
 
 {"name":"statedata","method":"GET","qs":{"SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
-200 {"objects":3,"owner":"joe","title":"worldMultistep.Test.Title","description":"","lastUpdate":"2015-08-12T17:53:37.412Z","created":"2015-08-07T18:01:37.678Z","publishSettings":{"allowAnonymous":false,"SinglePlayer":false,"camera":null,"createAvatar":true,"allowTools":true,"persistence":true},"updates":72,"userSetThumbnail":true,"children":["_adl_sandbox_jzfyZYS4Vwt9iXh3_","_adl_sandbox_jzfyZYS4Vwt9iXh3_","_adl_sandbox_nTnwFDCAq5zOKh0M_","_adl_sandbox_nTnwFDCAq5zOKh0M_","_adl_sandbox_AN91bJqZY29N7Cbz_","_adl_sandbox_AN91bJqZY29N7Cbz_","_adl_sandbox_XunaYRoAK6heKig0_","_adl_sandbox_XunaYRoAK6heKig0_","_adl_sandbox_XLdkzkaXyV1jP2aO_","_adl_sandbox_XLdkzkaXyV1jP2aO_","_adl_sandbox_2jJVJVTBBXXAsF4L_","_adl_sandbox_2jJVJVTBBXXAsF4L_","_adl_sandbox_Nvnl1bd7rHCx5NPc_","_adl_sandbox_Nvnl1bd7rHCx5NPc_","_adl_sandbox_chPvmzp5RHmtJlPb_","_adl_sandbox_chPvmzp5RHmtJlPb_","_adl_sandbox_qZPBcAVIpMIjD8F5_","_adl_sandbox_qZPBcAVIpMIjD8F5_","_adl_sandbox_ZoHK1lFQYwwsFrVb_","_adl_sandbox_ZoHK1lFQYwwsFrVb_","_adl_sandbox_Qb3rR2R8AG4zkfMi_","_adl_sandbox_Qb3rR2R8AG4zkfMi_","_adl_sandbox_fPSZL6HSljXmz4sJ_","_adl_sandbox_fPSZL6HSljXmz4sJ_","_adl_sandbox_wHtyesciyYAVaMn2_","_adl_sandbox_wHtyesciyYAVaMn2_","_adl_sandbox_4vto99hmIVUcx3Vn_","_adl_sandbox_4vto99hmIVUcx3Vn_","_adl_sandbox_pfVH8fB7PNEhAjEs_","_adl_sandbox_pfVH8fB7PNEhAjEs_","_adl_sandbox_75qTtKV1wND4Xu04_","_adl_sandbox_75qTtKV1wND4Xu04_","_adl_sandbox_V8KhWsJR173VGCyx_","_adl_sandbox_V8KhWsJR173VGCyx_","_adl_sandbox_eH0TwDwQ91bkKWCD_","_adl_sandbox_eH0TwDwQ91bkKWCD_","_adl_sandbox_Hdl0sZDKq9G5VCnh_","_adl_sandbox_Hdl0sZDKq9G5VCnh_","_adl_sandbox_pODO4LnpHtkWSdYr_","_adl_sandbox_pODO4LnpHtkWSdYr_","_adl_sandbox_bdVuedWOUsYOSLai_","_adl_sandbox_bdVuedWOUsYOSLai_","_adl_sandbox_QSvX0d8hDMisYfMw_","_adl_sandbox_QSvX0d8hDMisYfMw_","_adl_sandbox_Ajg5zgF6SvMiAhEx_","_adl_sandbox_Ajg5zgF6SvMiAhEx_","_adl_sandbox_4FaGniwQQPr9v0N2_","_adl_sandbox_4FaGniwQQPr9v0N2_","_adl_sandbox_VDcnJ6sJ1nez1b8G_","_adl_sandbox_VDcnJ6sJ1nez1b8G_","_adl_sandbox_PDazIZiaIFGY5S6J_","_adl_sandbox_PDazIZiaIFGY5S6J_","_adl_sandbox_GYMdPfNhMhxbLj1E_","_adl_sandbox_GYMdPfNhMhxbLj1E_","_adl_sandbox_6TT7vY9T0uGUZBaV_","_adl_sandbox_6TT7vY9T0uGUZBaV_","_adl_sandbox_a8cEYvL5mAHIqdxP_","_adl_sandbox_a8cEYvL5mAHIqdxP_","_adl_sandbox_tU0ocrvjNwqs0M3T_","_adl_sandbox_tU0ocrvjNwqs0M3T_","_adl_sandbox_smNb6TLna3dUbjDZ_","_adl_sandbox_smNb6TLna3dUbjDZ_","_adl_sandbox_KerrwV3JM2lp8xU2_","_adl_sandbox_KerrwV3JM2lp8xU2_","_adl_sandbox_79zArmuTlLBzVhFb_","_adl_sandbox_79zArmuTlLBzVhFb_","_adl_sandbox_od4uAm95hQRUGasG_","_adl_sandbox_od4uAm95hQRUGasG_","_adl_sandbox_JB85B6IUIzucgip5_","_adl_sandbox_JB85B6IUIzucgip5_"]}
+200 {"title":"","description":"","isExample":true,"publishSettings":{"allowAnonymous":true,"persistence":false,"allowTools":true,"createAvatar":true,"singlePlayer":true}}
 
 {"name":"statedata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
-401 Anonymous users cannot edit instances
+401 State not found. State _adl_sandbox_L8BnGGj85ZHAmsy1_
 
 
 {"name":"stateslist","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/stateslist"}
-200 [{"file":"state","time":"2015-08-12T15:31:16.000Z"},{"file":"statebackup1ba12a74-f1de-4df2-a0f7-e7622e06d1db","time":"2015-08-10T21:11:50.000Z"},{"file":"thumbnail.png","time":"2015-08-12T17:53:23.000Z"},{"file":"statebackup2cbe72c6-5d92-4bd4-ab83-1f8f8e0d1aa7","time":"2015-08-12T15:29:22.000Z"},{"file":"statebackup1d9e19fb-1f73-4fc0-82e5-36baf71630d3","time":"2015-08-12T13:06:28.000Z"},{"file":"statebackup507206be-6483-473f-a540-8989a527df9b","time":"2015-08-12T15:30:22.000Z"}]
+200 [{"file":"state","time":"2015-08-12T15:31:16.000Z"},{"file":"statebackup1ba12a74-f1de-4df2-a0f7-e7622e06d1db","time":"2015-08-10T21:11:50.000Z"},{"file":"statebackup1d9e19fb-1f73-4fc0-82e5-36baf71630d3","time":"2015-08-12T13:06:28.000Z"},{"file":"thumbnail.png","time":"2015-08-12T17:53:23.000Z"},{"file":"statebackup507206be-6483-473f-a540-8989a527df9b","time":"2015-08-12T15:30:22.000Z"},{"file":"statebackup2cbe72c6-5d92-4bd4-ab83-1f8f8e0d1aa7","time":"2015-08-12T15:29:22.000Z"}]
 
 
 {"name":"texture","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texture"}
@@ -137,11 +130,11 @@ Session Cookie: session=LYf0VrnW-893yiI9dig5gA.-1O94tDv_hRErVIwh62tW9v9dN45ZayU_
 
 
 {"name":"thumbnail","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/thumbnail"}
-401 Anonymous users cannot delete instances
+500 TypeError: Cannot call method &#39;replace&#39; of undefined<br> &nbsp; &nbsp;at SaveThumbnail (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:928:24)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1857:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
 
 
 {"name":"updatepassword","method":"GET","qs":{"P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/updatepassword"}
-401 no login data saving profile
+200 
 
 
 {"name":"uploadtemp","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/uploadtemp"}
@@ -149,4 +142,4 @@ Session Cookie: session=LYf0VrnW-893yiI9dig5gA.-1O94tDv_hRErVIwh62tW9v9dN45ZayU_
 
 
 
-session=LYf0VrnW-893yiI9dig5gA.-1O94tDv_hRErVIwh62tW9v9dN45ZayU_qdioZjZm9GGGJQ24Y49wsFH1EZT1waldvcSN1Ve4Jvtmor7ciM-95GcX54hqjLnLMVx4eFYvJAWWRIhnynM_Qz7-JW0bugVPi5qrDgeUTJ4XrdZtjGSttnm0nr7aYhYq5hT1q5GFe1OnOKl_MqiPUJ2jTh0KWYp4EOkOc5M2yZk4_nyAbo25I64VdFYFO72IvhWkAuf-v3o5bbU0h4U2eKYULys1btLv5CDocXLumiD-z0dGboX8Xs3YFgfEegkjpCCsKQ3R66BqSfc4EZ85Nm7N_hQluBS_bRC8uULYh12czgIX2IHfl03tf5NN3f_oSTNjnfmMz9CoRkTXfdqCeb2OI3kqw46pijK6Reut3-87T-kFhAVUP1ZAs2FFpr8ZnMQd_sZWOc.1440627538629.86400000.VVzMP1Ji2X7M0DdDqaZ54I9gmmHilhSOBFcE3L0Gjzs; Path=/Curiouser and curiouser
+session=I5nnGN-GsfRohVBt1dih0g.Artg7glapPw2RxG6-unKUTQR2JLL0d8Ij6r5rMy7wz5pp-tbXBWyl10cokSfW60avf-CTS6vLchSVzDE8z5F6KjRrEDLE5X0prk7lZVWYORwv8vtDkPraEU4JdvE4ZDAM4Ox3ERhkFYZ7qNrVmsUvyWOyRVrIZJ9bRtrqzAH_vdKeALAMEcBQal12jvxsj-FM_fRvBlm7yL7hMkAvgUkuFjPwsq08Z-xFax2hsza8RytaRodXlzdE_zK7nsX_lQ5cG-vop9487DCsTeVQk4Ao6ydB2EFgVwwUS1oB-ZZUVM9Z6aH3GqiTDqZBWSlIyPVi6OZ2K1ZxMBd20zyESLKt-ow3gHxbkfWqJOxnVN_8TuPB09vAZmKx3ePgb9rLuvYxC8MHxNEzI6qijgdm91KFBbtiRZ74FCSQ0UfEKFEkYk.1440707626795.86400000.4CbA03f8ZjlKOL23u4T0NqxRFizuispFdFit12D2B4s; Path=/Curiouser and curiouser
