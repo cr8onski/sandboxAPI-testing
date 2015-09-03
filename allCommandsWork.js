@@ -168,14 +168,16 @@ var commands = [
 		url : root + sandbox + vwf + 'copyinstance',
 	},*/
 	createprofile = {
-		//404 404 not found
+		// 500 user Postman already exists
+		// do I have to be logged out to do this
+		//see also
 		name : 'createprofile',
 		method : 'POST',
 		qs : {	'UID' : UID,
 			'SID' : SID,},
 		form : {
-			username : 'Remy',
-			email : 'remy@mail.com',
+			Username : 'Remy',
+			Email : 'remy@mail.com',
 			password : 'beware333Squirrels',
 			password2 : 'beware333Squirrels',
 			dateofbirth : '01022015',
@@ -544,7 +546,7 @@ var commands = [
 		// 	'SID' : SID,},
 		url : root + sandbox + vwf + 'statedata',
 	},*/
-	statedataG = {
+/*	statedataG = {
 		//works fine with uid and sid in qs
 		//it is our chief crasher when qs is empty
 		//with uid and sid works great
@@ -555,7 +557,7 @@ var commands = [
 			'SID' : SID,
 		},
 		url : root + sandbox + vwf + 'statedata',
-	},
+	},*/
 	statedataP = {
 		//401 Anonymous users cannot edit instances
 		//
@@ -575,7 +577,7 @@ var commands = [
 			'SID' : SID,},
 		url : root + sandbox + vwf + 'statehistory',
 	},*/
-/*	states = {
+	states = {
 		//200 {"_adl_sandbox_..."...}
 		//this one has gotten huge
 		name : 'states',
@@ -583,15 +585,15 @@ var commands = [
 		qs : {	'UID' : UID,
 			'SID' : SID,},
 		url : root + sandbox + vwf + 'states',
-	},*/
-	stateslist = {
+	},
+/*	stateslist = {
 		//200 [{"file"...}]
 		name : 'stateslist',
 		method : 'GET',
 		qs : {	'UID' : UID,
 			'SID' : SID,},
 		url : root + sandbox + vwf + 'stateslist',
-	},
+	},*/
 	texture = {
 		//404 file not found
 		//find some textures
