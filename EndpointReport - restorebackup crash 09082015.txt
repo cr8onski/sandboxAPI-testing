@@ -1,0 +1,201 @@
+Report of Testing SandboxAPI Endpoints on 2015-09-08 19:31:27.
+Requests which produce Server Errors or Crashes.
+
+This is the data from the restorebackup command which produced the crash of the server.  The regular report follows after.
+
+from report:
+restorebackup
+{"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_osMQbVMIYaTWNOd8_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
+Error: read ECONNRESET
+
+from server terminal:
+info: restorebackup Postman 3
+loginData is undefined! { sessionId: '981d9e8d-9f87-4dff-b74d-13d32acc0497',
+  UID: 'Postman',
+  Password: '91e782701a5dbb1446f00d5d488405c24546619c1235b904cc94f6f9c241fc31',
+  loginTime: '2015-09-08T19:31:27.579Z',
+  clients: {},
+  lastUpdate: '2015-09-08T19:31:27.579Z',
+  id: 'Postman',
+  Username: 'Postman' }
+error: uncaughtException: Cannot call method 'replace' of undefined date=Tue Sep
+ 08 2015 15:31:34 GMT-0400 (Eastern Daylight Time), pid=1952, uid=null, gid=null
+, cwd=c:\Users\creighta\workspace\sandbox, execPath=c:\Program Files\nodejs\node
+.exe, version=v0.10.28, argv=[c:\Program Files\nodejs\node.exe, c:\Users\creight
+a\workspace\sandbox\app.js], rss=100491264, heapTotal=84202304, heapUsed=5263283
+2, loadavg=[0, 0, 0], uptime=25244.2282489, trace=[column=16, file=c:\Users\crei
+ghta\workspace\sandbox\support\server\DAL.js, function=sanitizeString, line=34,
+method=null, native=false, column=21, file=c:\Users\creighta\workspace\sandbox\s
+upport\server\DAL.js, function=Object.restoreBackup, line=1624, method=restoreBa
+ckup, native=false, column=8, file=c:\Users\creighta\workspace\sandbox\support\s
+erver\sandboxAPI.js, function=null, line=814, method=null, native=false, column=
+9, file=c:\Users\creighta\workspace\sandbox\support\server\DAL.js, function=null
+, line=499, method=null, native=false, column=25, file=c:\Users\creighta\workspa
+ce\sandbox\support\server\DB_nedb.js, function=null, line=28, method=null, nativ
+e=false, column=17, file=c:\Users\creighta\workspace\sandbox\node_modules\nedb\l
+ib\executor.js, function=callback, line=30, method=null, native=false, column=12
+, file=c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\datastore.js, f
+unction=Cursor.execFn, line=415, method=execFn, native=false, column=17, file=c:
+\Users\creighta\workspace\sandbox\node_modules\nedb\lib\cursor.js, function=Curs
+or._exec, line=172, method=_exec, native=false, column=13, file=c:\Users\creight
+a\workspace\sandbox\node_modules\nedb\lib\executor.js, function=null, line=40, m
+ethod=null, native=false, column=21, file=c:\Users\creighta\workspace\sandbox\no
+de_modules\async\lib\async.js, function=Object.q.process [as _onImmediate], line
+=731, method=q.process [as _onImmediate], native=false], stack=[TypeError: Canno
+t call method 'replace' of undefined,     at sanitizeString (c:\Users\creighta\w
+orkspace\sandbox\support\server\DAL.js:34:16),     at Object.restoreBackup (c:\U
+sers\creighta\workspace\sandbox\support\server\DAL.js:1624:21),     at c:\Users\
+creighta\workspace\sandbox\support\server\sandboxAPI.js:814:8,     at c:\Users\c
+reighta\workspace\sandbox\support\server\DAL.js:499:9,     at c:\Users\creighta\
+workspace\sandbox\support\server\DB_nedb.js:28:25,     at callback (c:\Users\cre
+ighta\workspace\sandbox\node_modules\nedb\lib\executor.js:30:17),     at Cursor.
+execFn (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\datastore.js:4
+15:12),     at Cursor._exec (c:\Users\creighta\workspace\sandbox\node_modules\ne
+db\lib\cursor.js:172:17),     at c:\Users\creighta\workspace\sandbox\node_module
+s\nedb\lib\executor.js:40:13,     at Object.q.process [as _onImmediate] (c:\User
+s\creighta\workspace\sandbox\node_modules\async\lib\async.js:731:21)]
+error:
+error: TypeError: Cannot call method 'replace' of undefined
+    at sanitizeString (c:\Users\creighta\workspace\sandbox\support\server\DAL.js
+:34:16)
+    at Object.restoreBackup (c:\Users\creighta\workspace\sandbox\support\server\
+DAL.js:1624:21)
+    at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:814:8
+    at c:\Users\creighta\workspace\sandbox\support\server\DAL.js:499:9
+    at c:\Users\creighta\workspace\sandbox\support\server\DB_nedb.js:28:25
+    at callback (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\execu
+tor.js:30:17)
+    at Cursor.execFn (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\
+datastore.js:415:12)
+    at Cursor._exec (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\c
+ursor.js:172:17)
+    at c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\executor.js:40:
+13
+    at Object.q.process [as _onImmediate] (c:\Users\creighta\workspace\sandbox\n
+ode_modules\async\lib\async.js:731:21)
+warn: email system not configured
+
+
+
+
+
+
+regular report:
+
+3drupload
+{"name":"3drupload","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drupload"}
+500 TypeError: Cannot read property &#39;path&#39; of undefined<br> &nbsp; &nbsp;at Object.proxyUpload (c:\Users\creighta\workspace\sandbox\support\server\3dr_proxy.js:187:32)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1907:18<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+
+
+createprofile
+{"name":"createprofile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{"Username":"Remy","Email":"remy@mail.com","password":"beware333Squirrels","password2":"beware333Squirrels","dateofbirth":"01022015","sex":"male","relationshipstatus":"none","fullname":"Remy 'Dude' Creighton","location":"Orlando FL","homepage":"remy.com","employer":"no need"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createprofile"}
+500 user Postman already exists
+
+
+globalasset
+{"name":"globalasset","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
+500 no AID in query string
+
+
+globalassetassetdata
+{"name":"globalassetassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetassetdata"}
+500 no AID in query string
+
+
+globalassetmetadata
+{"name":"globalassetmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetmetadata"}
+500 no AID in query string
+
+
+inventoryitemmetadata
+{"name":"inventoryitemmetadata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
+500 no AID in query string
+
+
+publish
+{"name":"publish","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/publish"}
+500 State ID is incorrect
+
+
+restorebackup
+{"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_osMQbVMIYaTWNOd8_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
+Error: read ECONNRESET
+
+info: restorebackup Postman 3
+loginData is undefined! { sessionId: '981d9e8d-9f87-4dff-b74d-13d32acc0497',
+  UID: 'Postman',
+  Password: '91e782701a5dbb1446f00d5d488405c24546619c1235b904cc94f6f9c241fc31',
+  loginTime: '2015-09-08T19:31:27.579Z',
+  clients: {},
+  lastUpdate: '2015-09-08T19:31:27.579Z',
+  id: 'Postman',
+  Username: 'Postman' }
+error: uncaughtException: Cannot call method 'replace' of undefined date=Tue Sep
+ 08 2015 15:31:34 GMT-0400 (Eastern Daylight Time), pid=1952, uid=null, gid=null
+, cwd=c:\Users\creighta\workspace\sandbox, execPath=c:\Program Files\nodejs\node
+.exe, version=v0.10.28, argv=[c:\Program Files\nodejs\node.exe, c:\Users\creight
+a\workspace\sandbox\app.js], rss=100491264, heapTotal=84202304, heapUsed=5263283
+2, loadavg=[0, 0, 0], uptime=25244.2282489, trace=[column=16, file=c:\Users\crei
+ghta\workspace\sandbox\support\server\DAL.js, function=sanitizeString, line=34,
+method=null, native=false, column=21, file=c:\Users\creighta\workspace\sandbox\s
+upport\server\DAL.js, function=Object.restoreBackup, line=1624, method=restoreBa
+ckup, native=false, column=8, file=c:\Users\creighta\workspace\sandbox\support\s
+erver\sandboxAPI.js, function=null, line=814, method=null, native=false, column=
+9, file=c:\Users\creighta\workspace\sandbox\support\server\DAL.js, function=null
+, line=499, method=null, native=false, column=25, file=c:\Users\creighta\workspa
+ce\sandbox\support\server\DB_nedb.js, function=null, line=28, method=null, nativ
+e=false, column=17, file=c:\Users\creighta\workspace\sandbox\node_modules\nedb\l
+ib\executor.js, function=callback, line=30, method=null, native=false, column=12
+, file=c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\datastore.js, f
+unction=Cursor.execFn, line=415, method=execFn, native=false, column=17, file=c:
+\Users\creighta\workspace\sandbox\node_modules\nedb\lib\cursor.js, function=Curs
+or._exec, line=172, method=_exec, native=false, column=13, file=c:\Users\creight
+a\workspace\sandbox\node_modules\nedb\lib\executor.js, function=null, line=40, m
+ethod=null, native=false, column=21, file=c:\Users\creighta\workspace\sandbox\no
+de_modules\async\lib\async.js, function=Object.q.process [as _onImmediate], line
+=731, method=q.process [as _onImmediate], native=false], stack=[TypeError: Canno
+t call method 'replace' of undefined,     at sanitizeString (c:\Users\creighta\w
+orkspace\sandbox\support\server\DAL.js:34:16),     at Object.restoreBackup (c:\U
+sers\creighta\workspace\sandbox\support\server\DAL.js:1624:21),     at c:\Users\
+creighta\workspace\sandbox\support\server\sandboxAPI.js:814:8,     at c:\Users\c
+reighta\workspace\sandbox\support\server\DAL.js:499:9,     at c:\Users\creighta\
+workspace\sandbox\support\server\DB_nedb.js:28:25,     at callback (c:\Users\cre
+ighta\workspace\sandbox\node_modules\nedb\lib\executor.js:30:17),     at Cursor.
+execFn (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\datastore.js:4
+15:12),     at Cursor._exec (c:\Users\creighta\workspace\sandbox\node_modules\ne
+db\lib\cursor.js:172:17),     at c:\Users\creighta\workspace\sandbox\node_module
+s\nedb\lib\executor.js:40:13,     at Object.q.process [as _onImmediate] (c:\User
+s\creighta\workspace\sandbox\node_modules\async\lib\async.js:731:21)]
+error:
+error: TypeError: Cannot call method 'replace' of undefined
+    at sanitizeString (c:\Users\creighta\workspace\sandbox\support\server\DAL.js
+:34:16)
+    at Object.restoreBackup (c:\Users\creighta\workspace\sandbox\support\server\
+DAL.js:1624:21)
+    at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:814:8
+    at c:\Users\creighta\workspace\sandbox\support\server\DAL.js:499:9
+    at c:\Users\creighta\workspace\sandbox\support\server\DB_nedb.js:28:25
+    at callback (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\execu
+tor.js:30:17)
+    at Cursor.execFn (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\
+datastore.js:415:12)
+    at Cursor._exec (c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\c
+ursor.js:172:17)
+    at c:\Users\creighta\workspace\sandbox\node_modules\nedb\lib\executor.js:40:
+13
+    at Object.q.process [as _onImmediate] (c:\Users\creighta\workspace\sandbox\n
+ode_modules\async\lib\async.js:731:21)
+warn: email system not configured
+
+
+sitelogin
+{"name":"sitelogin","method":"GET","qs":{"UID":"Postman","P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/sitelogin"}
+Error: connect ECONNREFUSED
+
+texture
+{"name":"texture","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texture"}
+Error: connect ECONNREFUSED
+
+texturethumbnail
+{"name":"texturethumbnail","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texturethumbnail"}
+Error: connect ECONNREFUSED
