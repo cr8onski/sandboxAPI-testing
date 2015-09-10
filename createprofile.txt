@@ -1,29 +1,15 @@
-Profiles before: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble"]
+Profiles before: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon"]
 
 500 text/plain
-user Bumble already exists
+user Yukon already exists
 
 
-Profiles after: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble"]
+Profiles after: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon"]
 
 
 {"Username":"Bumble","Email":"remy@mail.com","Password2":"beware333Squirrels","dateofbirth":"01022015","sex":"male","relationshipstatus":"none","fullname":"Remy 'Dude' Creighton","location":"Orlando FL","homepage":"remy.com","employer":"no need","inventoryKey":"9caf5cc5-81de-4d3e-935a-1d3d1ad7ab4a","id":"Bumble"}
 
 
 
-{
-    "name": "profile",
-    "method": "DELETE",
-    "qs": {
-        "UID": "Bumble",
-        "SID": "_adl_sandbox_L8BnGGj85ZHAmsy1_"
-    },
-    "form": {},
-    "url": "http://localhost:3000/sandbox/adl/vwfdatamanager.svc/profile"
-}
-
-
-
-
-Profiles after: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble"]
+Profiles after: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon"]
 

@@ -1,15 +1,10 @@
-Report of Testing SandboxAPI Endpoints on 2015-08-27 20:33:46.
+Report of Testing SandboxAPI Endpoints on 2015-09-10 21:09:17.
 Requests which produce Server Errors or Crashes.
 
 
 3drupload
 {"name":"3drupload","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drupload"}
 500 TypeError: Cannot read property &#39;path&#39; of undefined<br> &nbsp; &nbsp;at Object.proxyUpload (c:\Users\creighta\workspace\sandbox\support\server\3dr_proxy.js:187:32)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1907:18<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
-
-
-createprofile
-{"name":"createprofile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createprofile"}
-500 TypeError: Cannot read property &#39;length&#39; of undefined<br> &nbsp; &nbsp;at validateUsername (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:424:14)<br> &nbsp; &nbsp;at CreateProfile (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:447:7)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1887:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)
 
 
 globalasset
@@ -32,22 +27,7 @@ inventoryitemmetadata
 500 no AID in query string
 
 
-publish
-{"name":"publish","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/publish"}
-500 State ID is incorrect
-
-
 restorebackup
-{"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
-500 State ID is incorrect
-
-
-state
-{"name":"state","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/state"}
-500 instance does not exist
-
-
-thumbnail
-{"name":"thumbnail","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/thumbnail"}
-500 TypeError: Cannot call method &#39;replace&#39; of undefined<br> &nbsp; &nbsp;at SaveThumbnail (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:928:24)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1857:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1492:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
+{"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_osMQbVMIYaTWNOd8_","statename":"statebackup1d9e19fb-1f73-4fc0-82e5-36baf71630d3","backup":"statebackup1ba12a74-f1de-4df2-a0f7-e7622e06d1db"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
+500 Unable to restore backup
 

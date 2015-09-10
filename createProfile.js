@@ -45,7 +45,7 @@ var command = {
     //must have a nonempty UID in qs
     name : 'createprofile',
     method : 'POST',
-    qs : {	'UID' : 'Fluffy',
+    qs : {	'UID' : 'Fluffbutton',
         'SID' : SID,},
     form : {
         // Username : 'Remy',
@@ -60,6 +60,7 @@ var command = {
         location : 'Orlando FL',
         homepage : 'remy.com',
         employer : 'no need',
+		badField : 'bad data',
     },
     url : root + sandbox + vwf + 'createprofile',
 },

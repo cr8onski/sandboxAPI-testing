@@ -49,7 +49,7 @@ var command = {
     //must have a nonempty UID in qs
     name : 'createprofile',
     method : 'POST',
-    qs : {	'UID' : 'Bumble',
+    qs : {	'UID' : 'Yukon',
         'SID' : SID,},
     form : {
         // Username : 'Remy',
@@ -64,6 +64,7 @@ var command = {
         location : 'Orlando FL',
         homepage : 'remy.com',
         employer : 'no need',
+		badField : 'bad data',
     },
     url : root + sandbox + vwf + 'createprofile',
 },
@@ -88,7 +89,7 @@ async.series([
     createProfile,
     checkProfiles,
     userProfile,
-	delProfile,
+	// delProfile,
 	checkProfiles,
     ],
     function(err, results) {
