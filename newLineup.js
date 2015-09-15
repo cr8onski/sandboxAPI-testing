@@ -10,7 +10,7 @@
    Cookie to hold the valid session cookie (we could try making up garbage here)
    Could also use variables to hold valid profile names, states, and such.
 
-   Run all kinds of scenarios - come back to this
+   Run all kinds of scenarios - looks like there is good call for a pre login, login, with login, and post login.  Separate the commands in logical order to create, verify, use, then delete to keep things clean and tidy and not end up with 1000 users and worlds.
 */
 
 // console.log('Howdy!');//intro - we're working
@@ -985,5 +985,6 @@ console.log('Winni');
 console.log('pesaukee');
 }	//runEmAll
 
+//Here is the command that starts it all
 reqSalt();
 // console.log('who loves synchrony');

@@ -1,0 +1,36 @@
+Session:  { sessionId: 'bb0a43b3-af8a-4211-9557-aeb5635c6aeb',
+  UID: 'joe',
+  Password: 'ccec713572ad6c305a553802fc77689d32d22698bf88ffc7469d4350702cb218',
+  loginTime: '2015-09-15T15:51:02.343Z',
+  clients: {},
+  lastUpdate: '2015-09-15T15:51:02.343Z',
+  id: 'joe',
+  Username: 'joe' }
+info: error joe 3
+error: {
+    "user": "joe",
+    "sesssion": "/adl/sandbox/U3cqCR1lnJzuX4Lx/",
+    "time": "2015-09-15T16:08:46.247Z",
+    "message": "Uncaught ReferenceError: clearCameraModeIcons is not defined",
+    "source": "http://localhost:3000/adl/sandbox/vwf/view/editorview/UserManager
+.js",
+    "line": 247,
+    "stack": "ReferenceError: clearCameraModeIcons is not defined\n
+        at Object.createdNode
+            (http://localhost:3000/adl/sandbox/vwf/view/editorview/UserManager.
+             js:247:25)\n
+        at Object.view.load.viewAPINotify
+            (http://localhost:3000/adl/sandbox/vwf/view/EditorView.js:206:43)\n
+        at Object.view.load.createdNode
+            (http://localhost:3000/adl/sandbox/vwf/view/EditorView.js:212:18)\n
+        at http://localhost:3000/adl/sandbox/vwf.js:2657:42\n
+        at http://localhost:3000/adl/sandbox/U3cqCR1lnJzuX4Lx/async.js:108:13\n
+        at Array.forEach (native)\n
+        at _each
+            (http://localhost:3000/adl/sandbox/U3cqCR1lnJzuX4Lx/async.js:32:24)
+        at Object.async.each
+            (http://localhost:3000/adl/sandbox/U3cqCR1lnJzuX4Lx/async.js:107:9)
+        at http://localhost:3000/adl/sandbox/vwf.js:2653:19\n
+        at http://localhost:3000/adl/sandbox/U3cqCR1lnJzuX4Lx/async.js:548:21",
+    "column": 25
+}
