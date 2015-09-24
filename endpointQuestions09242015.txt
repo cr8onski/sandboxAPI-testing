@@ -1,0 +1,35 @@
+Endpoint Questions
+
+1. 3dr - leave these command alone - I heard there is corruption in that area
+
+2. datafile - where and how
+
+3. getanalytics.js - what?
+
+4. geteditorcss/libraary - should it reference readthedocs? master vs development? geteditorcss works fine, library I can't fig out
+
+5. globalitemitemdata - i get {}, how can I get something inside?
+
+6. logout - not logged into ..., how can I log into something to logout of it? also sitelogin and sitelogout? and sitelogin - getting hung up on check password
+
+7. profileD - 200, but profile still exists
+
+8. publish - get ok, but setting do not change for the world
+
+9. need help with restorebackup
+
+10. statedataG - emptystring "" and null return statedataG, undefined or no SID crashes
+
+11. statedataP - get 200 Created state "SID", but nothing changes nor is created, with valid current or new unique sid.  
+
+12. updatepassword - 200 and password is reset - I should pay more attention - I lost what the password was reset to and forgot password was no help either, the new password did not work for me
+
+13. uploadtemp - 404 Not Found - is the response even though the tempfile is created at ../Sandbox/tepmupload
+
+{"name":"statedata","method":"GET","qs":{"SID":"_adl_sandbox_NOGEv5q7kmL6VSN4_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
+200 {"objects":24,"owner":"Postman","lastUpdate":"2015-09-09T13:23:02.343Z","created":"2015-08-24T19:24:56.883Z","publishSettings":{"singlePlayer":"true","camera":"","allowAnonymous":"true","createAvatar":"true","allowTools":"true","persistence":"true","SinglePlayer":false},"updates":12,"userSetThumbnail":true}
+
+{"objects":3,"owner":"Postman","lastUpdate":"2015-09-24T14:09:07.247Z","created":"2015-08-25T15:15:19.012Z","updates":72,"userSetThumbnail":true,"featured":false,"clonedFrom":"_adl_sandbox_L8BnGGj85ZHAmsy1_","publishSettings":{"allowAnonymous":false,"SinglePlayer":false,"camera":null,"createAvatar":true,"allowTools":true,"persistence":true}}
+
+{"name":"statedata","method":"GET","qs":{"SID":"_adl_sandbox_xReWilVZ1l0wfL2U_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
+200 {"objects":0,"owner":"Postman","lastUpdate":"2015-09-14T19:59:26.043Z","created":"2015-09-14T19:59:26.044Z","publishSettings":{"allowAnonymous":false,"SinglePlayer":false,"camera":null,"createAvatar":true,"allowTools":true,"persistence":true}}

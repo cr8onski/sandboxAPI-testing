@@ -1,6 +1,6 @@
 //Begin Sandbox/public/adl/sandbox/views/login.html
 
-<script type="text/javascript">
+//<script type="text/javascript">
 	var EncryptPassword = function (password, username,salt)
 	{
 
@@ -65,7 +65,7 @@
 		},false);
 		xhr.send(formData);
 	};
-</script>
+/*</script>
 <div id="content" class="row" style="margin:10px auto;float:none;text-align:center;">
 	<div class="col-md-5" style="margin:10px auto;float:none;text-align:center;">
 		<form data-bind="submit:handleLoginButton" >
@@ -96,21 +96,21 @@
 		<a href='signup' class='' style=""  value="" >{{#translate}}Sign Up Now »{{/translate}}</a><span style="margin-left:3em" />
 		<a href='forgotPassword' class='' style=""  value="" >{{#translate}}Forgot your password?{{/translate}}</a>
 	</div>
-</div>
+</div>*/
 
 //End Sandbox/public/adl/sandbox/views/login.html
 
 
 
 //Begin login1.html
-
+/*
 <!Doctype html>
 <html lang="en">
     <head>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha256-min.js"></script>
-        <script>
+        <script>*/
             // added this because the handleLoginButton was looking for the root variable, which
             // was in another file .. in js/model.js
             // had to add https://sandbox.adlnet.gov/ because i was running from localhost
@@ -176,24 +176,24 @@
 
 			handleLoginButton('Postman', 'Postman123')
 
-        </script>
+/*        </script>
     </head>
     <body>
     </body>
-</html>
+</html>*/
 
 //End login1.html
 
 
 
 //Begin endpoints.html
-
+/*
 <!Doctype html>
 <html lang="en">
 
 <head>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script>
+    <script>*/
         var root = "https://sandbox.adlnet.gov/100/adl/sandbox/",
             lroot = "localhost:3000/adl/sandbox/",
             sapi = "vwfdatamanager.svc/",
@@ -230,7 +230,7 @@
             // 			ajaxGet(root + sapi + 'profiles');
             // that should spit out {"version":....}
         ajaxGet("https://lrs.adlnet.gov/xapi/about");
-    </script>
+/*    </script>
 </head>
 
 <body>
@@ -238,5 +238,5 @@
     <-- funny yeah it 's fine.. i retyped what i was trying to type oh i get what you meant now, i'm tricksy like that </body>
 
 </html>
-
+*/
 //End endpoints.html

@@ -1,4 +1,4 @@
-<script type="text/javascript">
+//<script type="text/javascript">
 var EncryptPassword = function (password, username,salt)
 {
 

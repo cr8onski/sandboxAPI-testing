@@ -43,26 +43,44 @@ var command = {
     // do I have to be logged out to do this
     //see also createprofile.txt
     //must have a nonempty UID in qs
-    name : 'createprofile',
-    method : 'POST',
-    qs : {	'UID' : 'Fluffbutton',
-        'SID' : SID,},
-    form : {
-        // Username : 'Remy',
-        Username : 'Fluffbutton',
-        Email : 'remy@mail.com',
-        Password : 'beware333Squirrels',
-        Password2 : 'beware333Squirrels',
-        dateofbirth : '01022015',
-        sex : 'male',
-        relationshipstatus: 'none',
-        fullname : "Remy 'Dude' Creighton",
-        location : 'Orlando FL',
-        homepage : 'remy.com',
-        employer : 'no need',
-		badField : 'bad data',
-    },
-    url : root + sandbox + vwf + 'createprofile',
+    // name : 'createprofile',
+    // method : 'POST',
+    // qs : {
+	// 	'UID' : 'Fred',
+    //     // 'SID' : SID,
+	// },
+    // form : {
+    //     // Username : 'Remy',
+    //     Username : 'Frodo',
+    //     Email : 'remy@mail.com',
+    //     Password : 'beware333Squirrels',
+    //     Password2 : 'beware333Squirrels',
+    //     dateofbirth : '01022015',
+    //     sex : 'male',
+    //     relationshipstatus: 'none',
+    //     fullname : "Frodo Tikki Tavi",
+    //     location : 'Orlando FL',
+    //     homepage : 'remy.com',
+    //     employer : 'no need',
+	// 	badField : 'bad data',
+    // },
+    // url : root + sandbox + vwf + 'createprofile',
+
+//Testing commands without loggin in - go ahead and delete and uncomment the above to restore to original working condition
+name : 'uploadtemp',
+method : 'POST',
+// qs : {
+// 	'UID' : UID,
+// 	'SID' : SID,
+// },
+form : {
+	something : "Here is a great big long string and story about nothing, although the title says that it is something.",
+	rabbitSeason : 'duckSeason',
+	note : "This will post into tempupload however the response from the server will still be - uploadtemp 404 Not Found.  This seems like an incorrect or misleading response.",
+	here : "Andy C was here 09-24-2015",
+},
+url : root + sandbox + vwf + 'uploadtemp',
+
 },
     profiles = {
         name : 'profiles',

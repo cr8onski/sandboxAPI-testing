@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>SandboxAPI Endpoint Testing</title>
+</head>
+<body>
+    <h1>SandboxAPI Endpoint Testing</h1>
+    <h2>Welcome. Let's choose an endpoint to test.</h2>
+    <form name="endpointTestingForm" action="sandboxAPIEndpointTesting.js" onsubmit="validateForm()" method="post">
+        Name: <input type="text" name="fname" />
+        <br />
+        Get Methods: <select id="getEndpoint">
+            <option value="none">None</option>
+<!--            <option value="drdownload">3dr Download</option>
+            <option value="drmetadata">3dr Metadata</option>
+            <option value="drpermission">3dr Permission</option>
+            <option value="drsearch">3dr Search</option>
+            <option value="drtexture">3dr Texture</option>
+            <option value="drthumbnail">3dr Thumbnail</option>  -->
+            <option value="apppath">App Path</option>
+            <option value="cameras">Cameras</option>
+            <option value="copyinstance">Copy Instance</option>
+            <option value="datafile">Data File</option>
+            <option value="docdir">Doc Dir</option>
+        </select>
+        Post Methods: <select id="postEndpoint">
+            <option value="none">None</option>
+<!--            <option value="drupload">3dr Upload</option>    -->
+            <option value="createprofile">Create Profile</option>
+            <option value="createstate">Create State</option>
+            <option value="error">Error</option>
+        </select>
+        Delete Methods: <select id="deleteEndpoint">
+            <option value="none">None</option>
+            <option value="globalasset">Global Asset</option>
+        </select>
+        <br />
+        <br />
+        <input type="submit" value="Test This Endpoint" />
+    </form>
+</body>
+</html>

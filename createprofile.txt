@@ -1,15 +1,6 @@
-Profiles before: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon"]
+Profiles before: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon","Bubba","Rikki","Billi","Gimli","Fred"]
 
-500 text/plain
-user Yukon already exists
-
-
-Profiles after: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon"]
+200 text/plain
 
 
-{"Username":"Bumble","Email":"remy@mail.com","Password2":"beware333Squirrels","dateofbirth":"01022015","sex":"male","relationshipstatus":"none","fullname":"Remy 'Dude' Creighton","location":"Orlando FL","homepage":"remy.com","employer":"no need","inventoryKey":"9caf5cc5-81de-4d3e-935a-1d3d1ad7ab4a","id":"Bumble"}
-
-
-
-Profiles after: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon"]
-
+Profiles after: ["___Global___","joe","N4151f242","N8343485f","Postman","Remy","Fluffy","Bumble","Fluffbutton","Yukon","Bubba","Rikki","Billi","Gimli","Fred"]

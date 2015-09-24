@@ -26,10 +26,12 @@ var vwf = 'vwfdatamanager.svc/';
 var auth = 'auth/local/';
 //Command help
 var sid = '?SID=_adl_sandbox_L8BnGGj85ZHAmsy1_';
-var UID = 'Postman';
-var pword = 'Postman123';
+// var UID = 'Postman';
+// var pword = 'Postman123';
+var UID = 'joe';
+var pword = 'Abc123456';	//"793af97e52c796fdf016c2f242663a8e203b1ff93e14b4c3a1bea4798d081ff0"
 var SID = '_adl_sandbox_L8BnGGj85ZHAmsy1_';
-var salt = "";
+var salt = "";	//"e099584b-b004-d202-f948-6b6eac9da36 "
 var cookie = "";
 var AID;
 
@@ -72,7 +74,7 @@ var commands = [
 		method : 'DELETE',
 		url : root + sandbox + vwf,
 	},*/
-	drdownload = {
+/*	drdownload = {
 		//401
 		name : '3drdownload',
 		method : 'GET',
@@ -92,7 +94,7 @@ var commands = [
 		},
 		url : root + sandbox + vwf + '3drmetadata',
 	},*/
-	drpermission = {
+/*	drpermission = {
 		//401 ""
 		name : '3drpermission',
 		method : 'GET',
@@ -144,24 +146,28 @@ var commands = [
 		},
 		form : {},
 		url : root + sandbox + vwf + '3drupload',
-	},
+	},*/
 /*	apppath = {
 		//this one works as is
+		//login not required, qs not required
+		//returns the path to the application
 		name : 'apppath',
 		method : 'GET',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
+		// qs : {
+		// 	'UID' : UID,
+		// 	'SID' : SID,
+		// },
 		url : root + sandbox + vwf + 'apppath',
 	},*/
 /*	cameras = {
+		//requires login and sid
+		//returns empty array if world contains no added cameras
 		//works as is.  Would like to add a camera to double check
 		// 200 [{"name":"Camera1","id":"SandboxCamera-vwf-N32196c51"}]
 		name : 'cameras',
 		method : 'GET',
 		qs : {
-			'UID' : UID,
+			// 'UID' : UID,
 			//this sid has a camera
 			'SID' : "_adl_sandbox_E8acu9xeKsoaARn7_",
 			// 'SID' : SID,
@@ -174,19 +180,23 @@ var commands = [
 		name : 'copyinstance',
 		method : 'GET',
 		qs : {
-			'UID' : UID,
-			'SID' : SID,
+			// 'UID' : UID,
+			// 'SID' : SID,
+			'SID' : '_adl_sandbox_jzfyZYS4Vwt9iXh3_',
 		},
 		url : root + sandbox + vwf + 'copyinstance',
 	},*/
 /*	createprofile = {
 		// 500 user Postman already exists
-		// do I have to be logged out to do this
+		// do I have to be logged out to do this - yes
 		//see: createProfile.js, createprofile.txt, and createProfileSeries.js
+		//requires UID, and form with Username, Password, and Email
 		name : 'createprofile',
 		method : 'POST',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
 		form : {
 			Username : 'Remy',
 			Email : 'remy@mail.com',
@@ -202,18 +212,21 @@ var commands = [
 		},
 		url : root + sandbox + vwf + 'createprofile',
 	},*/
-	createstate = {
-		//404 404 not found
+/*	createstate = {
+		//401 'text/plain' 'Anonymous users cannot create instances\n'
+		//200 Created state _adl_sandbox_AWtJY9uwVKvInoV4_
+		//must be logged in, no other data is needed
 		name : 'createstate',
 		method : 'POST',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
+		// qs : {
+		// 	// 'UID' : UID,
+		// 	// 'SID' : SID,
+		// },
 		url : root + sandbox + vwf + 'createstate',
-	},
-	datafile = {
+	},*/
+/*	datafile = {
 		//404 file not found
+		//Still not sure of this one
 		name : 'datafile',
 		method : 'GET',
 		qs : {
@@ -221,39 +234,48 @@ var commands = [
 			'SID' : SID,
 		},
 		url : root + sandbox + vwf + 'datafile',
-	},
+	},*/
 /*	docdir = {
 		//works fine as is, find way to suppress or shorten
 		name : 'docdir',
 		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
+		// qs : {	'UID' : UID,
+		// 	'SID' : SID,},
 		url : root + sandbox + vwf + 'docdir',
 	},*/
-	error = {
-		//404 404 not found
+/*	error = {
+		//200
+		//must be logged in
+		//qs and form seems to have no effect
 		name : 'error',
 		method : 'POST',
 		qs : {
 			'UID' : UID,
 			'SID' : SID,
 		},
-		form : {},
+		form : {
+			// msg : 'Does this show up in Error??',
+			msg : '',
+		},
 		url : root + sandbox + vwf + 'error',
-	},
+	},*/
 /*	forgotpassword = {
 		//200
 		//seems to be working just fine, logging in with the old password keeps the old one valid
+		//can use while logged out with a valid UID in qs
+	    //or while logged in with no UID
+	    //or logged in and any valid UID - in this case resets password of valid UID
 		name : 'forgotpassword',
 		method : 'GET',
 		qs : {
-			'UID' : UID,
-			'SID' : SID,
+			// 'UID' : "joe",
+			// 'SID' : SID,
 		},
 		url : root + sandbox + vwf + 'forgotpassword',
 	},*/
-	getanalytics = {
+/*	getanalytics = {
 		//200 //Analytics not found, find analytics
+		//What is an analyticsObj??
 		name : 'getanalytics.js',
 		method : 'GET',
 		qs : {
@@ -261,134 +283,152 @@ var commands = [
 			'SID' : SID,
 		},
 		url : root + sandbox + vwf + 'getanalytics.js',
-	},
+	},*/
 /*	getassets = {
 		//200 and array of assets
+		//with no SID in qs - 500 TypeError - big ugly
+		//with or without login - must have state id
+		//with invalid state id - returns empty array []
 		name : 'getassets',
 		method : 'GET',
 		qs : {
-			'UID' : UID,
+			// 'UID' : UID,
 			'SID' : SID,
+
+			// 'SID' : 'SID',
+			// 'SID' : 'nope',
 		},
 		url : root + sandbox + vwf + 'getassets',
 	},*/
 /*	geteditorcss = {
 		//used to be library, now covers more
 		//beware returns the css apporx 2800 lines
+		//no login or qs needed
 		name : 'geteditorcss',
 		method : 'GET',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
+		// qs : {
+		// 	'UID' : UID,
+		// 	'SID' : SID,
+		// },
 		url : root + sandbox + vwf + 'geteditorcss',
 	},*/
-/*	globalasset = {
-		//404 404 not found
+/*	globalassetP = {
 		// 200 e445fe78-0e58-4383-aba5-6fbe347cf118
 		//UID and SID are not needed
+		//title, type, formdata are optional
 		//must be logged in
 		name : 'globalasset',
 		method : 'POST',
-		qs : {
-			// 'UID' : UID,
-			// 'SID' : SID,
-			title : 'chair',
-			type : 'wooden',
-		},
-		form : {},
+		// qs : {
+		// 	// 'UID' : UID,
+		// 	// 'SID' : SID,
+		// 	title : 'chair',
+		// 	type : 'wooden',
+		// },
+		// form : {
+		// 	foo : 'Nothing here really',
+		// },
 		url : root + sandbox + vwf + 'globalasset',
 	},*/
-/*	globalasset = {
+/*	globalassetD = {
 		//200 ok
 		//with valid active AID in qs
-		// does not need UID or SID, do need to be logged in
-		//with an old AID crashes sandbox
+		//does not need UID or SID, do need to be logged in
+		//no AID handled - 500 no AID in query string
+		//Invalid AID crashes sandbox!!!!!!!!!!!!!!!!!!!
 		name : 'globalasset',
 		method : 'DELETE',
 		qs : {
 			// 'UID' : UID,
 			// 'SID' : SID,
-			'AID' : 'b885457f-33c9-4d4b-99c1-87d4e66aca17',
+			'AID' : 'b6f29f68-8452-4ef3-8e61-993d30b9b445',
 			// title : 'chair',
 			// type : 'wooden',
 		},
-		form : {},
+		// form : {},
 		url : root + sandbox + vwf + 'globalasset',
 	},*/
 /*	globalassetassetdata = {
 		//200 {}
 		//must be logged in and have valid AID
+		//no AID - 500 no AID in query string
+		//want to find a valid AID which produces more than {}
 		name : 'globalassetassetdata',
 		method : 'GET',
 		qs : {
 			// 'UID' : UID,
 			// 'SID' : SID,
+			// 'AID' : 'c2d07f9e-4e4c-4fed-8c19-61a077e59b50'
 			'AID' : '88f3a909-df90-4bdf-a3dc-fc305f381f8e'
+
 		},
 		url : root + sandbox + vwf + 'globalassetassetdata',
 	},*/
 /*	globalassetmetadata = {
 		//200 {"uploader":"Postman","title":"chair","uploaded":"2015-09-14T19:36:58.020Z","description":"","type":"wooden"}
 		//must be logged in and have valid AID
+		//500 no AID in query string
 		name : 'globalassetmetadata',
 		method : 'GET',
 		qs : {
 			// 'UID' : UID,
 			// 'SID' : SID,
-			'AID' : '88f3a909-df90-4bdf-a3dc-fc305f381f8e'
+			// 'AID' : '88f3a909-df90-4bdf-a3dc-fc305f381f8e'
 		},
 		url : root + sandbox + vwf + 'globalassetmetadata',
 	},*/
 /*	globalassets = {
-		//200 []
+		//200 [Array of asset objects]
 		//got plenty now
 		name : 'globalassets',
 		method : 'GET',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
+		// qs : {
+		// 	'UID' : UID,
+		// 	'SID' : SID,
+		// },
 		url : root + sandbox + vwf + 'globalassets',
 	},*/
 /*	inventory = {
-		//200 [], find way to add to inventory and double check
-		//working good now
+		//200 [Array of inventory objects]
 		name : 'inventory',
 		method : 'GET',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
+		// qs : {
+		// 	'UID' : UID,
+		// 	'SID' : SID,
+		// },
 		url : root + sandbox + vwf + 'inventory',
 	},*/
 /*	inventoryitemP = {
 		//200 9ab2d1de-20c3-4c2e-8548-f4e9dfd6960f
 		// looks good to me
+		//qs and form optional
+		//must be logged in
 		name : 'inventoryitem',
 		method : 'POST',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
-		form : {},
+		// qs : {
+		// 	'UID' : UID,
+		// 	'SID' : SID,
+		// },
+		// form : {},
 		url : root + sandbox + vwf + 'inventoryitem',
 	},*/
-	inventoryitemD = {
-		//404 404 not found
+/*	inventoryitemD = {
+		//200 ok
 		//I keep getting 200 ok for the same inventory item AID, not good
+		//does delete if in inventory,
+		//but always returns 200 ok whether anything was deleted or not
+		//500 no AID in query string
 		name : 'inventoryitem',
 		method : 'DELETE',
 		qs : {
-			'UID' : UID,
-			'SID' : SID,
+			// 'UID' : UID,
+			// 'SID' : SID,
 			//let's try this - should only work once
-			'AID' : '9ab2d1de-20c3-4c2e-8548-f4e9dfd6960f',
-			sessionId : 'e536df52-b498-4513-bf48-8e79d51a9b95',
+			'AID' : '8ce7fb6b-5758-4574-8dee-10a7509b5899',
 		},
-		form : {},
+		// form : {},
 		url : root + sandbox + vwf + 'inventoryitem',
-	},
+	},*/
 /*	inventoryitemassetdata = {
 		//200 {}
 		//with AID and logged in
@@ -397,8 +437,7 @@ var commands = [
 		qs : {
 			// 'UID' : UID,
 			// 'SID' : SID,
-			//your very own aid
-			'AID' : '56b634e6-d22d-4510-8809-d5e12fc9abdd'
+			'AID' : 'c259bccb-e016-481d-a870-f0d78f6712d4'
 		},
 		url : root + sandbox + vwf + 'inventoryitemassetdata',
 	},*/
@@ -410,34 +449,39 @@ var commands = [
 		qs : {
 			// 'UID' : UID,
 			// 'SID' : SID,
-			'AID' : '56b634e6-d22d-4510-8809-d5e12fc9abdd'
+			'AID' : '05ee3e67-660c-4cd8-9abc-05bcf7b93ce0'
 		},
 		url : root + sandbox + vwf + 'inventoryitemmetadata',
 	},*/
 /*	inventoryitemmetadataP = {
-		//200 ok - with nothing in form
+		//200 ok
 		//must be logged in and valid AID
+		//without valid AID still 200 ok , but nothing is added
 		name : 'inventoryitemmetadata',
 		method : 'POST',
 		qs : {
 			// 'UID' : UID,
 			// 'SID' : SID,
-			'AID' : '56b634e6-d22d-4510-8809-d5e12fc9abdd'
+			'AID' : '05ee3e67-660c-4cd8-9abc-05bcf7b93ce0'
 		},
 		form : {
 			description : "Mary had a little lamb."
 		},
 		url : root + sandbox + vwf + 'inventoryitemmetadata',
 	},*/
-/*	This command has been replaced with geteditorcss
-	library = {
-		//This command has been removed, see: geteditorcss
+/*	This command has been replaced with geteditorcss in the dev branch
+	library is still active on the master branch
+*/
+/*	library = {
 		//404 404 not found, find the library
-		// I think this now does not exist - see geteditorcss line 1792
 		name : 'library',
 		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
+		qs : {
+			// 'UID' : 'model',
+			// 'UID' : UID,
+			// 'SID' : SID,
+			// path : '/my-entities$/',
+		},
 		url : root + sandbox + vwf + 'library',
 	},*/
 /*	login = {
@@ -456,25 +500,54 @@ var commands = [
 		//keep this active as a test againt good session
 		name : 'logindata',
 		method : 'GET',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
+		// qs : {
+		// 	'UID' : UID,
+		// 	'SID' : SID,
+		// },
 		url : root + sandbox + vwf + 'logindata',
 	},
-	logout = {
+/*	logout = {
 		//200 Client was not Logged into undefined
 		//looks like it takes a state id 'S' and a client id 'CID'
 		//with a good sid for s it sends:
 		//200 Client was not Logged into _adl_sandbox_L8BnGGj85ZHAmsy1_
+		//not logged in - 500 TypeError big ugly
 		name : 'logout',
 		method : 'GET',
 		qs : {
 			'S' : SID,
-			'CID' : UID,
+			// 'CID' : UID,
 		},
 		url : root + sandbox + vwf + 'logout',
-	},
+	},*/
+/*	profileG = {
+		//200 {Object...}
+		name : 'profile',
+		method : 'GET',
+		qs : {
+			// 'UID' : UID,
+			// 'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'profile',
+	},*/
+/*	profileP = {
+		//200 {Object...}
+		//need to have something to POST
+		//also think about arranging to create, post, get, delete and show deleted from profiles in that order
+		//logged out - 500 ReferenceError
+		name : 'profile',
+		method : 'POST',
+		// qs : {
+		// 	'UID' : UID,
+		// 	// 'UID' : 'Name',
+		// 	'SID' : SID,
+		// },
+		form : {
+			'DOB' : "four score and seven years ago",
+			Shoes : "Loafers"
+		},
+		url : root + sandbox + vwf + 'profile',
+	},*/
 /*	profileG = {
 		//200 {Object...}
 		name : 'profile',
@@ -485,43 +558,17 @@ var commands = [
 		},
 		url : root + sandbox + vwf + 'profile',
 	},*/
-	profileP = {
+/*	profileD = {
 		//200 {Object...}
-		//need to have something to POST
-		//also think about arranging to create, post, get, delete and show deleted from profiles in that order
-		name : 'profile',
-		method : 'POST',
-		qs : {
-			'UID' : UID,
-			// 'UID' : 'Name',
-			'SID' : SID,
-		},
-		form : {
-			'DOB' : "january 42, 1944",
-			Socks : "Argyle"
-		},
-		url : root + sandbox + vwf + 'profile',
-	},
-	profileG = {
-		//200 {Object...}
-		name : 'profile',
-		method : 'GET',
-		qs : {
-			'UID' : 'UID',
-			'SID' : SID,
-		},
-		url : root + sandbox + vwf + 'profile',
-	},
-	profileD = {
-		//200 {Object...}
+		//doesn't delete anything
 		name : 'profile',
 		method : 'DELETE',
-		qs : {
-			'UID' : UID,
-			// 'UID' : 'Name',
-			'SID' : SID,
-		},
-		form : {},
+		// qs : {
+		// 	'UID' : UID,
+		// 	// 'UID' : 'Name',
+		// 	'SID' : SID,
+		// },
+		// form : {},
 		url : root + sandbox + vwf + 'profile',
 	},
 	profileG = {
@@ -529,29 +576,29 @@ var commands = [
 		name : 'profile',
 		method : 'GET',
 		qs : {
-			'UID' : 'UID',
+			'UID' : UID,
 			'SID' : SID,
 		},
 		url : root + sandbox + vwf + 'profile',
-	},
-	profiles = {
+	},*/
+/*	profiles = {
 		//200 [Array of profile names]
 		name : 'profiles',
 		method : 'GET',
-		qs : {
-			'UID' : UID,
-			'SID' : SID,
-		},
+		// qs : {
+		// 	'UID' : UID,
+		// 	'SID' : SID,
+		// },
 		url : root + sandbox + vwf + 'profiles',
-	},
+	},*/
 /*	publish = {
-		//404 404 not found
+		//401 Anonymous users cannot copy instances
 		// 500 Settings format incorrect
 		//with good SID and any non null form 200 _adl_sandbox_nTnwFDCAq5zOKh0M_
 		name : 'publish',
 		method : 'POST',
 		qs : {
-			'UID' : UID,
+			// 'UID' : UID,
 			// 'SID' : SID,
 			'SID' : "_adl_sandbox_NOGEv5q7kmL6VSN4_",
 		},
@@ -580,8 +627,8 @@ var commands = [
 			'UID' : UID,
 			// 'SID' : SID,	//500 State ID is incorrect
 			// 'SID' : "_adl_sandbox_MH26teZnwu9BBISj_",	//500 State ID is incorrect
-			'SID' : "_adl_sandbox_osMQbVMIYaTWNOd8_",	//crash!!!!!!
-			statename : "statebackup1d9e19fb-1f73-4fc0-82e5-36baf71630d3",
+			'SID' : "_adl_sandbox_L8BnGGj85ZHAmsy1_",	//crash!!!!!!
+			statename : "state",
 			backup : 'statebackup1ba12a74-f1de-4df2-a0f7-e7622e06d1db',
 		},
 		url : root + sandbox + vwf + 'restorebackup',
@@ -595,17 +642,18 @@ var commands = [
 		url : root + sandbox + vwf + 'salt',
 	},*/
 /*	saspath = {
-		//200
-		//could look into getting something more back
+		//200 /sas
 		name : 'saspath',
 		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
+		qs : {
+			'UID' : UID,
+			'SID' : SID,
+		},
 		url : root + sandbox + vwf + 'saspath',
 	},*/
-	sitelogin = {
+/*	sitelogin = {
 		//401 Already Logged in - yay!!! Victory!!!
-		//what does this really do?? is this still used??
+		//must be logged out, yet getting hung up on check password
 		name : 'sitelogin',
 		method : 'GET',
 		qs : {
@@ -613,10 +661,10 @@ var commands = [
 			'P' : '1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48',
 		},
 		url : root + sandbox + vwf + 'sitelogin',
-	},
+	},*/
 /*	sitelogout = {
 		//200
-		//would if be different is we could login to site
+		//would it be different is we could login to site
 		//looks like there would be no difference in what we see
 		//now after this command the sandbox console shows null for session instead of it's ususal info, so it looks like we do indeed logout
 		name : 'sitelogout',
@@ -629,68 +677,97 @@ var commands = [
 		//200 {"GetStateResult"...}
 		name : 'state',
 		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
+		qs : {
+			// 'UID' : UID,
+			'SID' : '_adl_sandbox_xReWilVZ1l0wfL2U_', //SID,
+		},
 		url : root + sandbox + vwf + 'state',
 	},*/
 /*	stateD = {
 		//200 deleted instance
 		//cannot reuse the same SID all the time - go fig
+		//must be full id - "_adl_sandbox_xkTMz9miCKQmBDwU_"
+		//less returns - 500 instance does not exist
+		//ie - 	'_xkTMz9miCKQmBDwU_'
+		//		'xkTMz9miCKQmBDwU'
 		name : 'state',
 		method : 'DELETE',
 		qs : {
-			'UID' : UID,
+			// 'UID' : UID,
 			// 'SID' : SID,	//500 instance does not exist
-			'SID' : "_adl_sandbox_MH26teZnwu9BBISj_",	//200 deleted instance
+			'SID' : "_adl_sandbox_8MInq5lboxiIhssa_",	//200 deleted instance
 		},
 		form : {},
 		url : root + sandbox + vwf + 'state',
 	},*/
 /*	statedataG = {
+		//works fine with uid and sid in qs
 		//it is our chief crasher when qs is empty
-		//with uid only crashes
-		//with sid only works great
 		//with uid and sid works great
-		//and valid session cookie of course
+		//SID of undefined crashes!!!!!
+		//it is our chief crasher when qs is empty
 		name : 'statedata',
 		method : 'GET',
-		// qs : {	'UID' : UID,
-		// 	'SID' : SID,},
+		qs : {
+			// 'UID' : UID,
+			'SID' : '_adl_sandbox_AndrewWCreighton_', //SID,
+		},
+		url : root + sandbox + vwf + 'statedata',
+	},*/
+/*	statedataP = {
+		//200 Created state _adl_sandbox_AN91bJqZY29N7Cbz_
+		//nothing changes nor is created with valid sid
+		//with new sid - 401 State not found. State _adl_sandbox_AndrewWCreighton_
+		name : 'statedata',
+		method : 'POST',
+		qs : {
+			// 'UID' : UID,
+			// 'SID' : SID,	//401 State not found.
+			// 'SID' : '_AN91bJqZY29N7Cbz_',	//401 State not found.
+			'SID' : '_adl_sandbox_AndrewWCreighton_',	//works
+			// 'SID' : 'AN91bJqZY29N7Cbz',	//401 State not found.
+		},
+		form : {
+			"objects":1,
+			"owner":"Postman",
+			"lastUpdate":"2015-09-14T19:59:26.043Z",
+			"created":"2015-09-14T19:59:26.044Z",
+			"publishSettings":{
+				"allowAnonymous":false,
+				"SinglePlayer":false,
+				"camera":null,
+				"createAvatar":true,
+				"allowTools":true,
+				"persistence":true
+			},
+		foo:'nonsense',
+		},
 		url : root + sandbox + vwf + 'statedata',
 	},*/
 /*	statedataG = {
 		//works fine with uid and sid in qs
 		//it is our chief crasher when qs is empty
 		//with uid and sid works great
+		//SID of undefined crashes!!!!!
+		//it is our chief crasher when qs is empty
 		name : 'statedata',
 		method : 'GET',
 		qs : {
 			// 'UID' : UID,
-			'SID' : SID,
+			'SID' : '_adl_sandbox_AndrewWCreighton_', //SID,
 		},
-		url : root + sandbox + vwf + 'statedata',
-	},*/
-/*	statedataP = {
-		//200 Created state _adl_sandbox_AN91bJqZY29N7Cbz_
-		name : 'statedata',
-		method : 'POST',
-		qs : {
-			'UID' : UID,
-			// 'SID' : SID,	//401 State not found.
-			// 'SID' : '_AN91bJqZY29N7Cbz_',	//401 State not found.
-			'SID' : '_adl_sandbox_AN91bJqZY29N7Cbz_',	//works
-			// 'SID' : 'AN91bJqZY29N7Cbz',	//401 State not found.
-		},
-		form : {},
 		url : root + sandbox + vwf + 'statedata',
 	},*/
 /*	statehistory = {
-		//200 {"children"...}
-		//also quite huge
+		//200 {"children":[...], "parents":[...]}
+		//200 {"error":"inner state not found"} for invalid sid
+		//caution can get large quick
 		name : 'statehistory',
 		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
+		qs : {
+			'UID' : UID,
+			'SID' : '_adl_sandbox_r8oyUpB6DiAi2VWx_', //SID,
+		},//aoWX23JPeUj7YMTb, r8oyUpB6DiAi2VWx, 3IkxhPjXTgunIOuG
 		url : root + sandbox + vwf + 'statehistory',
 	},*/
 /*	states = {
@@ -698,32 +775,38 @@ var commands = [
 		//this one has gotten huge
 		name : 'states',
 		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
-		url : root + sandbox + vwf + 'states',
-	},*/
-/*	stateslist = {
-		//200 [{"file"...}]
-		name : 'stateslist',
-		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
-		url : root + sandbox + vwf + 'stateslist',
-	},*/
-	texture = {
-		//404 file not found
-		//find some textures
-		name : 'texture',
-		method : 'GET',
 		qs : {
 			'UID' : UID,
 			'SID' : SID,
 		},
+		url : root + sandbox + vwf + 'states',
+	},*/
+/*	stateslist = {
+		//200 [{"file":"statebackup..."}, ...]
+		//500 Error in trying to retrieve backup list - when no backup history
+		name : 'stateslist',
+		method : 'GET',
+		qs : {
+			// 'UID' : UID,
+			'SID' : SID,
+		},
+		url : root + sandbox + vwf + 'stateslist',
+	},*/
+/*	texture = {
+		//200 + file
+		//..\Sandbox\data\Textures
+		name : 'texture',
+		method : 'GET',
+		qs : {
+			'UID' : 'georgie.jpeg',
+			// 'UID' : UID,
+		// 	'SID' : SID,
+		},
 		url : root + sandbox + vwf + 'texture',
-	},
+	},*/
 /*	textures = {
 		//200 {"GetTextureResult"...}
-		//find some textures to upload
+		//..\Sandbox\data\Textures
 		name : 'textures',
 		method : 'GET',
 		qs : {
@@ -732,25 +815,31 @@ var commands = [
 		},
 		url : root + sandbox + vwf + 'textures',
 	},*/
-	texturethumbnail = {
-		//404 file not found
+/*	texturethumbnail = {
+		//200 + file
+		//..\Sandbox\data\Thumbnails
 		name : 'texturethumbnail',
 		method : 'GET',
 		qs : {
-			'UID' : UID,
-			'SID' : SID,
+			'UID' : 'george.jpeg',
+			// 'UID' : UID,
+			// 'SID' : SID,
 		},
 		url : root + sandbox + vwf + 'texturethumbnail',
-	},
+	},*/
 /*	thumbnailG = {
 		//200 ?png - prints out the whole png
 		//works fine need to find way to suppress printing whole file
 		//printing to console produces a lot of beeps - a lot
 		//and tie up the console until they are done
+		//no sid - big ugly 500 TypeError
+		//still works when logged out however file is returned with different encoding - when logged out encoding does not cause console to beep
 		name : 'thumbnail',
 		method : 'GET',
-		qs : {	'UID' : UID,
-			'SID' : SID,},
+		qs : {
+			// 'UID' : UID,
+			'SID' : SID,
+		},
 		url : root + sandbox + vwf + 'thumbnail',
 	},*/
 /*	thumbnailP = {
@@ -761,10 +850,11 @@ var commands = [
 		//so the SID's
 		name : 'thumbnail',
 		method : 'POST',
-		qs : {	'UID' : UID,
+		qs : {
+			// 'UID' : UID,
 			// 'SID' : '_AN91bJqZY29N7Cbz_',	//500 state does not exist
-			// 'SID' : '_adl_sandbox_AN91bJqZY29N7Cbz_',
-			'SID' : 'AN91bJqZY29N7Cbz',
+			'SID' : 'AN91bJqZY29N7Cbz',	//200
+			// 'SID' : '_adl_sandbox_AN91bJqZY29N7Cbz_',	//200
 			// auto : false,
 		},
 		form : {
@@ -780,10 +870,11 @@ var commands = [
 		method : 'GET',
 		qs : {
 			'P' : '1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48'
+			// 'P' : '1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48'
 		},
 		url : root + sandbox + vwf + 'updatepassword',
 	},*/
-/*	uploadtemp = {
+	uploadtemp = {
 		//404 404 Not Found
 		//is this uploading formData
 		//and where/when does this happen??
@@ -800,10 +891,11 @@ var commands = [
 		form : {
 			something : "Here is a great big long string and story about nothing, although the title says that it is something.",
 			rabbitSeason : 'duckSeason',
-			note : "This will post into tempupload however the response from the server will still be - uploadtemp 404 Not Found.  This seems like an incorrect or misleading response."
+			note : "This will post into tempupload however the response from the server will still be - uploadtemp 404 Not Found.  This seems like an incorrect or misleading response.",
+			here : "Ang was here 09-24-2015",
 		},
 		url : root + sandbox + vwf + 'uploadtemp',
-	},*/
+	},
 ];
 
 //set up data variables (profiles, states, inventory, textures)
@@ -961,29 +1053,9 @@ var runEmAll = function (error, response, data) {
 	}	//doRequest function
 console.log('Lake');
 //produce a loop around this to vary the input data
-//Andy's way - not quite working
-	// var varyInputs = function (k) {
-	// 	if (k === badData.length) {
-	// 		return;
-	// 	}
-	//
-	// 	doRequest(0);
-	// 	console.log(badData[k], k++);
-	// 	varyInputs(k)
-	// }
-	// varyInputs(0);
 console.log('Winni');
-//Tommy's way
-	// function varyInputs() {
-	// 	console.log('bonjorno');
-	// 	while (bd = badData.shift()) {
 			doRequest(0);
-	// 		console.log(badData[0]);
-	// 	}
-	// }
-	// varyInputs();
 console.log('pesaukee');
 }	//runEmAll
 
 reqSalt();
-// console.log('who loves synchrony');

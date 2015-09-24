@@ -1,140 +1,18 @@
-Results from Testing SandboxAPI Endpoints on 2015-09-16 13:32:14
-Session Cookie: session=E_Ux7bnLkGj8ZHlqHq_g4Q.WyECQqHVsw_4tcOlSMGmN8JUiZpnl5UR_7nmCsABayrSPw8h8aFZiLPeuz0j6SX7A7Do9tswspohIKW8VLWKyyIMZi55JU5Byub-meYxmDF9FtV4hRwmlGdQBINR2zraVx3BcTOgr3yIM0eIij2yxR3uz0b80YzT8btaEegOz0UhCTmVMlA3WDucSyA0j61YU3nldOMpkPrg1aSIxCL642k8Rbz0kgwHIjOHo_tmxor6JZwYRPttECEjqP5k6ywqawBuovvycc5Zjbkek0st6udEs4G8lGXoWh4V2WO6wST8x-T2RJY1vNxaAKBaPb08QTlRDhYQAbGjRsDGU2304GWAnpjNvRZ0fc8RFPfpm77PdBlOq4h8_HW8CMTHTXXiGx2PyeelQ59wdJOuwZRXqJ9-DZbiB6UF4JdrFutK5j4.1442410334686.86400000.biEGD-A9mEsU3ApMAMpccVrvjD2PnzVYTFBJyzw8kco; Path=/
+Results from Testing SandboxAPI Endpoints on 2015-09-24 19:47:30
+Session Cookie: session=3MOOO-eU22IBaYwtJ4ha7A.Rn0mjWGB7W9E2-iKxLcO84WVGGwxFBasS4eL0v3rvDIL7rK7RKPUxZ4LXqGDq8FYNPoZVZszGxRB6EaWtdVaJmE686TBXEbev7adUIf3--LSjfXgLBiXKCtTyOIFcRcIUhYU4Pb99BWHSPAGn9A_PyNspoqpVJE-OTVBStpYgusHcbrBUgeT9rJXPF--CjhkS-FBsr_a4EoiL5xQvJvQrI1boR2SJ9eHDlAmJ8_UglAW8Nj3W04J728TTvCJnQ7AsuY-d9Mu9Q5yfqU7ICbqO3yYGGjNCl3GP-ak1FhUYMLukeEXKbVJDMWf6Ci-KSe8AJIS7Oo6P3qZ9-PVdWb-72RA1Y1xSqy0Kc1PXBcnuRTyIgLC5SUbtvtWftqnuGh9NZRFc9JhwMrMcEfeMiel5w.1443124050969.86400000.MytBdlUQ5mIXylHEj12RL9ANgc9D-nE9MyF3oEox3VY; Path=/
 
 
 {"name":"","method":"GET","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/"}
 404 404 Not Found
 
 
-{"name":"","method":"POST","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/"}
-404 404 Not Found
+{"name":"logindata","method":"GET","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/logindata"}
+200 {"user_uid":"joe","username":"joe","admin":false,"instances":[],"clients":[]}
 
 
-{"name":"","method":"DELETE","url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/"}
-404 404 Not Found
-
-
-{"name":"3drdownload","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drdownload"}
-401 
-
-{"name":"3drpermission","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drpermission"}
-401 ""
-
-{"name":"3drsearch","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drsearch"}
-200 []
-
-{"name":"3drtexture","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drtexture"}
-401 
-
-{"name":"3drupload","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/3drupload"}
-500 TypeError: Cannot read property &#39;path&#39; of undefined<br> &nbsp; &nbsp;at Object.proxyUpload (c:\Users\creighta\workspace\sandbox\support\server\3dr_proxy.js:187:32)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1904:18<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1490:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
-
-
-{"name":"copyinstance","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/copyinstance"}
-Error: read ECONNRESET
-
-{"name":"createprofile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createprofile"}
-Error: connect ECONNREFUSED
-
-{"name":"createstate","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/createstate"}
-Error: connect ECONNREFUSED
-
-{"name":"datafile","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/datafile"}
-Error: connect ECONNREFUSED
-
-{"name":"error","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/error"}
-Error: connect ECONNREFUSED
-
-{"name":"getanalytics.js","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/getanalytics.js"}
-Error: connect ECONNREFUSED
-
-{"name":"globalasset","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
-Error: connect ECONNREFUSED
-
-{"name":"globalasset","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalasset"}
-Error: connect ECONNREFUSED
-
-{"name":"globalassetassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetassetdata"}
-Error: connect ECONNREFUSED
-
-{"name":"globalassetmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/globalassetmetadata"}
-Error: connect ECONNREFUSED
-
-{"name":"inventoryitem","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"9ab2d1de-20c3-4c2e-8548-f4e9dfd6960f"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitem"}
-Error: connect ECONNREFUSED
-
-{"name":"inventoryitemassetdata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"72011935-2aef-4f0c-a5dd-953bc89e6849"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemassetdata"}
-Error: connect ECONNREFUSED
-
-{"name":"inventoryitemmetadata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_","AID":"56b634e6-d22d-4510-8809-d5e12fc9abdd"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
-200 {"uploaded":"2015-08-25T16:50:04.480Z","description":"Mary had a little lamb."}
-
-{"name":"inventoryitemmetadata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/inventoryitemmetadata"}
-500 no AID in query string
-
-
-{"name":"library","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/library"}
-404 404 Not Found
-
-
-{"name":"logindata","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/logindata"}
-200 {"user_uid":"Postman","username":"Postman","admin":false,"instances":[],"clients":[]}
-
-
-{"name":"profile","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/profile"}
-200 
-
-
-{"name":"profile","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/profile"}
-200 
-
-
-{"name":"publish","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/publish"}
-500 State ID is incorrect
-
-
-{"name":"restorebackup","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/restorebackup"}
-500 State ID is incorrect
-
-
-{"name":"sitelogin","method":"GET","qs":{"UID":"Postman","P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/sitelogin"}
-401 Already Logged in
-
-
-{"name":"state","method":"DELETE","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/state"}
-500 instance does not exist
-
-
-{"name":"statedata","method":"GET","qs":{"SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
-200 {"title":"","description":"","isExample":true,"publishSettings":{"allowAnonymous":true,"persistence":false,"allowTools":true,"createAvatar":true,"singlePlayer":true}}
-
-{"name":"statedata","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/statedata"}
-401 State not found. State _adl_sandbox_L8BnGGj85ZHAmsy1_
-
-
-{"name":"stateslist","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/stateslist"}
-200 [{"file":"statebackup1ba12a74-f1de-4df2-a0f7-e7622e06d1db","time":"2015-08-10T21:11:50.000Z"},{"file":"statebackup507206be-6483-473f-a540-8989a527df9b","time":"2015-08-12T15:30:22.000Z"},{"file":"statebackup1d9e19fb-1f73-4fc0-82e5-36baf71630d3","time":"2015-08-12T13:06:28.000Z"},{"file":"statebackup2cbe72c6-5d92-4bd4-ab83-1f8f8e0d1aa7","time":"2015-08-12T15:29:22.000Z"},{"file":"state","time":"2015-08-12T15:31:16.000Z"},{"file":"thumbnail.png","time":"2015-08-12T17:53:23.000Z"}]
-
-
-{"name":"texture","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texture"}
-404 file not found
-
-
-{"name":"texturethumbnail","method":"GET","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/texturethumbnail"}
-404 file not found
-
-
-{"name":"thumbnail","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/thumbnail"}
-500 TypeError: Cannot call method &#39;replace&#39; of undefined<br> &nbsp; &nbsp;at SaveThumbnail (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:926:24)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1854:7<br> &nbsp; &nbsp;at Object.exports.GetSessionData (c:\Users\creighta\workspace\sandbox\support\server\sessions.js:24:9)<br> &nbsp; &nbsp;at Object.serve (c:\Users\creighta\workspace\sandbox\support\server\sandboxAPI.js:1490:11)<br> &nbsp; &nbsp;at routeToAPI (c:\Users\creighta\workspace\sandbox\support\server\appserver.js:333:20)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\layer.js:82:5)<br> &nbsp; &nbsp;at trim_prefix (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:302:13)<br> &nbsp; &nbsp;at c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:270:7<br> &nbsp; &nbsp;at Function.proto.process_params (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:321:12)<br> &nbsp; &nbsp;at next (c:\Users\creighta\workspace\sandbox\node_modules\express\lib\router\index.js:261:10)
-
-
-{"name":"updatepassword","method":"GET","qs":{"P":"1164a4a2a16700439c1863872b3cf2176a41c38f49005c0183bf58e6f4d61c48"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/updatepassword"}
-200 
-
-
-{"name":"uploadtemp","method":"POST","qs":{"UID":"Postman","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/uploadtemp"}
+{"name":"uploadtemp","method":"POST","qs":{"UID":"joe","SID":"_adl_sandbox_L8BnGGj85ZHAmsy1_"},"form":{"something":"Here is a great big long string and story about nothing, although the title says that it is something.","rabbitSeason":"duckSeason","note":"This will post into tempupload however the response from the server will still be - uploadtemp 404 Not Found.  This seems like an incorrect or misleading response.","here":"Ang was here 09-24-2015"},"url":"http://localhost:3000/sandbox/adl/vwfdatamanager.svc/uploadtemp"}
 404 404 Not Found
 
 
 
-session=E_Ux7bnLkGj8ZHlqHq_g4Q.WyECQqHVsw_4tcOlSMGmN8JUiZpnl5UR_7nmCsABayrSPw8h8aFZiLPeuz0j6SX7A7Do9tswspohIKW8VLWKyyIMZi55JU5Byub-meYxmDF9FtV4hRwmlGdQBINR2zraVx3BcTOgr3yIM0eIij2yxR3uz0b80YzT8btaEegOz0UhCTmVMlA3WDucSyA0j61YU3nldOMpkPrg1aSIxCL642k8Rbz0kgwHIjOHo_tmxor6JZwYRPttECEjqP5k6ywqawBuovvycc5Zjbkek0st6udEs4G8lGXoWh4V2WO6wST8x-T2RJY1vNxaAKBaPb08QTlRDhYQAbGjRsDGU2304GWAnpjNvRZ0fc8RFPfpm77PdBlOq4h8_HW8CMTHTXXiGx2PyeelQ59wdJOuwZRXqJ9-DZbiB6UF4JdrFutK5j4.1442410334686.86400000.biEGD-A9mEsU3ApMAMpccVrvjD2PnzVYTFBJyzw8kco; Path=/Curiouser and curiouser
+session=3MOOO-eU22IBaYwtJ4ha7A.Rn0mjWGB7W9E2-iKxLcO84WVGGwxFBasS4eL0v3rvDIL7rK7RKPUxZ4LXqGDq8FYNPoZVZszGxRB6EaWtdVaJmE686TBXEbev7adUIf3--LSjfXgLBiXKCtTyOIFcRcIUhYU4Pb99BWHSPAGn9A_PyNspoqpVJE-OTVBStpYgusHcbrBUgeT9rJXPF--CjhkS-FBsr_a4EoiL5xQvJvQrI1boR2SJ9eHDlAmJ8_UglAW8Nj3W04J728TTvCJnQ7AsuY-d9Mu9Q5yfqU7ICbqO3yYGGjNCl3GP-ak1FhUYMLukeEXKbVJDMWf6Ci-KSe8AJIS7Oo6P3qZ9-PVdWb-72RA1Y1xSqy0Kc1PXBcnuRTyIgLC5SUbtvtWftqnuGh9NZRFc9JhwMrMcEfeMiel5w.1443124050969.86400000.MytBdlUQ5mIXylHEj12RL9ANgc9D-nE9MyF3oEox3VY; Path=/Curiouser and curiouser
